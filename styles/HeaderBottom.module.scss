@@ -1,0 +1,34 @@
+.slider {
+  display: flex;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.image {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
+}
+
+.dot {
+  width: 0.5rem;
+  height: 0.1rem;
+  background-color: #ffffff;
+  opacity: 0.75;
+  transition: all ease 250ms;
+
+  &:hover {
+    opacity: 1;
+  }
+}

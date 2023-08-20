@@ -1,0 +1,27 @@
+
+[
+    {
+        "id": 1,
+        "tag": "Member Shop",
+        "name": "Shop-Member Exclusive styles.",
+        "routePath" : "/products", 
+        "pic" : "/pictures/membership/1.jpeg",
+        "categoryId": 1
+    },
+    {
+        "id": 2,
+        "tag": "Shipping As It Should Be",
+        "name": "Free shipping on order $50+",
+        "routePath" : "/products", 
+        "pic" : "/pictures/membership/2.jpeg",
+        "categoryId": 1
+    },
+    {
+        "id": 3,
+        "tag": "Nike By You",
+        "name": "Customize your so-you shoe",
+        "routePath" : "/products", 
+        "pic" : "/pictures/membership/3.jpeg",
+        "categoryId": 2
+    }
+]

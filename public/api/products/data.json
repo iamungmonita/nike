@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "name": "Testing",
+        "categoryId": 1
+    },
+    {
+        "id": 2,
+        "name": "Swimming Shirt",
+        "categoryId": 2
+    }
+]

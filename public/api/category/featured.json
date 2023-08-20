@@ -1,0 +1,19 @@
+
+[
+    {
+        "id": 1,
+        "name": "Adventure-Ready Styles",
+        "tag" : "Nike Trail + Nike ACG",
+        "routePath" : "/products", 
+        "pic" : "/pictures/featured/1.jpeg",
+        "categoryId": 1
+    },
+    {
+        "id": 2,
+        "name": "Our Latest and Greatest Shoes for Running",
+        "tag" : "Nike Running",
+        "routePath" : "/products", 
+        "pic" : "/pictures/featured/2.jpeg",
+        "categoryId": 1
+    }
+]

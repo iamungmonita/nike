@@ -1,0 +1,31 @@
+
+[
+    {
+        "id": 1,
+        "name": "Nike Tech",
+        "routePath" : "/products", 
+        "pic" : "/pictures/trending/1.jpeg",
+        "categoryId": 1
+    },
+    {
+        "id": 2,
+        "name": "LeBron NXXT Gen",
+        "routePath" : "/products", 
+        "pic" : "/pictures/trending/2.jpeg",
+        "categoryId": 1
+    },
+    {
+        "id": 3,
+        "name": "Fresh Kicks for Kids",
+        "routePath" : "/products", 
+        "pic" : "/pictures/trending/3.jpeg",
+        "categoryId": 1
+    },
+    {
+        "id": 4,
+        "name": "Nike Swoosh Bra",
+        "routePath" : "/products", 
+        "pic" : "/pictures/trending/4.jpeg",
+        "categoryId": 1
+    }
+]

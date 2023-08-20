@@ -1,0 +1,39 @@
+
+[
+    {
+        "id": 1,
+        "name": "Nike Football",
+        "description" : "Command the filed in game-ready gear.",
+        "routePath" : "/products", 
+        "pic" : "/pictures/bysport/1.webp",
+        "categoryId": 1,
+        "shop" : true
+    },
+    {
+        "id": 2,
+        "name": "Nike Golf",
+        "description" : "Conquer any course in style.",
+        "routePath" : "/products", 
+        "pic" : "/pictures/bysport/2.webp",
+        "categoryId": 1,
+        "shop" : true
+    },
+    {
+        "id": 3,
+        "name": "Nike Soccer",
+        "description" : "Bring mad style to the pitch with the latest gear.",
+        "routePath" : "/products", 
+        "pic" : "/pictures/bysport/3.webp",
+        "categoryId": 2,
+        "shop" : true
+    },
+    {
+        "id": 4,
+        "name": "Nike Tennis",
+        "description" : "Serve up in style",
+        "routePath" : "/products", 
+        "pic" : "/pictures/bysport/4.webp",
+        "categoryId": 1,
+        "shop" : true
+    }
+]
