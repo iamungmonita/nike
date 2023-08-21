@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getFooter } from '@/service/footer'
+import { getFooter } from '@/pages/service/footer'
 import { Product } from '@/models/product'
 import { facebook, twitter, instagram, youtube } from '@/public/icons'
 import { IconBtn } from '@/core/components'
@@ -18,10 +18,10 @@ export default function index({ }: Props) {
         })
     }
     return (
-        <footer className='bg-black text-white py-10'>
-            <div className='max-w-6xl mx-auto space-y-10'>
-                <div className='flex  justify-between'>
-                    <div className=' grid grid-cols-3 gap-x-32'>
+        <footer className='bg-black text-white px-10 py-10 sm:px-none'>
+            <div className='max-w-6xl mx-auto space-y-10 '>
+                <div className='flex flex-col sm:flex-row justify-between'>
+                    <div className=' grid grid-cols-1 sm:grid-cols-3 sm:gap-x-20 md:gap-x-32'>
                         <div>
                             {footer.map((foo, index) =>
                                 <div key={index} className='uppercase font-bold'>
@@ -29,35 +29,37 @@ export default function index({ }: Props) {
                                 </div>
                             )}
                         </div>
-                        <div>
-                            {footer.map((foo, index) =>
-                                <div key={index}>
-                                    {foo.id === 7 ?
-                                        <div>
-                                            <p className='font-bold uppercase'>{foo.name}</p>
-                                            {foo.subCategory?.map((sub, index) =>
-                                                <div key={index} className='text-xs text-white/30'>
-                                                    <p className=''>{sub.name}</p>
-                                                </div>)}
-                                        </div>
-                                        : ''}
-                                </div>
-                            )}
-                        </div>
-                        <div>
-                            {footer.map((foo, index) =>
-                                <div key={index}>
-                                    {foo.id === 8 ?
-                                        <div>
-                                            <p className='font-bold uppercase'>{foo.name}</p>
-                                            {foo.subCategory?.map((sub, index) =>
-                                                <div key={index} className='text-xs text-white/30'> <p>{sub.name}</p> </div>)}
-                                        </div>
-                                        : ''}
-                                </div>
-                            )}
-                        </div>
+
+
                     </div>
+                    <div>
+                        {footer.map((foo, index) =>
+                            <div key={index}>
+                                {foo.id === 7 ?
+                                    <div>
+                                        <p className='font-bold uppercase'>{foo.name}</p>
+                                        {foo.subCategory?.map((sub, index) =>
+                                            <div key={index} className='hidden sm:block text-xs text-white/30'>
+                                                <p className=''>{sub.name}</p>
+                                            </div>)}
+                                    </div>
+                                    : ''}
+                            </div>
+                        )}
+                    </div>
+                    <div>
+                        {footer.map((foo, index) =>
+                            <div key={index}>
+                                {foo.id === 8 ?
+                                    <div>
+                                        <p className='font-bold uppercase'>{foo.name}</p>
+                                        {foo.subCategory?.map((sub, index) =>
+                                            <div key={index} className='hidden sm:block text-xs text-white/30'> <p>{sub.name}</p> </div>)}
+                                    </div>
+                                    : ''}
+                            </div>
+                        )}
+                    </div >
                     <div className=''>
                         <div className='flex gap-3'>
                             <IconBtn icon={twitter} footer={true} />

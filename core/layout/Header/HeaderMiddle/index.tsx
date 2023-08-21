@@ -4,7 +4,7 @@ import { heart, search, shoppingbag, menu } from '@/public/icons'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Category, MappedCategory, SubCategory } from '@/models/category'
-import { getAllCategory, getAllSubCategory } from '@/service/category'
+import { getAllCategory, getAllSubCategory } from '@/pages/service/category'
 import { filter } from 'lodash'
 import { IconBtn } from '@/core/components'
 type Props = {};
