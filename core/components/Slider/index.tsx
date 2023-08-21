@@ -39,7 +39,8 @@ export default function index(
                                 <Image src={result.pic} alt={result.name} width={800} height={800} />
                                 <div className='absolute bottom-10 left-10 space-y-3'>
                                     <div className='text-white'>
-
+                                        <p className='text-lg '>{result.tag}</p>
+                                        <p className='text-2xl'>{result.name}</p>
                                     </div>
                                     <Button text={`${index === 0 ? 'Shop' : 'Shop All'}`} bg_color={true} />
                                 </div>

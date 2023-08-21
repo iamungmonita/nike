@@ -41,7 +41,7 @@ export default function () {
 
 
     return (
-        <div className='max-w-6xl mx-auto p-3 md:py-3 md:px-0 flex justify-between items-center'>
+        <div className='max-w-6xl mx-auto px-5 py-3 md:py-3 md:px-0 flex justify-between items-center'>
             <Link href={'/'}>
                 <Image src={nike} width={60} height={60} alt='nike' />
             </Link>

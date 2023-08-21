@@ -27,8 +27,8 @@ export default function index({ }: Props) {
                 <div className={`${style.slider} transition-transform ease-out duration-500 items-center`}>
                     {HeaderBottom.map((bottom, index) =>
                         <div className={`transition-transform ease-out duration-500 text-sm p-3 ${style.image}`} style={{ transform: `translateX(-${curr * 100}%)` }} key={index} >
-                            <h2>{bottom.link}</h2>
-                            <h2>{bottom.description} <button className='underline text-[13px]'>{bottom.button}</button></h2>
+                            <h2 className='font-bold'>{bottom.link}</h2>
+                            <h2 className='text-sm'>{bottom.description} <button className='underline text-[13px]'>{bottom.button}</button></h2>
 
                         </div>
                     )}
