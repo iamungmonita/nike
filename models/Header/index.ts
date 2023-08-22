@@ -3,5 +3,12 @@ export interface Header {
     name: string,
     route?: string,
     routePath: string,
-    description?: string
+    description?: string,
+    subCategories?: subCategory[]
 }
+
+export interface subCategory {
+    id: number,
+    name: string,
+    routePath: string,
+} 

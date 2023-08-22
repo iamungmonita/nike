@@ -1,9 +1,8 @@
 [
     {
       "id": 1,
-      "name": "Save Up to 60% | Now End 8.12",
-      "description": "Get an extra 20% off select styles with code SCHOOL20.",
-      "route" : "Shop Now",
+      "name": "Fall Ready Sale | Extra 20% Off Select Style",
+      "route" : "Members: Sign in and use code READY at checkout.",
       "routePath": "/"
 
     },

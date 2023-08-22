@@ -1,5 +1,6 @@
 import React from 'react'
-import { Header } from '@/core/components'
+import Header from '../Header'
+import Footer from '../Footer'
 type Props = {
     children: React.ReactNode
 }
@@ -9,6 +10,7 @@ export default function Layout({ children }: Props) {
         <div>
             <Header />
             {children}
+            <Footer />
         </div>
     )
 }
