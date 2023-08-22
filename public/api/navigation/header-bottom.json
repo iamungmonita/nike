@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "name": "Save Up to 60% | Now End 8.12",
+      "description": "Get an extra 20% off select styles with code SCHOOL20.",
+      "route" : "Shop Now",
+      "routePath": "/"
+
+    },
+    {
+      "id": 2,
+      "name": "Shop All New Arrivals",
+      "route" : "Shop Now",
+      "routePath": "/shop-now"
+    },
+    {
+      "id": 3,
+      "name": "Members: Free Shipping on Orders $50+",
+      "route" : "Join Now",
+      "routePath": "/"
+    },
+    {
+      "id": 4,
+      "name": "Why Wait? Try Store Pickup",
+      "description": "Buy online and find a store near you for pick up in less than 2 hours.",
+      "route" : "Shop Now",
+      "routePath": "/"
+    }
+  ]
+  

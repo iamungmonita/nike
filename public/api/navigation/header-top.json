@@ -1,0 +1,22 @@
+[
+    {
+      "id": 1,
+      "name": "Find a Store",
+      "routePath": "/find-store"
+    },
+    {
+      "id": 2,
+      "name": "Help",
+      "routePath": "/help"
+    },
+    {
+      "id": 3,
+      "name": "Join Us",
+      "routePath": "/join-us"
+    },
+    {
+      "id": 4,
+      "name": "Sign In",
+      "routePath": "/sign-in"
+    }
+  ]

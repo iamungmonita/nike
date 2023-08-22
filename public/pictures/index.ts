@@ -1,6 +1,6 @@
-import converse from '@/public/pictures/converse.png'
-import jordan from '@/public/pictures/jordan.png'
-import nike from '@/public/pictures/nike.png'
+import converse from '@/public/pictures/logo/converse.png'
+import jordan from '@/public/pictures/logo/jordan.png'
+import nike from '@/public/pictures/logo/nike.png'
 
 export {
     jordan, converse, nike
