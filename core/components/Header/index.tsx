@@ -5,6 +5,7 @@ import { getHeaderTop, getHeaderMiddle, getHeaderBottom } from '@/pages/service/
 import { Header } from '@/models/Header'
 import Link from 'next/link'
 import { heart, menu, search, shoppingbag } from '@/public/icons'
+import style from '@/styles/Carousel.module.scss'
 
 type Props = {
     getHeaderTop: () => Promise<any>
@@ -16,8 +17,21 @@ export default function Header({ }: Props) {
     const [navlinksTop, setNavlinksTop] = useState<Header[]>([])
     const [navlinksMiddle, setNavlinksMiddle] = useState<Header[]>([])
     const [navlinksBottom, setNavlinksBottom] = useState<Header[]>([])
+    const [curr, setCurr] = useState<number>(0)
+    const [autoSlide, setAutoSlide] = useState<boolean>(true)
+
+
+    const prev = () => {
+        setCurr((curr) => (curr === navlinksBottom.length - 1 ? 0 : curr + 1))
+    }
+    const next = () => {
+        setCurr((curr) => (curr === navlinksBottom.length - 1 ? 0 : curr + 1))
+    }
     useEffect(() => {
         init()
+        if (!autoSlide) return;
+        const slideInterval = setInterval(next, 3000)
+        return () => clearInterval(slideInterval)
     }, [])
 
     function init() {
@@ -83,10 +97,10 @@ export default function Header({ }: Props) {
                         </div>
                     </div>
                     {/* HeaderBottom */}
-                    <div className='bg-header w-screen text-center py-3 px-10'>
-                        <ul className='flex gap-x-3 font-medium'>
+                    <div className='relative bg-header w-screen text-center py-3 px-10'>
+                        <ul className={`flex gap-x-3 font-medium ${style.container} transition-transform ease-out duration-500`}>
                             {navlinksBottom.map((navlink, index) =>
-                                <li key={index}>
+                                <li key={index} className={`${style.slider} transition-transform ease-out duration-500`} style={{ transform: `translateX(-${curr * 100}%)` }}>
                                     <Link href={navlink.routePath}>{navlink.name}</Link>
                                 </li>)}
                         </ul>
