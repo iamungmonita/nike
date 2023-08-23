@@ -8,37 +8,39 @@
     {
         "id": 2,
         "name": "Promotions",
-        "routePath" : "/products"
+        "routePath" : "/promotions"
     },
     {
         "id": 3,
         "name": "Find a store",
-        "routePath" : "/products"
+        "routePath" : "/find-store"
     },
     {
         "id": 4,
         "name": "Become a member",
-        "routePath" : "/products"
+        "routePath" : "/become-member"
     },
     {
         "id": 5,
         "name": "Nike Journal",
-        "routePath" : "/products"
+        "routePath" : "/nike-journal"
     },
     {
         "id": 6,
-        "name": "Send us feedback",
-        "routePath" : "/products"
+        "name": "Send us Feedback",
+        "routePath" : "/send-feedback"
     },
     {
         "id": 7,
         "name": "Get Help",
-        "routePath" : "/products"
+        "routePath" : "/help",
+        "subCategories": true
     },
     {
         "id": 8,
         "name": "About Nike",
-        "routePath" : "/products"
+        "routePath" : "/about-nike",
+        "subCategories" : true
     }
 
 ]

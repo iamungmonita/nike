@@ -1,5 +1,5 @@
 import { GET } from "@/core/services";
-import { Header } from "@/models/Header";
+import { Header } from "@/models/Footer";
 
 
 export function getHeaderTop() {

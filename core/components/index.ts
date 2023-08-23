@@ -1,0 +1,1 @@
+export { default as IconButton } from '@/core/components/IconButton/index'

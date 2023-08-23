@@ -1,0 +1,6 @@
+.svg {
+    cursor: pointer;
+    &:hover {
+        @apply  fill-gray-500;
+    }
+}
