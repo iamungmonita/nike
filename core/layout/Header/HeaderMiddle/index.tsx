@@ -31,7 +31,7 @@ export default function HeaderMiddle({ }: Props) {
                     </svg>
                 </Link>
             </div>
-            <div className='w-full flex items-center justify-end col-span-3 gap-x-10'>
+            <div className='w-full flex items-center col-span-2'>
                 <div className='hidden md:block'>
                     <ul className='flex gap-x-3 font-[12px]'>
                         {navlinks.map((navlink, index) =>
@@ -39,10 +39,12 @@ export default function HeaderMiddle({ }: Props) {
                         )}
                     </ul>
                 </div>
+            </div>
+            <div className='w-full flex items-center justify-end col-span-1'>
                 <div className='flex gap-x-3 justify-between'>
-                    <div className='bg-header hover:bg-gray-200 rounded-full hidden lg:flex justify-end gap-x-3'>
+                    <div className='hover:bg-gray-200 rounded-full hidden lg:flex justify-end gap-x-3'>
                         <IconButton IconImage={search} IconWidth={25} IconHeight={25} />
-                        <input type="text" className='bg-transparent w-[130px] outline-none' placeholder='Search...' />
+                        {/* <input type="text" className='bg-transparent w-[130px] outline-none' placeholder='Search...' /> */}
                     </div>
                     <ul className='flex gap-x-3 list-none '>
                         <IconButton IconImage={search} IconWidth={25} IconHeight={25} IconLargeHidden />
