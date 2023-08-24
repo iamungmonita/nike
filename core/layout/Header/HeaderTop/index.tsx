@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { getHeaderTop } from '@/pages/service/navigtion'
-import { Header } from '@/models/Footer'
+import { getHeaderTop } from '@/pages/service/header'
+import { Header } from '@/models/Header'
 import svgStyle from '@/styles/SVG.module.scss'
 import Link from 'next/link'
 type Props = {}

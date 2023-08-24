@@ -1,11 +1,26 @@
-import Head from "next/head"
-import Image from "next/image"
+import { useEffect, useState } from "react"
+import { Category } from "@/models/Category"
+import { Card } from "@/core"
+import { useRouter } from "next/router"
+import { AHelmet } from "@/core"
+import { getAllTrending } from "./service/trending"
+
 export default function Home() {
+  const [items, setItems] = useState<Category[]>([])
+
+  useEffect(() => {
+    initFunction()
+  }, [])
+
+  function initFunction() {
+    Promise.resolve((getAllTrending()).then((response) => {
+      setItems(response)
+    }))
+  }
+
   return (
     <main>
-      <Head>
-        <title>Nike. Just Do it. Nike.com</title>
-      </Head>
+      <AHelmet>Nike. Just Do it. Nike.com</AHelmet>
     </main>
   )
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { getHeaderTop, getHeaderMiddle, getHeaderBottom } from '@/pages/service/navigtion'
+import { getHeaderTop, getHeaderMiddle, getHeaderBottom } from '@/pages/service/header'
 import { Header } from '@/models/Header'
 import HeaderBottom from './HeaderBottom'
 import HeaderTop from './HeaderTop'

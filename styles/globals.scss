@@ -2,5 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '_config'; 
 
 
+
+
+.bg-color {
+    color: set-background(white)
+}

@@ -1,10 +1,10 @@
 import React from 'react'
 import svgStyle from '@/styles/SVG.module.scss'
 import { useEffect, useState } from 'react'
-import { getHeaderMiddle } from '@/pages/service/navigtion'
+import { getHeaderMiddle } from '@/pages/service/header'
 import { Header } from '@/models/Header'
 import { IconButton } from '@/core/components'
-import { search, heart, shoppingbag, menu } from '@/public/svg'
+import { search, heart, shoppingbag, menu } from '@/public/icons'
 import Link from 'next/link'
 
 type Props = {}

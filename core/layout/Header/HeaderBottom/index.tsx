@@ -1,7 +1,7 @@
 import { Header } from '@/models/Header'
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { getHeaderBottom } from '@/pages/service/navigtion'
+import { getHeaderBottom } from '@/pages/service/header'
 import style from '@/styles/Carousel.module.scss'
 import Link from 'next/link'
 
@@ -11,21 +11,24 @@ export default function HeaderBottom({ }: Props) {
     const [navlinks, setNavlinks] = useState<Header[]>([])
     const [autoSlide, setAutoSlide] = useState<boolean>(true)
     const [currentSlide, setCurrentSlide] = useState<number>(0)
-    const nextSlide = () => {
-        // instead of 4 i cant put the navlinks.length because it wont comeback to the first slide.
-        setCurrentSlide((current) => (current === 4 - 1 ? 0 : current + 1))
-    }
+
     useEffect(() => {
         initFunction()
+    }, [])
+
+    useEffect(() => {
         if (!autoSlide) return;
         const slideInterval = setInterval(nextSlide, 3000)
         return () => clearInterval(slideInterval)
-    }, [])
+    }, [navlinks.length])
 
     function initFunction() {
         Promise.resolve(getHeaderBottom()).then((response) => {
             setNavlinks(response)
         })
+    }
+    function nextSlide() {
+        setCurrentSlide((current) => (current === navlinks.length - 1 ? 0 : current + 1))
     }
     return (
         <div className='bg-header text-center overflow-x-hidden'>

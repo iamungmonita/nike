@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { facebook, twitter, youtube, instagram, location, plus } from '@/public/svg'
+import { facebook, twitter, youtube, instagram, location, plus } from '@/public/icons'
 import Image from 'next/image'
 import { Footer, subFooter, FooterTermOfUse } from '@/models/Footer'
 import { getFooter, getFooterTermOfUse, getSubFooter } from '@/pages/service/footer'
