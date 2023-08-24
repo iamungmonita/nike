@@ -1,0 +1,12 @@
+
+[
+    {
+        "id": 1,
+        "name": "Adventure-Ready Styles",
+        "tag" : "Nike Trail + Nike ACG",
+        "routePath" : "/products",
+        "pic" : "/pictures/section1.webp",
+        "mobile_pic" : "/picture/section1-mobile.webp",
+        "categoryId": 1
+    }
+]

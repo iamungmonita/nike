@@ -1,0 +1,29 @@
+[
+    {
+      "id": 1,
+      "name": "Fall Ready Sale | Extra 20% Off Select Style",
+      "route" : "Members: Sign in and use code READY at checkout.",
+      "routePath": "/"
+
+    },
+    {
+      "id": 2,
+      "name": "Shop All New Arrivals",
+      "route" : "Shop Now",
+      "routePath": "/shop-now"
+    },
+    {
+      "id": 3,
+      "name": "Members: Free Shipping on Orders $50+",
+      "route" : "Join Now",
+      "routePath": "/"
+    },
+    {
+      "id": 4,
+      "name": "Why Wait? Try Store Pickup",
+      "description": "Buy online and find a store near you for pick up in less than 2 hours.",
+      "route" : "Shop Now",
+      "routePath": "/"
+    }
+  ]
+  

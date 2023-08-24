@@ -1,0 +1,59 @@
+[
+    {
+        "id" : 1,
+        "name" : "Guides",
+        "routePath" : "/guides",
+        "subCategories" : [
+            {
+                "id": 1,
+                "name" : "Order Status",
+                "routePath" : "/products"
+            },
+            {
+                "id": 2,
+                "name" : "Shipping and Delivery",
+                "routePath" : "/products"
+            },
+            {
+                "id": 3,
+                "name" : "Returns",
+                "routePath" : "/products"
+            },
+            {
+                "id": 4,
+                "name" : "Order Cancellation",
+                "routePath" : "/products"
+            },
+            {
+                "id": 5,
+                "name" : "Payment Options",
+                "routePath" : "/products"
+            },
+            {
+                "id": 6,
+                "name" : "Gift Card Balance",
+                "routePath" : "/products"
+            },
+            {
+                "id": 7,
+                "name" : "Contact Us",
+                "routePath" : "/products"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name" : "Terms of Sale",
+        "routePath": "/terms-of-sale"
+    },
+    {
+        "id" : 3,
+        "name" : "Term of Use",
+        "routePath" : "terms-of-use"
+    },
+    {
+        "id" : 4,
+        "name" : "Nike Privacy Policy",
+        "routePath" : "/nike-policy"
+    }
+]

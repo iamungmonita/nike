@@ -1,11 +1,26 @@
-import { Banner, Slider } from "@/core";
+import { useEffect, useState } from "react"
+import { Category } from "@/models/Category"
+import { Card } from "@/core"
+import { useRouter } from "next/router"
+import { AHelmet } from "@/core"
+import { getAllTrending } from "./service/trending"
 
-
-import { getAllTrending } from "@/service";
 export default function Home() {
+  const [items, setItems] = useState<Category[]>([])
+
+  useEffect(() => {
+    initFunction()
+  }, [])
+
+  function initFunction() {
+    Promise.resolve((getAllTrending()).then((response) => {
+      setItems(response)
+    }))
+  }
+
   return (
     <main>
-      <Banner />
+      <AHelmet>Nike. Just Do it. Nike.com</AHelmet>
     </main>
   )
 }

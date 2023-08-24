@@ -13,7 +13,28 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        "backgroundHeader": '#f5f5f5'
+        "header": '#f5f5f5',
+        "hover": '#000 rounded-full'
+      },
+      fontFamily: {
+        'display': ['Oswald'],
+        'body': ['"Open Sans"'],
+      },
+      screens: {
+        'sm': '640px',
+        // => @media (min-width: 640px) { ... }
+
+        'md': '960px',
+        // => @media (min-width: 768px) { ... }
+
+        'lg': '1080px',
+        // => @media (min-width: 1024px) { ... }
+
+        'xl': '1280px',
+        // => @media (min-width: 1280px) { ... }
+
+        '2xl': '1536px',
+        // => @media (min-width: 1536px) { ... }
       }
     },
   },

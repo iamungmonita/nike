@@ -1,14 +1,22 @@
-import React from 'react'
-import HeaderMiddle from './HeaderMiddle';
-import { HeaderTop } from '..';
-import { HeaderBottom } from '..';
+import { useEffect, useState } from 'react'
+import { getHeaderTop, getHeaderMiddle, getHeaderBottom } from '@/pages/service/header'
+import { Header } from '@/models/Header'
+import HeaderBottom from './HeaderBottom'
+import HeaderTop from './HeaderTop'
+import HeaderMiddle from './HeaderMiddle'
 
-export default function () {
+type Props = {}
+
+export default function Header({ }: Props) {
     return (
-        <>
-            <HeaderTop />
-            <HeaderMiddle />
-            <HeaderBottom />
-        </>
+        <section>
+            <div className='w-screen'>
+                <div className='flex flex-col justify-between items-center'>
+                    <HeaderTop />
+                    <HeaderMiddle />
+                    <HeaderBottom />
+                </div>
+            </div>
+        </section >
     )
 }

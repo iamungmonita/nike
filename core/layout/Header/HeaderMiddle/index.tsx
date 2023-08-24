@@ -1,70 +1,60 @@
-import React, { useEffect, useState } from 'react'
-import { nike } from '@/public/pictures'
-import { heart, search, shoppingbag, menu } from '@/public/icons'
-import Image from 'next/image'
+import React from 'react'
+import svgStyle from '@/styles/SVG.module.scss'
+import { useEffect, useState } from 'react'
+import { getHeaderMiddle } from '@/pages/service/header'
+import { Header } from '@/models/Header'
+import { IconButton } from '@/core/components'
+import { search, heart, shoppingbag, menu } from '@/public/icons'
 import Link from 'next/link'
-import { Category, MappedCategory, SubCategory } from '@/models/category'
-import { getAllCategory, getAllSubCategory } from '@/service/category'
-import { filter } from 'lodash'
-import { IconBtn } from '@/core/components'
-type Props = {};
 
-export default function () {
-    const [category, setCategory] = useState<MappedCategory[]>([]);
+type Props = {}
+
+export default function HeaderMiddle({ }: Props) {
+    const [navlinks, setNavlinks] = useState<Header[]>([])
 
     useEffect(() => {
-        initCategory();
-    }, []);
+        initFunction()
+    }, [])
 
-
-    function initCategory() {
-        Promise.all([
-            getAllCategory(),
-            getAllSubCategory(),
-        ]).then((response: [Category[], SubCategory[]]) => {
-            const categories = response[0];
-            const subCategories = response[1];
-
-            if (!category.length) {
-                const mappedObject = categories.map((item): MappedCategory => {
-                    const filterSub = filter(subCategories, { categoryId: item.id });
-                    return {
-                        ...item,
-                        subCategories: filterSub,
-                    };
-                });
-                setCategory(mappedObject)
-            }
-        });
+    function initFunction() {
+        Promise.resolve(getHeaderMiddle()).then((response) => {
+            setNavlinks(response)
+        })
     }
 
-
-
     return (
-        <div className='max-w-6xl mx-auto p-3 md:py-3 md:px-0 flex justify-between items-center'>
-            <Link href={'/'}>
-                <Image src={nike} width={60} height={60} alt='nike' />
-            </Link>
-
-            <div className='flex gap-12 justify-between items-center'>
-                <ul className='md:flex gap-5 font-medium hidden'>
-                    {category.map((middle, index) =>
-                        <Link href={middle.routePath} key={index}>{middle.name}</Link>
-                    )}
-                </ul>
-                <div>
-                    <span className='p-2 hidden md:flex bg-backgroundHeader hover:bg-gray-200 rounded-full gap-3'>
-                        <Image src={search} width={20} height={20} alt='search' />
-                        <input className='bg-transparent w-36 outline-none' type="text" placeholder='Search...' />
-                    </span>
+        <div className='w-full px-10  flex md:grid grid-cols-4 justify-between items-center'>
+            <div className='grid group col-span-1'>
+                <Link href='/'>
+                    <svg className={`${svgStyle.svg}`} xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="135.5 361.38 1000 356.39">
+                        <path d="M245.8075 717.62406c-29.79588-1.1837-54.1734-9.3368-73.23459-24.4796-3.63775-2.8928-12.30611-11.5663-15.21427-15.2245-7.72958-9.7193-12.98467-19.1785-16.48977-29.6734-10.7857-32.3061-5.23469-74.6989 15.87753-121.2243 18.0765-39.8316 45.96932-79.3366 94.63252-134.0508 7.16836-8.0511 28.51526-31.5969 28.65302-31.5969.051 0-1.11225 2.0153-2.57652 4.4694-12.65304 21.1938-23.47957 46.158-29.37751 67.7703-9.47448 34.6785-8.33163 64.4387 3.34693 87.5151 8.05611 15.898 21.86731 29.6684 37.3979 37.2806 27.18874 13.3214 66.9948 14.4235 115.60699 3.2245 3.34694-.7755 169.19363-44.801 368.55048-97.8366 199.35686-53.0408 362.49439-96.4029 362.51989-96.3672.056.046-463.16259 198.2599-703.62654 301.0914-38.08158 16.2806-48.26521 20.3928-66.16827 26.6785-45.76525 16.0714-86.76008 23.7398-119.89779 22.4235z" />
+                    </svg>
+                </Link>
+            </div>
+            <div className='w-full flex items-center col-span-2'>
+                <div className='hidden md:block'>
+                    <ul className='flex gap-x-3 font-[12px]'>
+                        {navlinks.map((navlink, index) =>
+                            <Link key={index} href={navlink.routePath}>{navlink.name}</Link>
+                        )}
+                    </ul>
                 </div>
-                <div className='flex gap-2'>
-                    <IconBtn icon={search} footer={false} />
-                    <IconBtn icon={heart} hidden={true} footer={false} />
-                    <IconBtn icon={shoppingbag} footer={false} />
-                    <IconBtn icon={menu} md_hidden={true} footer={false} />
+            </div>
+            <div className='w-full flex items-center justify-end col-span-1'>
+                <div className='flex gap-x-3 justify-between'>
+                    <div className='hover:bg-gray-200 rounded-full hidden lg:flex justify-end gap-x-3'>
+                        <IconButton IconImage={search} IconWidth={25} IconHeight={25} />
+                        {/* <input type="text" className='bg-transparent w-[130px] outline-none' placeholder='Search...' /> */}
+                    </div>
+                    <ul className='flex gap-x-3 list-none '>
+                        <IconButton IconImage={search} IconWidth={25} IconHeight={25} IconLargeHidden />
+                        <IconButton IconImage={heart} IconWidth={25} IconHeight={25} IconHidden />
+                        <IconButton IconImage={shoppingbag} IconWidth={25} IconHeight={25} />
+                        <IconButton IconImage={menu} IconWidth={25} IconHeight={25} IconMediumHidden />
+                    </ul>
                 </div>
             </div>
         </div>
     )
+
 }

@@ -8,9 +8,9 @@ const nextConfig = {
   serverRuntimeConfig: {
     API_URL1: 'http://localhost:3000/api',
   },
-
-
-
+  i18n: {
+    locales: ['ENG', 'KHM'],
+    defaultLocale: 'ENG'
+  }
 }
-
 module.exports = nextConfig

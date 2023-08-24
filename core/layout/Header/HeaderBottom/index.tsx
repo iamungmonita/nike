@@ -1,39 +1,45 @@
+import { Header } from '@/models/Header'
 import React from 'react'
-import { HeaderBottom } from '@/constants'
-import style from '@/styles/HeaderBottom.module.scss'
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import { getHeaderBottom } from '@/pages/service/header'
+import style from '@/styles/Carousel.module.scss'
+import Link from 'next/link'
+
 type Props = {}
 
-export default function index({ }: Props) {
-    const [curr, setCurr] = useState<number>(0)
-
-    const prev = () => {
-        setCurr((curr) => (curr === 0 ? HeaderBottom.length - 1 : curr - 1))
-    }
-    const next = () => {
-        setCurr((curr) => (curr === HeaderBottom.length - 1 ? 0 : curr + 1))
-    }
+export default function HeaderBottom({ }: Props) {
+    const [navlinks, setNavlinks] = useState<Header[]>([])
     const [autoSlide, setAutoSlide] = useState<boolean>(true)
+    const [currentSlide, setCurrentSlide] = useState<number>(0)
+
+    useEffect(() => {
+        initFunction()
+    }, [])
 
     useEffect(() => {
         if (!autoSlide) return;
-        const slideInterval = setInterval(next, 3000)
+        const slideInterval = setInterval(nextSlide, 3000)
         return () => clearInterval(slideInterval)
-    }, [])
+    }, [navlinks.length])
 
+    function initFunction() {
+        Promise.resolve(getHeaderBottom()).then((response) => {
+            setNavlinks(response)
+        })
+    }
+    function nextSlide() {
+        setCurrentSlide((current) => (current === navlinks.length - 1 ? 0 : current + 1))
+    }
     return (
-        <section className='bg-backgroundHeader'>
-            <div className='relative w-full mx-auto overflow-x-hidden justify-center items-center text-center '>
-                <div className={`${style.slider} transition-transform ease-out duration-500 items-center`}>
-                    {HeaderBottom.map((bottom, index) =>
-                        <div className={`transition-transform ease-out duration-500 text-sm p-3 ${style.image}`} style={{ transform: `translateX(-${curr * 100}%)` }} key={index} >
-                            <h2>{bottom.link}</h2>
-                            <h2>{bottom.description} <button className='underline text-[13px]'>{bottom.button}</button></h2>
-
-                        </div>
-                    )}
-                </div>
-            </div>
-        </section>
+        <div className='bg-header text-center overflow-x-hidden'>
+            <ul className={`flex font-medium ${style.container} transition-transform ease-out duration-500 w-screen`}>
+                {navlinks.map((navlink, index) =>
+                    <div key={index} className={`${style.slider} transition-transform ease-out duration-500 text-center items-center p-3`} style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+                        <p>{navlink.name}</p>
+                        <p className='font-normal text-xs'>{navlink.description} <Link href={navlink.routePath} className='text-xs underline font-normal'>{navlink.route}</Link></p>
+                    </div>)
+                }
+            </ul>
+        </div>
     )
 }

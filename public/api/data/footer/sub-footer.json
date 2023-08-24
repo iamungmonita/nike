@@ -1,0 +1,78 @@
+[
+    {
+        "id" : 1,
+        "name" : "Get Help",
+        "categoryId" : 7,
+        "routePath" : "/help",
+        "subCategories" : [
+            {
+                "id": 1,
+                "name" : "Order Status",
+                "routePath" : "/order-status"
+            },
+            {
+                "id": 2,
+                "name" : "Shipping and Delivery",
+                "routePath" : "/shipping-delivery"
+            },
+            {
+                "id": 3,
+                "name" : "Returns",
+                "routePath" : "/returns"
+            },
+            {
+                "id": 4,
+                "name" : "Order Cancellation",
+                "routePath" : "/order-cancellation"
+            },
+            {
+                "id": 5,
+                "name" : "Payment Options",
+                "routePath" : "/payment-options"
+            },
+            {
+                "id": 6,
+                "name" : "Gift Card Balance",
+                "routePath" : "/gift-card-balance"
+            },
+            {
+                "id": 7,
+                "name" : "Contact Us",
+                "routePath" : "/contact-us"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name" : "About Nike",
+        "categoryId" :  8,
+        "routePath" : "/about-nike",
+        "subCategories" : [
+        {
+            "id": 1,
+            "name" : "News",
+            "routePath" : "/news"
+        },
+        {
+            "id": 2,
+            "name" : "Careers",
+            "routePath" : "/careers"
+        },
+        {
+            "id": 3,
+            "name" : "Investors",
+            "routePath" : "/investors"
+        },
+        {
+            "id": 4,
+            "name" : "Purpose",
+            "routePath" : "/purpose"
+        },
+        {
+            "id": 5,
+            "name" : "Sustainibility",
+            "routePath" : "/sustainability"
+        }
+        ]
+    }
+]

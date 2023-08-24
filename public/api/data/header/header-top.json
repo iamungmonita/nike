@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "name": "Find a Store",
+      "routePath": "/find-store"
+    },
+    {
+      "id": 2,
+      "name": "Help",
+      "routePath": "/help",
+      "subCategories" : [
+        {
+          "id" : 1,
+          "name" : "Order Status",
+          "routePath" : "/order-status"
+        },
+        {
+          "id" : 2,
+          "name" : "Shipping & Delivery",
+          "routePath" : "/shipping-delivery"
+        },
+        {
+          "id" : 3,
+          "name" : "Returns",
+          "routePath" : "/returns"
+        },
+        {
+          "id" : 4,
+          "name" : "Order Cancellation",
+          "routePath" : "/order-cancellation"
+        },
+        {
+          "id" : 5,
+          "name" : "Size Charts",
+          "routePath" : "/size-charts"
+        },
+        {
+          "id" : 6,
+          "name" : "Contact Us",
+          "routePath" : "/contact-us"
+        },
+        {
+          "id" : 7,
+          "name" : "Privacy Policy",
+          "routePath" : "/privacy-policy"
+        },
+        {
+          "id" : 8,
+          "name" : "Term of Sale",
+          "routePath" : "/term-of-sale"
+        },
+        {
+          "id" : 9,
+          "name" : "Term of Use",
+          "routePath" : "/term-of-use"
+        },
+        {
+          "id" : 10,
+          "name" : "Send Us Feedback",
+          "routePath" : "/send-feedback"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Join Us",
+      "routePath": "/join-us"
+    },
+    {
+      "id": 4,
+      "name": "Sign In",
+      "routePath": "/sign-in"
+    }
+  ]
