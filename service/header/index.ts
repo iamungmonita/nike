@@ -13,3 +13,4 @@ export function getHeaderMiddle() {
 export function getHeaderBottom() {
     return GET<Header[]>('/data/header/header-bottom.json')
 }
+
