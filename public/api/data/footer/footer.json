@@ -37,37 +37,37 @@
         "subCategories":
         [
             {
-                "id": 1,
+                "id": 171,
                 "name" : "Order Status",
                 "routePath" : "/order-status"
             },
             {
-                "id": 2,
+                "id": 271,
                 "name" : "Shipping and Delivery",
                 "routePath" : "/shipping-delivery"
             },
             {
-                "id": 3,
+                "id": 371,
                 "name" : "Returns",
                 "routePath" : "/returns"
             },
             {
-                "id": 4,
+                "id": 471,
                 "name" : "Order Cancellation",
                 "routePath" : "/order-cancellation"
             },
             {
-                "id": 5,
+                "id": 571,
                 "name" : "Payment Options",
                 "routePath" : "/payment-options"
             },
             {
-                "id": 6,
+                "id": 671,
                 "name" : "Gift Card Balance",
                 "routePath" : "/gift-card-balance"
             },
             {
-                "id": 7,
+                "id": 771,
                 "name" : "Contact Us",
                 "routePath" : "/contact-us"
             }
@@ -79,27 +79,27 @@
         "routePath" : "/about-nike",
         "subCategories" :[
             {
-                "id": 1,
+                "id": 181,
                 "name" : "News",
                 "routePath" : "/news"
             },
             {
-                "id": 2,
+                "id": 282,
                 "name" : "Careers",
                 "routePath" : "/careers"
             },
             {
-                "id": 3,
+                "id": 383,
                 "name" : "Investors",
                 "routePath" : "/investors"
             },
             {
-                "id": 4,
+                "id": 484,
                 "name" : "Purpose",
                 "routePath" : "/purpose"
             },
             {
-                "id": 5,
+                "id": 585,
                 "name" : "Sustainibility",
                 "routePath" : "/sustainability"
             }
