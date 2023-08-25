@@ -6,12 +6,15 @@ import { getFooter, getFooterTermOfUse, getSubFooter } from '@/pages/service/foo
 import { IconButton, NavLink } from '@/core/components'
 import Link from 'next/link'
 
-type Props = {}
+type Props = {
+    handleChange?: () => void
+}
 
-export default function Footer({ }: Props) {
+export default function Footer(props: Props) {
     const [navlinks, setNavlinks] = useState<Footer[]>([])
     const [subNavlinks, setSubNavlinks] = useState<subFooter[]>([])
     const [termOfUse, setTermOfUse] = useState<FooterTermOfUse[]>([])
+    const [item, setItem] = useState<number>(1)
 
     useEffect(() => {
         initFunction()
@@ -33,6 +36,26 @@ export default function Footer({ }: Props) {
     const secondColumnSubLinks = subNavlinks.filter((subNavlink) => subNavlink.subCategories).slice(0, 1)
     const thirdColumnSubLinks = subNavlinks.filter((subNavlink) => subNavlink.subCategories).slice(1, 2)
 
+    function handle(id: number) {
+
+        setItem(id)
+
+
+
+    }
+    useEffect(() => {
+        const number = [0, 2, 3, 4, 5]
+        const label = (): number => {
+            const result = number.find((num) => num === item)
+            if (!result) return 0;
+            return 1
+        }
+        console.log(label());
+    }, [item])
+
+
+
+
     return (
         <footer className='bg-[#101010] text-white'>
             <div className='w-screen p-10 space-y-5 md:space-y-0'>
@@ -46,13 +69,13 @@ export default function Footer({ }: Props) {
                                 .map((navlink, index) =>
                                     <div className='flex justify-between items-center md:hidden'>
                                         <NavLink index={index} name={navlink.name} routePath={navlink.routePath} />
-                                        <button><Image src={plus} height={25} width={25} alt='' /></button>
+                                        <button onClick={(e) => handle(2)}><Image src={plus} height={25} width={25} alt='' /></button>
                                     </div>)}
                             {thirdColumnLinks
                                 .map((navlink, index) =>
                                     <div className='flex justify-between items-center md:hidden'>
                                         <NavLink index={index} name={navlink.name} routePath={navlink.routePath} />
-                                        <button><Image src={plus} height={25} width={25} alt='' /></button>
+                                        <button onClick={(e) => handle(0)}><Image src={plus} height={25} width={25} alt='' /></button>
                                     </div>)}
                         </ul>
                         <ul className='hidden md:flex flex-col gap-y-2 font-semibold uppercase'>
