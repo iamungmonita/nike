@@ -1,6 +1,6 @@
-import axios, { AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from "axios";
-import * as _ from "lodash";
-import getConfig from "next/config";
+import axios, { AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from 'axios';
+import * as _ from 'lodash';
+import getConfig from 'next/config';
 
 /**
  * @template T the type of the action's `response` tag.

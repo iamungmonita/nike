@@ -1,16 +1,14 @@
-import React from 'react'
-import svgStyle from '@/styles/SVG.module.scss'
-import { useEffect, useState } from 'react'
-import { getHeaderMiddle } from '@/pages/service/header'
-import { Header } from '@/models/Header'
-import { IconButton } from '@/core/components'
-import { search, heart, shoppingbag, menu } from '@/public/icons'
-import Link from 'next/link'
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 
-type Props = {}
+import { IconButton } from '@/core/components';
+import { Header } from '@/models/Header';
+import { heart, menu, search, shoppingBag } from '@/public/icons';
+import { getHeaderMiddle } from '@/service/header';
+import svgStyle from '@/styles/SVG.module.scss';
 
-export default function HeaderMiddle({ }: Props) {
-    const [navlinks, setNavlinks] = useState<Header[]>([])
+export default function HeaderMiddle() {
+    const [navLinks, setNavLinks] = useState<Header[]>([])
 
     useEffect(() => {
         initFunction()
@@ -18,7 +16,7 @@ export default function HeaderMiddle({ }: Props) {
 
     function initFunction() {
         Promise.resolve(getHeaderMiddle()).then((response) => {
-            setNavlinks(response)
+            setNavLinks(response)
         })
     }
 
@@ -34,8 +32,8 @@ export default function HeaderMiddle({ }: Props) {
             <div className='w-full flex items-center col-span-2'>
                 <div className='hidden md:block'>
                     <ul className='flex gap-x-3 font-[12px]'>
-                        {navlinks.map((navlink, index) =>
-                            <Link key={index} href={navlink.routePath}>{navlink.name}</Link>
+                        {navLinks.map((navLink) =>
+                            <Link key={navLink.id} href={navLink.routePath}>{navLink.name}</Link>
                         )}
                     </ul>
                 </div>
@@ -49,7 +47,7 @@ export default function HeaderMiddle({ }: Props) {
                     <ul className='flex gap-x-3 list-none '>
                         <IconButton IconImage={search} IconWidth={25} IconHeight={25} IconLargeHidden />
                         <IconButton IconImage={heart} IconWidth={25} IconHeight={25} IconHidden />
-                        <IconButton IconImage={shoppingbag} IconWidth={25} IconHeight={25} />
+                        <IconButton IconImage={shoppingBag} IconWidth={25} IconHeight={25} />
                         <IconButton IconImage={menu} IconWidth={25} IconHeight={25} IconMediumHidden />
                     </ul>
                 </div>

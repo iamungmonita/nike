@@ -1,22 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import { getHeaderTop } from '@/pages/service/header'
-import { Header } from '@/models/Header'
-import svgStyle from '@/styles/SVG.module.scss'
-import Link from 'next/link'
-type Props = {}
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
 
-export default function HeaderTop({ }: Props) {
-    const [navlinks, setNavlinks] = useState<Header[]>([])
+import { Header } from '@/models/Header';
+import { getHeaderTop } from '@/service/header';
+import svgStyle from '@/styles/SVG.module.scss';
+
+export default function HeaderTop() {
+    const [navLinks, setNavLinks] = useState<Header[]>([]);
 
     useEffect(() => {
-        initFunction()
-    }, [])
+        initFunction();
+    }, []);
 
     function initFunction() {
         Promise.resolve(getHeaderTop()).then((response) => {
-            setNavlinks(response)
-        })
+            setNavLinks(response);
+        });
     }
+
     return (
         <div className='bg-header w-screen py-2 px-10 hidden md:flex justify-between items-center'>
             <div className='flex gap-x-3'>
@@ -24,11 +25,11 @@ export default function HeaderTop({ }: Props) {
                 <svg className={`${svgStyle.svg}`} xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="-16.71 -23.5 144.82 141"><path d="M19.3 36.7L0 30.4 12.1 47 .2 63.5l19.1-6.3 11.6 16.6V53.3L50.4 47l-19.5-6.4V20.2z" /><path d="M74.7 47L31.9 94h36.7l42.8-47L68.6 0H31.9z" /></svg>
             </div>
             <ul className='text-xs font-medium flex gap-x-3'>
-                {navlinks.map((navlink, index) =>
-                    <li key={index} className={`[&:not(:last-child)]:border-r border-r-gray-500 [&:not(:last-child)]:pr-3 hover:text-gray-500 cursor-pointer relative`}>
-                        <Link href={navlink.routePath}>{navlink.name}  </Link>
-                    </li>)
-                }
+                {navLinks.map((navlink) =>
+                    <li key={navlink.id} className={`[&:not(:last-child)]:border-r border-r-gray-500 [&:not(:last-child)]:pr-3 hover:text-gray-500 cursor-pointer relative`}>
+                        <Link href={navlink.routePath}>{navlink.name}</Link>
+                    </li>
+                )}
             </ul>
         </div>
     )

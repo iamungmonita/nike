@@ -1,9 +1,9 @@
-import { Header } from '@/models/Header'
-import React from 'react'
-import { useEffect, useState } from 'react'
-import { getHeaderBottom } from '@/pages/service/header'
-import style from '@/styles/Carousel.module.scss'
-import Link from 'next/link'
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
+
+import { Header } from '@/models/Header';
+import { getHeaderBottom } from '@/service/header';
+import style from '@/styles/Carousel.module.scss';
 
 type Props = {}
 

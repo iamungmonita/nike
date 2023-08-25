@@ -1,13 +1,8 @@
-import { useEffect, useState } from 'react'
-import { getHeaderTop, getHeaderMiddle, getHeaderBottom } from '@/pages/service/header'
-import { Header } from '@/models/Header'
-import HeaderBottom from './HeaderBottom'
-import HeaderTop from './HeaderTop'
-import HeaderMiddle from './HeaderMiddle'
+import HeaderBottom from './HeaderBottom';
+import HeaderMiddle from './HeaderMiddle';
+import HeaderTop from './HeaderTop';
 
-type Props = {}
-
-export default function Header({ }: Props) {
+export default function Header() {
     return (
         <section>
             <div className='w-screen'>
@@ -17,6 +12,6 @@ export default function Header({ }: Props) {
                     <HeaderBottom />
                 </div>
             </div>
-        </section >
+        </section>
     )
 }
