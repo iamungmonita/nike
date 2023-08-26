@@ -42,7 +42,7 @@ export default function HeaderMiddle() {
                 <div className='flex gap-x-3 justify-between'>
                     <div className='hover:bg-gray-200 rounded-full hidden lg:flex justify-end gap-x-3'>
                         <IconButton IconImage={search} IconWidth={25} IconHeight={25} />
-                        {/* <input type="text" className='bg-transparent w-[130px] outline-none' placeholder='Search...' /> */}
+                        <input type="text" className='bg-transparent w-[130px] outline-none' placeholder='Search...' />
                     </div>
                     <ul className='flex gap-x-3 list-none '>
                         <IconButton IconImage={search} IconWidth={25} IconHeight={25} IconLargeHidden />

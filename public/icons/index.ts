@@ -10,7 +10,7 @@ import menu from '@/public/icons/menu.svg';
 import nike from '@/public/icons/nike.svg';
 import plus from '@/public/icons/plus.svg';
 import search from '@/public/icons/search.svg';
-import shoppingBag from '@/public/icons/shoppingbag.svg';
+import shoppingBag from '@/public/icons/shopping_bag.svg';
 import twitter from '@/public/icons/twitter.svg';
 import youtube from '@/public/icons/youtube.svg';
 
