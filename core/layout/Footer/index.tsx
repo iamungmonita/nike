@@ -86,7 +86,7 @@ export default function Footer() {
                                 </ul>
                             )}
                         </ul>
-                        <ul className='flex md:justify-end md:items-start gap-3 flex-wrap h-8'>
+                        <ul className='flex md:justify-end md:items-start gap-3 h-8 flex-wrap'>
                             <IconButton IconImage={twitter} IconWidth={20} IconHeight={20} BackgroundColor={true} />
                             <IconButton IconImage={facebook} IconWidth={20} IconHeight={20} BackgroundColor={true} />
                             <IconButton IconImage={youtube} IconWidth={20} IconHeight={20} BackgroundColor={true} />

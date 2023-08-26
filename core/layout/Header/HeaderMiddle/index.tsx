@@ -7,11 +7,11 @@ import { heart, menu, search, shoppingBag } from '@/public/icons';
 import { getHeaderMiddle } from '@/service/header';
 import svgStyle from '@/styles/SVG.module.scss';
 
-import SearchItem from '../SearchIteam';
+import SearchItem from '../SearchItem';
 
 export default function HeaderMiddle() {
     const [navLinks, setNavLinks] = useState<Header[]>([]);
-    const [openSearch, setOpenSearch] = useState(true);
+    const [openSearch, setOpenSearch] = useState(false);
 
     useEffect(() => {
         initFunction()
@@ -23,16 +23,16 @@ export default function HeaderMiddle() {
         });
     }
 
-    function toggleSearch () {
+    function toggleSearch() {
         setOpenSearch(!openSearch);
     }
 
-    function onCancelSearch () {
+    function onCancelSearch() {
         setOpenSearch(false);
     }
 
     return (
-        <div className='px-10 bg-white flex md:grid grid-cols-3 justify-between items-center'>
+        <div className='pr-10 pl-14 bg-white flex md:grid grid-cols-3 justify-between items-center'>
             <div className='grid group'>
                 <Link href='/'>
                     <svg className={`${svgStyle.svg}`} xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="135.5 361.38 1000 356.39">
@@ -40,7 +40,7 @@ export default function HeaderMiddle() {
                     </svg>
                 </Link>
             </div>
-            <div className='flex items-center hidden md:block'>
+            <div className='items-center hidden md:block'>
                 <ul className='flex justify-center'>
                     {navLinks.map((navLink) => (
                         <li className='p-3 font-medium' key={navLink.id}>
@@ -49,11 +49,11 @@ export default function HeaderMiddle() {
                     ))}
                 </ul>
             </div>
-            <div className='flex items-center justify-end '>
+            <div className='flex items-center justify-end'>
                 <div className='flex gap-x-3 justify-between'>
-                    <div className='hover:bg-gray-200 rounded-full hidden lg:flex justify-end gap-x-3' >
-                        <IconButton  IconImage={search} IconWidth={25} IconHeight={25} />
-                        <input type="text" className='bg-transparent w-[130px] outline-none' placeholder='Search...' />
+                    <div className='bg-header rounded-full hidden lg:flex justify-end gap-x-3' >
+                        <IconButton IconImage={search} IconWidth={25} IconHeight={25} />
+                        <input type="text" placeholder='Search...' className='w-32 bg-transparent outline-none hover:bg-header rounded-full' />
                     </div>
                     <ul className='flex gap-x-3 list-none '>
                         <IconButton onClick={toggleSearch} IconImage={search} IconWidth={25} IconHeight={25} IconLargeHidden />
@@ -63,7 +63,7 @@ export default function HeaderMiddle() {
                     </ul>
                 </div>
             </div>
-            {openSearch && <SearchItem onCancel={onCancelSearch}/>}
+            {openSearch && <SearchItem onCancel={onCancelSearch} />}
         </div>
     )
 
