@@ -4,14 +4,10 @@ import HeaderTop from './HeaderTop';
 
 export default function Header() {
     return (
-        <section>
-            <div className='w-screen'>
-                <div className='flex flex-col justify-between items-center'>
-                    <HeaderTop />
-                    <HeaderMiddle />
-                    <HeaderBottom />
-                </div>
-            </div>
+        <section className='bg-header'>
+            <HeaderTop />
+            <HeaderMiddle />
+            <HeaderBottom />
         </section>
     )
 }
