@@ -41,9 +41,9 @@ export default function HeaderMiddle() {
                 </Link>
             </div>
             <div className='items-center hidden md:block'>
-                <ul className='flex justify-center'>
+                <ul className='flex justify-center  '>
                     {navLinks.map((navLink) => (
-                        <li className='p-3 font-medium' key={navLink.id}>
+                        <li className='p-3 font-medium header__top__zoom' key={navLink.id}>
                             <Link href={navLink.routePath}>{navLink.name}</Link>
                         </li>
                     ))}

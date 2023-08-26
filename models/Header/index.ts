@@ -1,3 +1,4 @@
+import { Category } from "../Category";
 
 
 export interface Header {
@@ -6,4 +7,5 @@ export interface Header {
     description?: string,
     route?: string,
     routePath: string,
+    subCategories: Category[]
 }
