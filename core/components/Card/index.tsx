@@ -18,7 +18,8 @@ type Props = {
     ShowDetails?: boolean,
     showButton?: boolean,
     showSampelImages?: boolean,
-    DisplayImage: string | StaticImport
+    DisplayImage: string | StaticImport,
+    MainTitle: string
 }
 
 export default function Card(props: Props) {
@@ -34,7 +35,8 @@ export default function Card(props: Props) {
         showButton = false,
         showSampelImages = true,
         DisplayImage,
-        ImageSize
+        ImageSize,
+        MainTitle
     } = props
 
     return (
@@ -54,7 +56,7 @@ export default function Card(props: Props) {
                     <p className={`text-red-700`}>Just In</p>
                     <p>Tag</p>
                     <span className='flex justify-between'>
-                        <h2>Main Title</h2>
+                        <h2>{MainTitle}</h2>
                         <h2>Price</h2>
                     </span>
                     <div className='group-hover:hidden'>

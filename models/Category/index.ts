@@ -5,5 +5,10 @@ export interface Category {
     id: number,
     name: string,
     routePath: string,
-    picture: string | StaticImport
+    picture: string | StaticImport,
+    subCategories: {
+        id: number,
+        name: string,
+        routePath: string,
+    }[]
 }

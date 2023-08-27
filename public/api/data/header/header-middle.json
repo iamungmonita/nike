@@ -2,9 +2,211 @@
     {
       "id": 1,
       "name": "New & Featured",
-      "routePath": "/new-feature"
-    },
-    {
+      "routePath": "/new-feature",
+      "subCategories" : [
+        {
+          "id" : 1,
+          "name" : "New & Feature",
+          "routePath" : "/new-feature",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "New Arrivals",
+              "routePath" : "/new-arrival"
+            },
+            {
+              "id" : 2,
+              "name" : "Best Sellers",
+              "routePath" : "/best-sellers"
+            },
+            {
+              "id" : 3,
+              "name" : "Member Exclusive",
+              "routePath" : "/member exclusive"
+            },
+            {
+              "id" : 4,
+              "name" : "It's Air Force 1 Week",
+              "routePath" : "/air-force"
+            },
+            {
+              "id" : 5,
+              "name" : "Extra 20% off Select Styles",
+              "routePath" : "/select-styles"
+            }
+          ]
+        },
+        {
+          "id" : 2,
+          "name" : "Back to School",
+          "routePath" : "/back-school",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "Back to School Essentials",
+              "routePath" : "/school-essentials"
+            },
+            {
+              "id" : 2,
+              "name" : "First Day Kicks",
+              "routePath" : "/first-kicks"
+            },
+            {
+              "id" : 3,
+              "name" : "Bags, Backpacks & Lunchboxes",
+              "routePath" : "/bags-lunchboxes"
+            }
+          ]
+        },
+        
+        {
+          "id" : 3,
+          "name" : "Shop Icons",
+          "routePath" : "/shop-icons",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "Air Force",
+              "routePath" : "/air-force"
+            },
+            {
+              "id" : 2,
+              "name" : "Air Jordan",
+              "routePath" : "/air-jordan"
+            },
+            {
+              "id" : 3,
+              "name" : "Air Max",
+              "routePath" : "/air-max"
+            },
+            {
+              "id" : 4,
+              "name" : "Blazer",
+              "routePath" : "/blazer"
+            },
+            {
+              "id" : 5,
+              "name" : "Pegasus",
+              "routePath" : "/pegasus"
+            },
+            {
+              "id" : 6,
+              "name" : "Metcon",
+              "routePath" : "/metcon"
+            },
+            {
+              "id" : 7,
+              "name" : "LeBron",
+              "routePath" : "/lebron"
+            },
+            {
+              "id" : 8,
+              "name" : "Tech Fleece",
+              "routePath" : "/tech-fleece"
+            }
+          ]
+        },
+        {
+          "id" : 4,
+          "name" : "New For Men",
+          "routePath" : "/new-men",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "Clothing",
+              "routePath" : "/clothing"
+            },
+            {
+              "id" : 2,
+              "name" : "Shoes",
+              "routePath" : "/shoes"
+            }
+          ]
+        },
+        {
+          "id" : 5,
+          "name" : "New For Women",
+          "routePath" : "/new-women",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "Clothing",
+              "routePath" : "/clothing"
+            },
+            {
+              "id" : 2,
+              "name" : "Shoes",
+              "routePath" : "/shoes"
+            }
+          ]
+        },
+        {
+          "id" : 6,
+          "name" : "New For Kids",
+          "routePath" : "/new-kids",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "Clothing",
+              "routePath" : "/clothing"
+            },
+            {
+              "id" : 2,
+              "name" : "Shoes",
+              "routePath" : "/shoes"
+            }
+          ]
+        },
+        {
+          "id" : 7,
+          "name" : "Drops",
+          "routePath" : "/drops",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "New & Upcoming Drops",
+              "routePath" : "/upcoming-drops"
+            },
+            {
+              "id" : 2,
+              "name" : "Get 'Em in SNKRS",
+              "routePath" : "/snkrs"
+            },
+            {
+              "id" : 3,
+              "name" : "SNKRS Launch Calendar",
+              "routePath" : "/snkrs-calendar"
+            },
+            {
+              "id" : 4,
+              "name" : "Jordan Heat Check",
+              "routePath" : "/jordan-heat"
+            },
+            {
+              "id" : 5,
+              "name" : "Jordan In Jordan Clothing",
+              "routePath" : "/jordan-clothing"
+            },
+            {
+              "id" : 6,
+              "name" : "Dunks",
+              "routePath" : "/dunks"
+            },
+            {
+              "id" : 7,
+              "name" : "NikeLab",
+              "routePath" : "/nike-lab"
+            },
+            {
+              "id" : 8,
+              "name" : "Drops 101",
+              "routePath" : "/drops-101"
+            }
+          ]
+        }
+      ]
+     },
+     {
       "id": 2,
       "name": "Men",
       "routePath": "/men"

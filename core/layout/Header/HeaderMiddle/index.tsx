@@ -41,10 +41,22 @@ export default function HeaderMiddle() {
                 </Link>
             </div>
             <div className='items-center hidden md:block'>
-                <ul className='flex justify-center  '>
+                <ul className='flex justify-center relative'>
+
                     {navLinks.map((navLink) => (
-                        <li className='p-3 font-medium header__top__zoom' key={navLink.id}>
-                            <Link href={navLink.routePath}>{navLink.name}</Link>
+                        <li className='p-3 font-medium group/item' key={navLink.id}>
+                            <Link className='' href={navLink.routePath}>{navLink.name}</Link>
+                            <div className='hidden group-hover/item:grid z-20 grid-cols-7 grid-rows-1 absolute left-[50%] -translate-x-[50%] bg-white w-screen '>
+                                {navLink.subCategories &&
+                                    navLink.subCategories.map((subLink, index) =>
+                                        <div key={index} className='p-10'>
+                                            <Link href={subLink.routePath} className='flex flex-col'>{subLink.name}
+                                                {subLink.subCategories && subLink.subCategories.map((subCat, index) => <Link className='font-light' key={index} href={subCat.routePath}>{subCat.name}</Link>)}</Link>
+
+                                        </div>
+                                    )
+                                }
+                            </div>
                         </li>
                     ))}
                 </ul>

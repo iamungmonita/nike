@@ -42,7 +42,7 @@ export default function Footer() {
     }
 
     return (
-        <footer className='bg-[#101010] text-white'>
+        <footer className='bg-[#101010] text-white w-full'>
             <div className='w-screen p-10 space-y-5 md:space-y-0'>
                 <div className='md:flex justify-between'>
                     <div className='md:grid md:grid-cols-4 justify-between gap-x-20 w-full space-y-5 md:space-y-0'>
@@ -95,9 +95,11 @@ export default function Footer() {
                     </div>
                 </div>
                 <div className='md:flex justify-between items-end gap-y-3 space-y-5'>
-                    <span className='flex justify-start items-center gap-x-3 text-sm'>
-                        <Image src={location} width={15} height={165} alt='' />
-                        <h2>United States</h2>
+                    <span className='flex flex-col sm:flex-row justify-start items-left sm:items-center gap-x-3 text-sm'>
+                        <div className='flex'>
+                            <Image src={location} width={15} height={165} alt='' />
+                            <h2>United States</h2>
+                        </div>
                         <h2 className='font-light'>© 2013 Nike. Inc. All Rights Reserved.</h2>
                     </span>
                     <div className='flex flex-col space-y-5'>
