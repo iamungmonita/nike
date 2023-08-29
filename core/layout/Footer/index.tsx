@@ -43,7 +43,7 @@ export default function Footer() {
 
     return (
         <footer className='bg-[#101010] text-white w-full'>
-            <div className='w-screen p-10 space-y-5 md:space-y-0'>
+            <div className='w-full p-10 space-y-5 md:space-y-0'>
                 <div className='md:flex justify-between'>
                     <div className='md:grid md:grid-cols-4 justify-between gap-x-20 w-full space-y-5 md:space-y-0'>
                         <ul className='gap-y-2 flex flex-col font-semibold uppercase'>

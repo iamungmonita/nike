@@ -37,7 +37,7 @@ export default function HeaderBottom({ }: Props) {
         <div className='text-center overflow-x-hidden'>
             <ul className={`flex font-medium ${style.container} transition-transform ease-out duration-500 w-screen`}>
                 {navLinks.map((navlink, index) =>
-                    <div key={index} className={`${style.slider} transition-transform ease-out duration-500 text-center items-center p-3`} style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+                    <div key={index} className={`${style.slider} transition-transform ease-out duration-500 text-center items-center p-5`} style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                         <p>{navlink.name}</p>
                         <p className='font-normal text-xs'>{navlink.description} <Link href={navlink.routePath} className='text-xs underline font-normal'>{navlink.route}</Link></p>
                     </div>)

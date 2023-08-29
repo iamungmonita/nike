@@ -2,26 +2,30 @@
 [
     {
         "id": 1,
-        "name": "Nike Tech",
+        "name": "Get inspired by the Nike Community and shop your favs now.",
         "routePath" : "/products",
-        "picture" : "/pictures/trending/1.jpeg"
+        "picture" : "/pictures/desktop/trending/1.webp",
+        "tag" : "Members: Find Your AF1"
     },
     {
         "id": 2,
-        "name": "LeBron NXXT Gen",
+        "name": "Featuring the sweat-wicking unlimited jackets",
         "routePath" : "/products",
-        "picture" : "/pictures/trending/2.jpeg"
+        "picture" : "/pictures/desktop/trending/2.webp",
+        "tag": "Men's Training Essentials"
     },
     {
         "id": 3,
-        "name": "Fresh Kicks for Kids",
+        "name": "Playful, colorful and always you.",
         "routePath" : "/products",
-        "picture" : "/pictures/trending/3.jpeg"
+        "picture" : "/pictures/desktop/trending/3.webp",
+        "tag": "Nike's Style"
     },
     {
         "id": 4,
-        "name": "Nike Swoosh Bra",
+        "name": "The latest from Jordan for their first day beyond.",
         "routePath" : "/products",
-        "picture" : "/pictures/trending/4.jpeg"
+        "picture" : "/pictures/desktop/trending/4.webp",
+        "tag": "Jordan's Essentials for Kids"
     }
 ]

@@ -1,6 +1,6 @@
 import { GET } from "@/core/services";
-import { Product } from "@/models/product";
+import { Category } from "@/models/Category";
 
 export function getAllShopSport() {
-    return GET<Product[]>('/category/shop-sport.json')
+    return GET<Category[]>('/data/category/shop-sport.json')
 }

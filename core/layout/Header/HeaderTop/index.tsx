@@ -31,7 +31,7 @@ export default function HeaderTop() {
                         {navlink.subCategories &&
                             <ul className='hidden group-hover/navlink:flex flex-col fixed top-10 w-52 bg-white text-left hover:block p-5 gap-y-2 shadow'>
                                 {navlink.subCategories?.map((sublink, index) =>
-                                    <Link className='' key={index} href={sublink.routePath}>{sublink.name}</Link>
+                                    <Link className='animate__animated animate__fadeInDown' key={index} href={sublink.routePath}>{sublink.name}</Link>
                                 )}
                             </ul>}
                     </Link>

@@ -1,90 +1,55 @@
 import React from 'react'
 import Image from 'next/image'
-import image1 from '@/public/pictures/desktop/trending/1.jpeg'
-import Link from 'next/link'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+import Link from 'next/link'
 
-type Props = {
-    ImageSize?: number,
-    showMainTitleOnly: boolean,
-    showMainTitle: boolean,
-    changeMainTitle?: boolean,
-    showTag?: boolean,
-    showDescription?: boolean,
-    showLink?: boolean,
-    showPrice?: boolean,
-    showCategory?: boolean,
-    changeTag?: boolean,
-    ShowDetails?: boolean,
-    showButton?: boolean,
-    showSampelImages?: boolean,
-    DisplayImage: string | StaticImport,
-    MainTitle: string
+interface ItemProps {
+    itemVersion: number,
+    itemPicture: string | StaticImport,
+    itemTag: string,
+    itemName: string,
+    itemPrice: number,
+    itemCategory: string,
+    itemCategoryId?: number,
+    itemDescription?: string,
+    itemShop?: boolean,
+    itemTitleCloser?: boolean,
+    itemSize: number | string
 }
 
-export default function Card(props: Props) {
-
-    const { ShowDetails = false,
-        showMainTitleOnly = false,
-        showMainTitle = true,
-        showDescription = true,
-        showCategory = true,
-        showLink = true,
-        showPrice = true,
-        showTag = true,
-        showButton = false,
-        showSampelImages = true,
-        DisplayImage,
-        ImageSize,
-        MainTitle
+export default function Card(props: ItemProps) {
+    const {
+        itemVersion,
+        itemPicture,
+        itemTag,
+        itemName,
+        itemPrice,
+        itemCategory,
+        itemCategoryId,
+        itemDescription,
+        itemShop,
+        itemTitleCloser,
+        itemSize
     } = props
 
     return (
-        <div className={`w-[${ImageSize}px] group mx-auto bg-red-200`}>
-            <div className='p-5'>
-                <div className='group'>
-                    <Image className='object-contain' src={DisplayImage} width={400} height={400} alt='' />
+        <div className={`min-w-[${itemSize}px] h-full [&:not(:last-child)]:mr-5`}>
+            <Image className='w-full h-full object-contain' src={itemPicture} height={500} width={500} alt='' />
+            {itemVersion === 1 ?
+                <div className='pb-[10%]'>
+                    <p className='text-sm sm:text-xl sm:font-medium'>{itemTag}</p>
+                    <span><p className='text-xl font-medium block sm:hidden'>{itemTag && itemName}</p><p className='text-xl font-medium'>{!itemTag && itemName}</p> <p>{itemPrice && itemPrice}</p></span>
+                    <p>{itemDescription && itemDescription}</p>
+                    <p className='text-sm sm:text-xl sm:font-medium'>{itemCategory}</p>
+                    {itemShop && <Link href={'/'} className='underline'>Shop</Link>}
                 </div>
-                <div className={`pt-2 ${showSampelImages && 'group-hover:block'}`}>
-                    <Image src={image1} width={50} height={50} alt='' />
-                </div>
-
-                {/* Text */}
-
-                {/* Detailed */}
-                <div className={`pt-5 ${ShowDetails ? '' : 'hidden'}`}>
-                    <p className={`text-red-700`}>Just In</p>
-                    <p>Tag</p>
-                    <span className='flex justify-between'>
-                        <h2>{MainTitle}</h2>
-                        <h2>Price</h2>
-                    </span>
-                    <div className='group-hover:hidden'>
-                        <p>description</p>
-                        <p className='font-medium'>Category</p>
-                        <p className='text-gray font-light'>Type </p>
-                        <p className='text-gray font-light'>Color </p>
-                    </div>
-                    <h2>Price</h2>
-                    <h2 className='text-green-700 font-medium'>Discouted Price</h2>
-                    <h2 className='line-through'>Original Price</h2>
-                    <Link href={'/'}>Shop</Link>
-                    <div>button</div>
-                </div>
-
-                {/* General */}
-                <div className={`pt-5 ${!ShowDetails ? '' : 'hidden'} `}>
-                    <p className={` ${showMainTitleOnly && 'hidden'} ${showTag ? '' : 'hidden'}`}>Tag</p>
-                    <span className={`flex justify-between ${showMainTitle && 'block'}`}>
-                        <h2 className={`${showMainTitle && 'block'}`}> Main Title</h2>
-                        <h2 className={`${showMainTitleOnly && 'hidden'} ${showPrice ? '' : 'hidden'}`}>Price</h2>
-                    </span>
-                    <p className={`${showMainTitleOnly && 'hidden'} ${showDescription ? '' : 'hidden'}`}>description</p>
-                    <p className={`text-gray font-light ${showMainTitleOnly && 'hidden'} ${showCategory ? '' : 'hidden'}`}>Type </p>
-                    <Link href={'/'} className={` ${showMainTitleOnly && 'hidden'} ${showLink ? '' : 'hidden'}`}>Shop</Link>
-                    <div className={` ${showMainTitleOnly && 'hidden'} ${showButton ? '' : 'hidden'}`}>button</div>
-                </div>
-            </div>
-        </div >
+                :
+                <div className='pb-[10%]'>
+                    <p className='text-sm sm:text-xl'>{itemTag}</p>
+                    <span className='flex justify-between items-center'><p className='text-xl font-medium'>{itemName}</p> <p className='hidden sm:block'>{itemPrice && `$ ${itemPrice}`}</p></span>
+                    <p className='text-sm'>{`${itemCategoryId === 1 ? `Men's Shoe` : itemCategoryId === 2 ? `Women's Shoe` : `Kid's Shoes`}`}</p>
+                    {itemShop && <Link href={'/'} className='underline self-end'>Shop</Link>}
+                </div>}
+        </div>
     )
 }

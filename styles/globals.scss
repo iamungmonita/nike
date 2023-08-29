@@ -5,7 +5,7 @@
 $lightblue: '#add8e6';
 $lightblue: '#add8e6';
 @import '_config';
-
+@import 'animate.css';
 
 
 .search-wrapper {
@@ -26,8 +26,8 @@ $lightblue: '#add8e6';
 .text-color {
     @include set-background(black);
 }
-body {
-    box-sizing: border-box;
-    margin: 0;
-padding: 0;
+
+.scroll_bar {
+    scrollbar-width:thin;
+    scrollbar-color: #333 transparent ;
 }

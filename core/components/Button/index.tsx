@@ -3,7 +3,7 @@ import React from 'react'
 type Props = {
     onClick?: () => void
     ButtonName?: string,
-    buttonColor: boolean
+    buttonColor?: boolean
 }
 
 export default function Button({ onClick, ButtonName, buttonColor }: Props) {
