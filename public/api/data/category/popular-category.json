@@ -5,7 +5,7 @@
         "name": "Nike Dunk Low Retro Premium",
         "price" : 120,
         "routePath" : "/products", 
-        "pic" : "/pictures/popular/1.jpeg",
+        "picture" : "/pictures/desktop/popular/1.jpeg",
         "categoryId": 1,
         "gender" : "men"
     },
@@ -14,7 +14,7 @@
         "name": "Air Jordan 3 Retro",
         "price" : 200,
         "routePath" : "/products", 
-        "pic" : "/pictures/popular/2.jpeg",
+        "picture" : "/pictures/desktop/popular/2.jpeg",
         "categoryId": 1,
         "gender" : "men"
     },
@@ -23,7 +23,7 @@
         "name": "Air Jordan 2 Retro Low",
         "price" : 150,
         "routePath" : "/products", 
-        "pic" : "/pictures/popular/3.jpeg",
+        "picture" : "/pictures/desktop/popular/3.jpeg",
         "categoryId": 2,
         "gender" : "women"
     },
@@ -32,7 +32,7 @@
         "name": "Air Jordan 13 Retro",
         "price" : 200,
         "routePath" : "/products", 
-        "pic" : "/pictures/popular/4.jpeg",
+        "picture" : "/pictures/desktop/popular/4.jpeg",
         "categoryId": 1,
         "gender" : "men"
     },
@@ -41,7 +41,7 @@
         "name": "Air Jordan 7 Retro",
         "price" : 200,
         "routePath" : "/products", 
-        "pic" : "/pictures/popular/5.webp",
+        "picture" : "/pictures/desktop/popular/5.webp",
         "categoryId": 1,
         "gender" : "men"
     },
@@ -50,7 +50,7 @@
         "name": "Air Jordan 7 Retro",
         "price" : 200,
         "routePath" : "/products", 
-        "pic" : "/pictures/popular/6.webp",
+        "picture" : "/pictures/desktop/popular/6.webp",
         "categoryId": 1,
         "gender" : "men"
     },
@@ -59,7 +59,7 @@
         "name": "Air Jordan 1 Low OG",
         "price" : 140,
         "routePath" : "/products", 
-        "pic" : "/pictures/popular/7.webp",
+        "picture" : "/pictures/desktop/popular/7.webp",
         "categoryId": 2,
         "gender" : "women"
     },
@@ -68,7 +68,7 @@
         "name": "Air Jordan 1 Low OG",
         "price" : 140,
         "routePath" : "/products", 
-        "pic" : "/pictures/popular/8.webp",
+        "picture" : "/pictures/desktop/popular/8.webp",
         "categoryId": 2,
         "gender" : "women"
     },
@@ -77,7 +77,7 @@
         "name": "Air Jordan 1 Low OG",
         "price" : 120,
         "routePath" : "/products", 
-        "pic" : "/pictures/popular/9.webp",
+        "picture" : "/pictures/desktop/popular/9.webp",
         "categoryId": 3
     }
 ]

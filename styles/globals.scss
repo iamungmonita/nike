@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+$lightblue: '#add8e6';
+$lightblue: '#add8e6';
 @import '_config';
+@import 'animate.css';
 
-.bg-color {
-    color: set-background(white)
-}
 
 .search-wrapper {
     position: absolute;
@@ -17,4 +17,17 @@
     bottom: 0;
     z-index: 5;
     padding: 8px 20px 8px 36px;
+}
+
+.image {
+    aspect-ratio: 20/9;
+}
+
+.text-color {
+    @include set-background(black);
+}
+
+.scroll_bar {
+    scrollbar-width:thin;
+    scrollbar-color: #333 transparent ;
 }

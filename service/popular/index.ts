@@ -1,6 +1,6 @@
 import { GET } from "@/core/services";
-import { Product } from "@/models/product";
+import { Category } from "@/models/Category";
 
 export function getAllPopular() {
-    return GET<Product[]>('/category/popular-category.json')
+    return GET<Category[]>('/data/category/popular-category.json')
 }

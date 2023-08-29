@@ -1,14 +1,7 @@
 [
     {
-      "id": 1,
-      "name": "New & Featured",
-      "routePath": "/new-feature",
-      "subCategories" : [
-        {
-          "id" : 1,
-          "name" : "New & Feature",
-          "routePath" : "/new-feature",
-          "subCategories" : [
+        "categoryId" : 1,
+        "subCategories" : [
             {
               "id" : 1,
               "name" : "New Arrivals",
@@ -35,12 +28,10 @@
               "routePath" : "/select-styles"
             }
           ]
-        },
-        {
-          "id" : 2,
-          "name" : "Back to School",
-          "routePath" : "/back-school",
-          "subCategories" : [
+    },
+    {
+        "categoryId" : 2,
+        "subCategories" : [
             {
               "id" : 1,
               "name" : "Back to School Essentials",
@@ -57,13 +48,10 @@
               "routePath" : "/bags-lunchboxes"
             }
           ]
-        },
-        
-        {
-          "id" : 3,
-          "name" : "Shop Icons",
-          "routePath" : "/shop-icons",
-          "subCategories" : [
+    },
+    {
+        "categoryId" : 3,
+        "subCategories" : [
             {
               "id" : 1,
               "name" : "Air Force",
@@ -105,12 +93,10 @@
               "routePath" : "/tech-fleece"
             }
           ]
-        },
-        {
-          "id" : 4,
-          "name" : "New For Men",
-          "routePath" : "/new-men",
-          "subCategories" : [
+    }, 
+    {
+        "categoryId" : 4,
+        "subCategories" : [
             {
               "id" : 1,
               "name" : "Clothing",
@@ -122,12 +108,10 @@
               "routePath" : "/shoes"
             }
           ]
-        },
-        {
-          "id" : 5,
-          "name" : "New For Women",
-          "routePath" : "/new-women",
-          "subCategories" : [
+    },
+    {
+        "categoryId" : 5,
+        "subCategories" : [
             {
               "id" : 1,
               "name" : "Clothing",
@@ -139,12 +123,10 @@
               "routePath" : "/shoes"
             }
           ]
-        },
-        {
-          "id" : 6,
-          "name" : "New For Kids",
-          "routePath" : "/new-kids",
-          "subCategories" : [
+    },
+    {
+        "categoryId" : 6,
+        "subCategories" : [
             {
               "id" : 1,
               "name" : "Clothing",
@@ -156,12 +138,10 @@
               "routePath" : "/shoes"
             }
           ]
-        },
-        {
-          "id" : 7,
-          "name" : "Drops",
-          "routePath" : "/drops",
-          "subCategories" : [
+    },
+    {
+        "categoryId" : 7,
+        "subCategories" : [
             {
               "id" : 1,
               "name" : "New & Upcoming Drops",
@@ -203,32 +183,5 @@
               "routePath" : "/drops-101"
             }
           ]
-        }
-      ]
-     },
-     {
-      "id": 2,
-      "name": "Men",
-      "routePath": "/men"
-    },
-    {
-      "id": 3,
-      "name": "Women",
-      "routePath": "/women"
-    },
-    {
-      "id": 4,
-      "name": "Kids",
-      "routePath": "/kid"
-    },
-    {
-      "id": 5,
-      "name": "Accessories",
-      "routePath": "/accessory"
-    },
-    {
-      "id": 6,
-      "name": "Sale",
-      "routePath": "/sale"
     }
-  ]
+]

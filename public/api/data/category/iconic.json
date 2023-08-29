@@ -1,0 +1,44 @@
+[
+    {
+        "id" : 1,
+        "name" : "Air Force 1",
+        "routePath" : "/",
+        "picture": "/pictures/desktop/iconic/1.webp"
+    },
+    {
+        "id" : 2,
+        "name" : "Air Jordan 1",
+        "routePath" : "/",
+        "picture": "/pictures/desktop/iconic/2.webp"
+    },
+    {
+        "id" : 3,
+        "name" : "Air Max",
+        "routePath" : "/",
+        "picture": "/pictures/desktop/iconic/3.webp"
+    },
+    {
+        "id" : 4,
+        "name" : "Dunk",
+        "routePath" : "/",
+        "picture": "/pictures/desktop/iconic/4.webp"
+    },
+    {
+        "id" : 5,
+        "name" : "Nike Blazer",
+        "routePath" : "/",
+        "picture": "/pictures/desktop/iconic/5.webp"
+    },
+    {
+        "id" : 6,
+        "name" : "Metcon",
+        "routePath" : "/",
+        "picture": "/pictures/desktop/iconic/6.webp"
+    },
+    {
+        "id" : 7,
+        "name" : "Pegasus Running Shoes",
+        "routePath" : "/",
+        "picture": "/pictures/desktop/iconic/7.webp"
+    }
+]
