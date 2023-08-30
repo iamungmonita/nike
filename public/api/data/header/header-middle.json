@@ -3,8 +3,8 @@
       "id": 1,
       "name": "New & Featured",
       "routePath": "/new-feature",
-      "subCategories" : [
-        {
+    "subCategories" : [
+      {
           "id" : 1,
           "name" : "New & Feature",
           "routePath" : "/new-feature",
@@ -15,26 +15,27 @@
               "routePath" : "/new-arrival"
             },
             {
-              "id" : 2,
+              "id" : 1  ,
               "name" : "Best Sellers",
               "routePath" : "/best-sellers"
             },
             {
-              "id" : 3,
+              "id" : 1,
               "name" : "Member Exclusive",
               "routePath" : "/member exclusive"
             },
             {
-              "id" : 4,
+              "id" : 1,
               "name" : "It's Air Force 1 Week",
               "routePath" : "/air-force"
             },
             {
-              "id" : 5,
+              "id" : 1,
               "name" : "Extra 20% off Select Styles",
               "routePath" : "/select-styles"
             }
-          ]
+          ],
+          "categoryId" : 1
         },
         {
           "id" : 2,
@@ -56,9 +57,9 @@
               "name" : "Bags, Backpacks & Lunchboxes",
               "routePath" : "/bags-lunchboxes"
             }
-          ]
+          ],
+          "categoryId" : 1
         },
-        
         {
           "id" : 3,
           "name" : "Shop Icons",
@@ -104,7 +105,8 @@
               "name" : "Tech Fleece",
               "routePath" : "/tech-fleece"
             }
-          ]
+          ],
+          "categoryId" : 1
         },
         {
           "id" : 4,
@@ -121,7 +123,8 @@
               "name" : "Shoes",
               "routePath" : "/shoes"
             }
-          ]
+          ],
+          "categoryId" : 1
         },
         {
           "id" : 5,
@@ -138,7 +141,8 @@
               "name" : "Shoes",
               "routePath" : "/shoes"
             }
-          ]
+          ],
+          "categoryId" : 1
         },
         {
           "id" : 6,
@@ -155,7 +159,8 @@
               "name" : "Shoes",
               "routePath" : "/shoes"
             }
-          ]
+          ],
+          "categoryId" : 1
         },
         {
           "id" : 7,
@@ -202,33 +207,555 @@
               "name" : "Drops 101",
               "routePath" : "/drops-101"
             }
-          ]
+          ],
+          "categoryId" : 1
         }
       ]
      },
+
      {
       "id": 2,
       "name": "Men",
-      "routePath": "/men"
+      "routePath": "/men",
+      "subCategories" : [
+        {
+          "id" : 1,
+          "name" : "New & Feature",
+          "routePath" : "/new-feature",
+          "subCategories" : [
+            {
+            "id" : 1,
+            "name" : "New Arrivals",
+            "routePath" : "/new-arrival"
+          },
+          {
+            "id" : 2,
+            "name" : "Best Sellers",
+            "routePath" : "/best-sellers"
+          },
+          {
+            "id" : 3,
+            "name" : "Customize with Nike by You",
+            "routePath" : "/customize-you"
+          },
+          {
+            "id" : 4,
+            "name" : "The latest Tech Fleece",
+            "routePath" : "/latest-fleece"
+          },
+          {
+            "id" : 5,
+            "name" : "New in Jordan Basketball",
+            "routePath" : "/jordan-basketball"
+          },
+          {
+            "id" : 6,
+            "name" : "Sale",
+            "routePath" : "/sale"
+          }
+        ],
+          "categoryId" : 2
+        },
+        {
+          "id" : 2,
+          "name" : "Back to School",
+          "routePath" : "/back-school",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "Back to School Essentials",
+              "routePath" : "/school-essentials"
+            },
+            {
+              "id" : 2,
+              "name" : "First Day Kicks",
+              "routePath" : "/first-kicks"
+            },
+            {
+              "id" : 3,
+              "name" : "Bags, Backpacks & Lunchboxes",
+              "routePath" : "/bags-lunchboxes"
+            }
+          ],
+          "categoryId" : 2
+        },
+        {
+          "id" : 3,
+          "name" : "All Shoes",
+          "routePath" : "/all-shoes",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "Life Style",
+              "routePath" : "/lifestyle"
+            },
+            {
+              "id" : 2,
+              "name" : "Jordan",
+              "routePath" : "/air-jordan"
+            },
+            {
+              "id" : 3,
+              "name" : "Air Max",
+              "routePath" : "/air-max"
+            },
+            {
+              "id" : 4,
+              "name" : "Air Force 1",
+              "routePath" : "/airforce-1"
+            },
+            {
+              "id" : 5,
+              "name" : "Dunks & Blazers",
+              "routePath" : "/dunk-blazer"
+            },
+            {
+              "id" : 6,
+              "name" : "Basketball",
+              "routePath" : "/basketball"
+            },
+            {
+              "id" : 7,
+              "name" : "Running",
+              "routePath" : "/running"
+            },
+            {
+              "id" : 8,
+              "name" : "Nike SB",
+              "routePath" : "/nike-sb"
+            },
+            {
+              "id" : 9,
+              "name" : "Training & Gym",
+              "routePath" : "/training-gym"
+            },
+            {
+              "id" : 10,
+              "name" : "Shoes $100 & Under",
+              "routePath" : "/100-under"
+            }
+          ],
+          "categoryId" : 2
+        },
+        {
+          "id" : 4,
+          "name" : "All Clothing",
+          "routePath" : "/all-clothing",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "Jordan",
+              "routePath" : "/jordan"
+            },
+            {
+              "id" : 2,
+              "name" : "Matching Sets",
+              "routePath" : "/matching-set"
+            },
+            {
+              "id" : 3,
+              "name" : "Fitness",
+              "routePath" : "/fitness"
+            },
+            {
+              "id" : 4,
+              "name" : "Big & Tall",
+              "routePath" : "/big-tall"
+            },
+            {
+              "id" : 5,
+              "name" : "Tops & T-shirts",
+              "routePath" : "/tops-tshirts"
+            },
+            {
+              "id" : 6,
+              "name" : "Shorts",
+              "routePath" : "/shorts"
+            },
+            {
+              "id" : 7,
+              "name" : "Hoodies & Sweatshirts",
+              "routePath" : "/hoodies-sweatshirts"
+            },
+            {
+              "id" : 8,
+              "name" : "Jackets & Vests",
+              "routePath" : "/jackets-vests"
+            },
+            {
+              "id" : 9,
+              "name" : "Pants & Tights",
+              "routePath" : "/pants-tights"
+            },
+            {
+              "id" : 10,
+              "name" : "Underwear",
+              "routePath" : "/underwear"
+            },
+            {
+              "id" : 11,
+              "name" : "Socks",
+              "routePath" : "/socks"
+            },
+            {
+              "id" : 12,
+              "name" : "Clothing $50 & Under ",
+              "routePath" : "/50-under"
+            }
+          ],
+          "categoryId" : 2
+        },
+        {
+          "id" : 5,
+          "name" : "Shop By Sport",
+          "routePath" : "/new-women",
+              "subCategories" : [
+                {
+                  "id" : 1,
+                  "name" : "Golf",
+                  "routePath" : "/golf"
+                },
+                {
+                  "id" : 2,
+                  "name" : "Soccer",
+                  "routePath" : "/soccer"
+                },
+                {
+                  "id" : 3,
+                  "name" : "Basketball",
+                  "routePath" : "/basketball"
+                },
+                {
+                  "id" : 4,
+                  "name" : "Tennis",
+                  "routePath" : "/tennis"
+                },
+                {
+                  "id" : 5,
+                  "name" : "Baseball",
+                  "routePath" : "/baseball"
+                },
+                {
+                  "id" : 6,
+                  "name" : "Football",
+                  "routePath" : "/football"
+                },
+                {
+                  "id" : 7,
+                  "name" : "Running",
+                  "routePath" : "/running"
+                },
+                {
+                  "id" : 8,
+                  "name" : "Fitness",
+                  "routePath" : "/fitness"
+                },
+                {
+                  "id" : 9,
+                  "name" : "Volleyball",
+                  "routePath" : "/volleyball"
+                },
+                {
+                  "id" : 10,
+                  "name" : "Cross Country",
+                  "routePath" : "/cross-country"
+                },
+                {
+                  "id" : 11,
+                  "name" : "Yoga",
+                  "routePath" : "/yoga"
+                }
+              ],
+          "categoryId" : 2
+        }
+      ]
+      
     },
+
     {
       "id": 3,
       "name": "Women",
-      "routePath": "/women"
+      "routePath": "/women",
+      "subCategories" : [
+        {
+            "id" : 1,
+            "name" : "New & Feature",
+            "routePath" : "/new-feature",
+            "subCategories" : [
+              {
+                "id" : 1,
+                "name" : "New Arrivals",
+                "routePath" : "/new-arrival"
+              },
+              {
+                "id" : 2,
+                "name" : "Best Sellers",
+                "routePath" : "/best-sellers"
+              },
+              {
+                "id" : 3,
+                "name" : "Customize with Nike by You",
+                "routePath" : "/customize-you"
+              },
+              {
+                "id" : 4,
+                "name" : "The latest Tech Fleece",
+                "routePath" : "/latest-fleece"
+              },
+              {
+                "id" : 5,
+                "name" : "Fall Color Shop",
+                "routePath" : "/fall-color"
+              },
+              {
+                "id" : 6,
+                "name" : "Dance Essentials",
+                "routePath" : "/dance-essentials"
+              },
+              {
+                "id" : 7,
+                "name" : "Sale",
+                "routePath" : "/sale"
+              }
+            ],
+            "categoryId" : 3
+          },
+          {
+            "id" : 2,
+            "name" : "Back to School",
+            "routePath" : "/back-school",
+            "subCategories" : [
+              {
+                "id" : 1,
+                "name" : "Back to School Essentials",
+                "routePath" : "/school-essentials"
+              },
+              {
+                "id" : 2,
+                "name" : "First Day Kicks",
+                "routePath" : "/first-kicks"
+              },
+              {
+                "id" : 3,
+                "name" : "Bags, Backpacks & Lunchboxes",
+                "routePath" : "/bags-lunchboxes"
+              }
+            ],
+            "categoryId" : 3
+          },
+          {
+            "id" : 3,
+            "name" : "All Shoes",
+            "routePath" : "/all-shoes",
+            "subCategories" : [
+              {
+                "id" : 1,
+                "name" : "Life Style",
+                "routePath" : "/lifestyle"
+              },
+              {
+                "id" : 2,
+                "name" : "Jordan",
+                "routePath" : "/air-jordan"
+              },
+              {
+                "id" : 3,
+                "name" : "Air Max",
+                "routePath" : "/air-max"
+              },
+              {
+                "id" : 4,
+                "name" : "Air Force 1",
+                "routePath" : "/airforce-1"
+              },
+              {
+                "id" : 5,
+                "name" : "Dunks & Blazers",
+                "routePath" : "/dunk-blazer"
+              },
+              {
+                "id" : 6,
+                "name" : "Basketball",
+                "routePath" : "/basketball"
+              },
+              {
+                "id" : 7,
+                "name" : "Running",
+                "routePath" : "/running"
+              },
+              {
+                "id" : 8,
+                "name" : "Nike SB",
+                "routePath" : "/nike-sb"
+              },
+              {
+                "id" : 9,
+                "name" : "Training & Gym",
+                "routePath" : "/training-gym"
+              },
+              {
+                "id" : 10,
+                "name" : "Shoes $100 & Under",
+                "routePath" : "/100-under"
+              }
+            ],
+          "categoryId" : 3
+          },
+          {
+            "id" : 4,
+            "name" : "All Clothing",
+            "routePath" : "/all-clothing",
+            "subCategories" : [
+              {
+                "id" : 1,
+                "name" : "Jordan",
+                "routePath" : "/jordan"
+              },
+              {
+                "id" : 2,
+                "name" : "Plus Size",
+                "routePath" : "/plus-size"
+              },
+              {
+                "id" : 3,
+                "name" : "Matching Sets",
+                "routePath" : "/matching-set"
+              },
+              {
+                "id" : 4,
+                "name" : "Bras",
+                "routePath" : "/bras"
+              },
+              {
+                "id" : 5,
+                "name" : "Tops & T-shirts",
+                "routePath" : "/tops-tshirts"
+              },
+              {
+                "id" : 6,
+                "name" : "Hoodies & Sweatshirts",
+                "routePath" : "/hoodies-sweatshirts"
+              },
+              {
+                "id" : 7,
+                "name" : "Jackets & Vests",
+                "routePath" : "/jackets-vests"
+              },
+              {
+                "id" : 8,
+                "name" : "Leggings",
+                "routePath" : "/leggings"
+              },
+              {
+                "id" : 9,
+                "name" : "Pants",
+                "routePath" : "/pants"
+              },
+              {
+                "id" : 10,
+                "name" : "Pants",
+                "routePath" : "/pants"
+              },
+              {
+                "id" : 11,
+                "name" : "Short",
+                "routePath" : "/shorts"
+              },
+              {
+                "id" : 12,
+                "name" : "Socks",
+                "routePath" : "/socks"
+              },
+              {
+                "id" : 12,
+                "name" : "Clothing $50 & Under ",
+                "routePath" : "/50-under"
+              }
+            ],
+            "categoryId" : 3
+          },
+          {
+            "id" : 5,
+            "name" : "Shop By Sport",
+            "routePath" : "/new-women",
+            "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "Golf",
+              "routePath" : "/golf"
+            },
+            {
+              "id" : 2,
+              "name" : "Running",
+              "routePath" : "/running"
+            },
+            {
+              "id" : 3,
+              "name" : "Fitness",
+              "routePath" : "/fitness"
+            },
+            {
+              "id" : 4,
+              "name" : "Soccer",
+              "routePath" : "/soccer"
+            },
+            {
+              "id" : 5,
+              "name" : "Tennis",
+              "routePath" : "/tennis"
+            },
+            {
+              "id" : 6,
+              "name" : "Volleyball",
+              "routePath" : "/volleyball"
+            },
+            {
+              "id" : 7,
+              "name" : "Basketball",
+              "routePath" : "/basketball"
+            },
+            {
+              "id" : 8,
+              "name" : "Cross Country",
+              "routePath" : "/cross-country"
+            },
+            {
+              "id" : 9,
+              "name" : "Cheerleading",
+              "routePath" : "/cheerleading"
+            },
+            {
+              "id" : 10,
+              "name" : "Yoga",
+              "routePath" : "/yoga"
+            }
+          ],
+          "categoryId" : 3
+          }
+        ]
     },
     {
       "id": 4,
       "name": "Kids",
-      "routePath": "/kid"
+      "routePath": "/kid",
+    "subCategories" : [
+      
+    ]
     },
     {
       "id": 5,
       "name": "Accessories",
-      "routePath": "/accessory"
+      "routePath": "/accessory",
+    "subCategories" : [
+      
+    ]
     },
     {
       "id": 6,
       "name": "Sale",
-      "routePath": "/sale"
+      "routePath": "/sale",
+    "subCategories" : [
+      
+    ]
     }
   ]

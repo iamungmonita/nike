@@ -14,7 +14,8 @@ module.exports = {
       },
       colors: {
         "header": '#f5f5f5',
-        "hover": '#000 rounded-full'
+        "hover": 'rgb(107 114 128)',
+
       },
       fontFamily: {
         'display': ['Oswald'],

@@ -51,16 +51,15 @@ export default function HeaderMiddle() {
                 <div className='items-center hidden md:block '>
                     <ul className='flex justify-center h-20 '>
                         {navLinks.map((navLink) => (
-                            <Link className='p-3 font-medium group/item' key={navLink.id} href={navLink.routePath}>{navLink.name}
+                            <Link className='p-3 font-medium group/item hover:border-b' key={navLink.id} href={navLink.routePath}>{navLink.name}
                                 <li className='hidden group-hover/item:grid z-20 grid-cols-7 grid-rows-1 top-20 absolute left-[50%] -translate-x-[50%] bg-white w-full overflow-x-hidden h-screen hover:block '>
-                                    {navLink.subCategories &&
-                                        navLink.subCategories.map((subLink, index) =>
-                                            <li key={index} className='p-5 animate__animated animate__fadeInDownBig'>
-                                                <Link href={subLink.routePath} className='flex flex-col '>{subLink.name}
-                                                    {subLink.subCategories && subLink.subCategories.map((subCat, index) => <Link className='font-light' key={index} href={subCat.routePath}>{subCat.name}</Link>)}
-                                                </Link>
-                                            </li>
-                                        )
+                                    {navLink.subCategories.filter((sublink) => sublink.categoryId === navLink.id).map((subLink, index) =>
+                                        <li key={index} className='p-5 animate__animated animate__fadeInDownBig'>
+                                            <Link href={subLink.routePath} className='flex flex-col '>{subLink.name}
+                                                {subLink.subCategories && subLink.subCategories.map((subCat, index) => <Link className='font-light' key={index} href={subCat.routePath}>{subCat.name}</Link>)}
+                                            </Link>
+                                        </li>
+                                    )
                                     }
                                 </li>
                             </Link>

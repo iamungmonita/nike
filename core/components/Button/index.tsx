@@ -1,13 +1,16 @@
 import React from 'react'
 
-type Props = {
+export interface ButtonProps {
     onClick?: () => void
     ButtonName?: string,
-    buttonColor?: boolean
+    ButtonTextWhiteBackgroundBlack?: boolean
 }
 
-export default function Button({ onClick, ButtonName, buttonColor }: Props) {
+export default function Button(props: ButtonProps) {
+    const { onClick, ButtonName, ButtonTextWhiteBackgroundBlack } = props
     return (
-        <button className={`px-5 py-2  text-center rounded-full pointer hover:bg-gray-200 bg-black text-white ${buttonColor ? 'sm:bg-black' : 'sm:bg-white'} ${buttonColor ? 'sm:text-white' : 'sm:text-black'}`} onClick={onClick}>{ButtonName}</button>
+        <button
+            className={`px-5 py-2  text-center rounded-full cursor-pointer hover:bg-hover  ${ButtonTextWhiteBackgroundBlack ? 'text-white bg-black' : 'text-black bg-white'} `}
+            onClick={onClick}>{ButtonName}</button>
     )
 }

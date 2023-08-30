@@ -2,22 +2,18 @@ import React from 'react'
 import Image from 'next/image'
 import Button from '../Button'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
-type BannerProps = {
+
+export interface BannerProps {
     onClick?: () => void,
     ButtonName: string,
     BannerImg: string | StaticImport,
-    titleFirstPart: string,
-    titleSecondPart?: string,
-    subtitleFirstPart?: string,
-    subtitleSecondPart?: string,
-    descriptionFirstPart?: string,
-    descriptionSecondPart?: string,
+    TitleFirstPart: string,
+    TitleSecondPart?: string,
+    DescriptionFirstPart?: string,
+    DescriptionSecondPart?: string,
     SmallScreenImage: string | StaticImport,
-    textColor?: boolean,
-    removeTitle?: boolean,
-    TextColorWhite?: boolean,
-    TextDownMiddle?: boolean,
-    ExtraButton?: boolean,
+    ButtonTextWhiteBackgroundBlack?: boolean,
+    TextColor?: string
     ExtraButtonName?: string,
     BannerVersion: number,
     BannerTitle?: string,
@@ -28,84 +24,191 @@ export default function Banner(props: BannerProps) {
         onClick,
         ButtonName,
         BannerImg,
-        titleFirstPart,
-        titleSecondPart,
-        descriptionFirstPart,
-        descriptionSecondPart,
+        TitleFirstPart,
+        TitleSecondPart,
+        DescriptionFirstPart,
+        DescriptionSecondPart,
         SmallScreenImage,
-        textColor,
-        removeTitle,
-        TextColorWhite,
-        TextDownMiddle,
-        ExtraButton,
+        ButtonTextWhiteBackgroundBlack,
+        TextColor,
         ExtraButtonName,
-        subtitleFirstPart,
-        subtitleSecondPart,
         BannerVersion,
         BannerTitle
     } = props
 
     return (
         <section>
-            <div className='block sm:hidden'>
-                {BannerTitle && <h2 className={`text-2xl font-medium px-[5%] py-5`}>{BannerTitle}</h2>}
-                <div className='relative h-[20%] px-[5%] w-auto'>
-                    <Image
-                        src={SmallScreenImage}
-                        width={1000}
-                        height={1000}
-                        alt={titleFirstPart as string} />
-                    {BannerVersion === 1 ? <div className={`${titleSecondPart === 'MEMBER' && 'absolute bottom-[10%] left-[10%]'} space-y-5 my-[5%] max-w-[95%]`} >
-                        <div className={`${removeTitle && 'hidden sm:block'} font-extrabold tracking-[-3px] w-[95%]`}>
-                            <span className={`text-5xl h-10 ${TextColorWhite && titleSecondPart === 'MEMBER' && 'text-white'}`}>{titleFirstPart} <br />{titleSecondPart}</span >
-                        </div>
-                        <p className={`${TextColorWhite && titleSecondPart === 'MEMBER' && 'text-white'}`}>{descriptionFirstPart}</p>
-
-                        <Button ButtonName={ButtonName} buttonColor={textColor} />
-                        {ExtraButton && <Button ButtonName={ExtraButtonName} buttonColor={textColor} />}
-
-                    </div> : <div className={`absolute bottom-0 left-[10%] space-y-5 max-w-[95%]`} >
-
-                        <div className={`${removeTitle && 'hidden sm:block'} font-medium w-[95%]`}>
-                            <span className={`text-2xl h-10 ${TextColorWhite && titleSecondPart === 'MEMBER' && 'text-white'}`}>{subtitleFirstPart} <br />{subtitleSecondPart}</span >
-                        </div>
-                        <p className={`${TextColorWhite && titleSecondPart === 'MEMBER' && 'text-white'}`}>{descriptionFirstPart}</p>
-
-                        <Button ButtonName={ButtonName} buttonColor={textColor} />
-                        {ExtraButton && <Button ButtonName={ExtraButtonName} buttonColor={textColor} />}
-
-                    </div>}
-                </div>
-            </div>
-
-            <div className='hidden sm:block'>
-                {BannerTitle && <h2 className={`text-2xl font-medium px-[5%] py-5`}>{BannerTitle}</h2>}
-                <div className={`${TextDownMiddle ? 'h-auto' : 'h-[300px]'} relative w-full `}>
-                    <Image
-                        src={BannerImg} className='w-[100%] h-[100%] object-cover'
-                        width={1000}
-                        height={1000}
-                        alt={titleFirstPart as string} />
-                    {BannerVersion === 1 ? <div className={`${TextDownMiddle ? ' text-center mt-[5%] mb-[5%] space-y-10' : 'sm:absolute space-y-5'} top-[15%] left-[5%] hidden sm:block`} >
-                        <div className={`font-extrabold tracking-[-3px] ${TextColorWhite && 'text-white'}`}>
-                            <h2 className={`${TextDownMiddle ? 'text-7xl h-14' : 'text-5xl h-10'}`}>{titleFirstPart}</h2 >
-                            <h2 className={`${TextDownMiddle ? 'text-7xl h-14' : 'text-5xl h-10'}`}> {titleSecondPart}</h2 >
-                        </div>
-                        <p className={`${TextColorWhite && 'text-white'}`}>{descriptionFirstPart} <br /> {descriptionSecondPart}</p>
-                        <Button ButtonName={ButtonName} buttonColor={textColor} />
-                    </div> :
-                        <div className={`absolute bottom-0 left-[10%] space-y-1 my-[5%] max-w-[95%]`} >
-                            <div className={`${removeTitle && 'hidden sm:block'} font-medium `}>
-                                <span className={`text-2xl h-10 ${TextColorWhite && titleSecondPart === 'MEMBER' && 'text-white'}`}>{subtitleFirstPart} <br />{subtitleSecondPart}</span >
+            {/* Version 1 */}
+            {BannerVersion === 1 &&
+                <>
+                    {/* Small Screen */}
+                    <div className='px-[5%] block sm:hidden'>
+                        {BannerTitle && <h2 className={`text-2xl font-medium py-5`}>{BannerTitle}</h2>}
+                        <Image
+                            src={SmallScreenImage}
+                            width={1000}
+                            height={1000}
+                            alt={TitleFirstPart as string} />
+                        <div className={`space-y-10 my-10 max-w-[95%]`} >
+                            <div className={`font-extrabold tracking-[-3px] mb-10`}>
+                                <h2 className='text-5xl'>{TitleFirstPart} <br />{TitleSecondPart}</h2 >
                             </div>
-                            <p className={`${TextColorWhite && titleSecondPart === 'MEMBER' && 'text-white'}`}>{descriptionFirstPart}</p>
+                            <p className={`text-black max-w-[90%]`}>{DescriptionFirstPart} {DescriptionSecondPart}</p>
+                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                        </div>
+                    </div>
 
-                            <Button ButtonName={ButtonName} buttonColor={textColor} />
-                            {ExtraButton && <Button ButtonName={ExtraButtonName} buttonColor={textColor} />}
+                    {/* Large Screen */}
+                    <div className='hidden sm:block'>
+                        {BannerTitle && <h2 className={`text-2xl font-medium px-[5%] py-5`}>{BannerTitle}</h2>}
+                        <div className={`h-auto w-full`}>
+                            <Image
+                                src={BannerImg} className='w-[100%] h-[100%] object-cover'
+                                width={1000}
+                                height={1000}
+                                alt={TitleFirstPart as string} />
+                        </div>
+                        <div className={`space-y-10 my-10 text-center`}>
+                            <div className='mb-10 font-extrabold tracking-[-3px]'>
+                                <h2 className='text-7xl h-14'>{TitleFirstPart}</h2 >
+                                <h2 className='text-7xl h-14'>{TitleSecondPart}</h2 >
+                            </div>
+                            <p className={`text-black`}>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>
+                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                        </div>
+                    </div>
+                </>
+            }
+            {/* Version 2  */}
+            {BannerVersion === 2 &&
+                <>
+                    {/* Small SCreen */}
+                    <div className='px-[5%] block sm:hidden'>
+                        {BannerTitle && <h2 className={`text-2xl font-medium py-5`}>{BannerTitle}</h2>}
+                        <Image
+                            src={SmallScreenImage}
+                            width={1000}
+                            height={1000}
+                            alt={TitleFirstPart as string} />
+                        <div className={`space-y-10 my-10`} >
+                            <div className={`font-extrabold tracking-[-3px] mb-10`}>
+                                <h2 className='text-5xl'>{TitleFirstPart} <br /> {TitleSecondPart}</h2 >
+                            </div>
+                            <p className={`text-black max-w-[95%]`}>{DescriptionFirstPart} {DescriptionSecondPart}</p>
+                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                        </div>
+                    </div>
 
-                        </div>}
-                </div >
-            </div>
+                    {/* Large Screen */}
+                    <div className='hidden sm:block relative'>
+                        {BannerTitle && <h2 className={`text-2xl font-medium px-[5%] py-5`}>{BannerTitle}</h2>}
+                        <div className={`h-[300px] w-full`}>
+                            <Image
+                                src={BannerImg} className='w-[100%] h-[100%] object-cover'
+                                width={1000}
+                                height={1000}
+                                alt={TitleFirstPart as string} />
+                        </div>
+                        <div className={`space-y-5 absolute bottom-[15%] left-[5%]`}>
+                            <div className=' font-extrabold tracking-[-3px]'>
+                                <h2 className='text-5xl h-10'>{TitleFirstPart}</h2 >
+                                <h2 className='text-5xl h-10'>{TitleSecondPart}</h2 >
+                            </div>
+                            <p className={`text-black`}>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>
+                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                        </div>
+                    </div>
+                </>
+            }
+            {/* Version 3 */}
+            {BannerVersion === 3 &&
+                <>
+                    {/* Small SCreen */}
+                    <div className='block sm:hidden relative'>
+                        <Image
+                            src={SmallScreenImage}
+                            width={1000}
+                            height={1000}
+                            alt={TitleFirstPart as string} />
+                        <div className={`space-y-10 absolute bottom-[5%] left-[5%] text-${TextColor}`} >
+                            <h2 className={`text-2xl font-medium text-${TextColor}`}>{TitleFirstPart} <br /> {TitleSecondPart}</h2 >
+                            {DescriptionFirstPart || DescriptionSecondPart && <p>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>}
+                            <div className='flex gap-x-3'>
+                                <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Large Screen */}
+                    <div className='hidden sm:block'>
+                        <div className='gap-x-3'>
+                            <div className='relative'>
+                                <div className={`h-auto w-full`}>
+                                    <Image
+                                        src={BannerImg} className='w-[100%] h-[100%] object-cover'
+                                        width={1000}
+                                        height={1000}
+                                        alt={TitleFirstPart as string} />
+                                </div>
+                                <div className={`space-y-7 absolute bottom-[10%] left-[5%] text-white`}>
+                                    <h2 className={`text-2xl font-medium text-${TextColor}`}>{TitleFirstPart} <br /> {TitleSecondPart}</h2 >
+                                    {DescriptionFirstPart || DescriptionSecondPart && <p>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>}
+                                    <div className='flex gap-x-3'>
+                                        <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            }
+            {/* Version 4 */}
+            {BannerVersion === 4 &&
+                <>
+                    {/* Small SCreen */}
+                    <div className='px-[5%] block sm:hidden relative my-10'>
+                        {BannerTitle && <h2 className={`text-2xl font-medium py-5`}>{BannerTitle}</h2>}
+                        <Image
+                            src={SmallScreenImage}
+                            width={1000}
+                            height={1000}
+                            alt={TitleFirstPart as string} />
+                        <div className={`space-y-10 absolute bottom-[5%] left-[5%] px-[5%] text-${TextColor}`} >
+                            <div className={`font-extrabold tracking-[-3px] mb-10`}>
+                                <h2 className='text-5xl flex flex-wrap'>{TitleFirstPart} <br /> {TitleSecondPart}</h2 >
+                            </div>
+                            <p>{DescriptionFirstPart} {DescriptionSecondPart}</p>
+                            <div className='flex gap-x-3'>
+                                <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                                <Button ButtonName={ExtraButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Large Screen */}
+                    <div className='hidden sm:block relative my-10'>
+                        {BannerTitle && <h2 className={`text-2xl font-medium px-[5%] py-5`}>{BannerTitle}</h2>}
+                        <div className={`h-[300px] w-full px-[5%]`}>
+                            <Image
+                                src={BannerImg} className='w-[100%] h-[100%] object-cover'
+                                width={1000}
+                                height={1000}
+                                alt={TitleFirstPart as string} />
+                        </div>
+                        <div className={`space-y-7 absolute bottom-[10%] left-[10%] text-white`}>
+                            <div className=' font-extrabold tracking-[-3px]'>
+                                <h2 className='text-7xl h-14'>{TitleFirstPart}</h2 >
+                                <h2 className='text-7xl h-14'>{TitleSecondPart}</h2 >
+                            </div>
+                            <p>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>
+                            <div className='flex gap-x-3'>
+                                <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                                <Button ButtonName={ExtraButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                            </div>
+                        </div>
+                    </div>
+                </>
+            }
         </section >
     )
 }

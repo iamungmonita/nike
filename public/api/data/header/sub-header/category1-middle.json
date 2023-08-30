@@ -1,43 +1,93 @@
 [
     {
         "id" : 1,
+        "subId" : 1,
         "name" : "New & Feature",
         "routePath" : "/new-feature",
+        "subCategories" : [],
         "categoryId" : 1
+      },
+      {
+        "id" : 2,
+        "subId" : 1,
+        "name" : "Back to School",
+        "routePath" : "/back-school",
+        "subCategories" : [],
+        "categoryId" : 1
+      },
+      {
+        "id" : 3,
+        "subId" : 1,
+        "name" : "Shop Icons",
+        "routePath" : "/shop-icons",
+        "subCategories" : [],
+        "categoryId" : 1
+      },
+      {
+        "id" : 4,
+        "subId" : 1,
+        "name" : "New For Men",
+        "routePath" : "/new-men",
+        "subCategories" : [],
+        "categoryId" : 1
+      },
+      {
+        "id" : 5,
+        "subId" : 1,
+        "name" : "New For Women",
+        "routePath" : "/new-women",
+        "subCategories" : [],
+        "categoryId" : 1
+      },
+      {
+        "id" : 6,
+        "subId" : 1,
+        "name" : "New For Kids",
+        "routePath" : "/new-kids",
+        "subCategories" : [],
+        "categoryId" : 1
+      },
+      {
+        "id" : 7,
+        "subId" : 1,
+        "name" : "Drops",
+        "routePath" : "/drops",
+        "subCategories" : [],
+        "categoryId" : 1
+      },
+      {
+        "id" : 1,
+        "name" : "New & Feature",
+        "routePath" : "/new-feature",
+        "subCategories" : [],
+        "categoryId" : 2
       },
       {
         "id" : 2,
         "name" : "Back to School",
         "routePath" : "/back-school",
-        "categoryId" : 1
+        "subCategories" : [],
+        "categoryId" : 2
       },
       {
         "id" : 3,
-        "name" : "Shop Icons",
-        "routePath" : "/shop-icons",
-        "categoryId" : 1
+        "name" : "All Shoes",
+        "routePath" : "/all-shoes",
+        "subCategories" : [],
+        "categoryId" : 2
       },
       {
         "id" : 4,
-        "name" : "New For Men",
-        "routePath" : "/new-men",
-        "categoryId" : 1
+        "name" : "All Clothing",
+        "routePath" : "/all-clothing",
+        "subCategories" : [],
+        "categoryId" : 2
       },
       {
         "id" : 5,
-        "name" : "New For Women",
+        "name" : "Shop By Sport",
         "routePath" : "/new-women",
-        "categoryId" : 1
-      },
-      {
-        "id" : 6,
-        "name" : "New For Kids",
-        "routePath" : "/new-kids",
-        "categoryId" : 1
-      },
-      {
-        "id" : 7,
-        "name" : "Drops",
-        "routePath" : "/drops"
+            "subCategories" : [],
+        "categoryId" : 2
       }
     ]

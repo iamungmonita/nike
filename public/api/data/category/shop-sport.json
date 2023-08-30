@@ -6,7 +6,6 @@
         "description" : "Command the filed in game-ready gear.",
         "routePath" : "/products", 
         "picture" : "/pictures/desktop/bysport/1.webp",
-        "categoryId": 1,
         "shop" : true
     },
     {
@@ -15,7 +14,6 @@
         "description" : "Conquer any course in style.",
         "routePath" : "/products", 
         "picture" : "/pictures/desktop/bysport/2.webp",
-        "categoryId": 1,
         "shop" : true
     },
     {
@@ -24,7 +22,6 @@
         "description" : "Bring mad style to the pitch with the latest gear.",
         "routePath" : "/products", 
         "picture" : "/pictures/desktop/bysport/3.webp",
-        "categoryId": 2,
         "shop" : true
     },
     {
@@ -33,7 +30,6 @@
         "description" : "Serve up in style",
         "routePath" : "/products", 
         "picture" : "/pictures/desktop/bysport/4.webp",
-        "categoryId": 1,
         "shop" : true
     }
 ]

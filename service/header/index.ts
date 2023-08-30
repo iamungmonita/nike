@@ -1,5 +1,5 @@
 import { GET } from "@/core/services";
-import { Header } from "@/models/Header";
+import { Header, SubHeader, SubSubHeader } from "@/models/Header";
 
 
 export function getHeaderTop() {
@@ -13,3 +13,5 @@ export function getHeaderMiddle() {
 export function getHeaderBottom() {
     return GET<Header[]>('/data/header/header-bottom.json')
 }
+
+

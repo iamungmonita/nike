@@ -8,22 +8,22 @@
               "routePath" : "/new-arrival"
             },
             {
-              "id" : 2,
+              "id" : 1  ,
               "name" : "Best Sellers",
               "routePath" : "/best-sellers"
             },
             {
-              "id" : 3,
+              "id" : 1,
               "name" : "Member Exclusive",
               "routePath" : "/member exclusive"
             },
             {
-              "id" : 4,
+              "id" : 1,
               "name" : "It's Air Force 1 Week",
               "routePath" : "/air-force"
             },
             {
-              "id" : 5,
+              "id" : 1,
               "name" : "Extra 20% off Select Styles",
               "routePath" : "/select-styles"
             }
