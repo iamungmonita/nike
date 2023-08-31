@@ -3,8 +3,8 @@
       "id": 1,
       "name": "New & Featured",
       "routePath": "/new-feature",
-    "subCategories" : [
-      {
+      "subCategories" : [
+        {
           "id" : 1,
           "name" : "New & Feature",
           "routePath" : "/new-feature",
@@ -211,9 +211,8 @@
           "categoryId" : 1
         }
       ]
-     },
-
-     {
+    },
+    {
       "id": 2,
       "name": "Men",
       "routePath": "/men",
@@ -471,7 +470,6 @@
       ]
       
     },
-
     {
       "id": 3,
       "name": "Women",
@@ -519,8 +517,8 @@
               }
             ],
             "categoryId" : 3
-          },
-          {
+        },
+        {
             "id" : 2,
             "name" : "Back to School",
             "routePath" : "/back-school",
@@ -542,8 +540,8 @@
               }
             ],
             "categoryId" : 3
-          },
-          {
+        },
+        {
             "id" : 3,
             "name" : "All Shoes",
             "routePath" : "/all-shoes",
@@ -600,8 +598,8 @@
               }
             ],
           "categoryId" : 3
-          },
-          {
+        },
+        {
             "id" : 4,
             "name" : "All Clothing",
             "routePath" : "/all-clothing",
@@ -673,8 +671,8 @@
               }
             ],
             "categoryId" : 3
-          },
-          {
+        },
+        {
             "id" : 5,
             "name" : "Shop By Sport",
             "routePath" : "/new-women",
@@ -731,31 +729,555 @@
             }
           ],
           "categoryId" : 3
-          }
+        }
         ]
     },
     {
       "id": 4,
       "name": "Kids",
       "routePath": "/kid",
-    "subCategories" : [
-      
-    ]
+      "subCategories" : [
+          {
+            "id" : 1,
+            "name" : "New & Feature",
+            "routePath" : "/new-feature",
+            "subCategories" : [
+              {
+                "id" : 1,
+                "name" : "New Arrivals",
+                "routePath" : "/new-arrival"
+              },
+              {
+                "id" : 2,
+                "name" : "Best Sellers",
+                "routePath" : "/best-sellers"
+              },
+              {
+                "id" : 3,
+                "name" : "Tween Collection",
+                "routePath" : "/tween-collection"
+              },
+              {
+                "id" : 4,
+                "name" : "Cool Shade of Blue",
+                "routePath" : "/"
+              },
+              {
+                "id" : 5,
+                "name" : "The Latest ACG",
+                "routePath" : "/fall-color"
+              },
+              {
+                "id" : 6,
+                "name" : "Sale - Up to 50% Off",
+                "routePath" : "/dance-essentials"
+              }
+            ],
+            "categoryId" : 4
+          },
+          {
+            "id" : 2,
+            "name" : "Back to School",
+            "routePath" : "/back-school",
+            "subCategories" : [
+              {
+                "id" : 1,
+                "name" : "Back to School Essentials",
+                "routePath" : "/school-essentials"
+              },
+              {
+                "id" : 2,
+                "name" : "First Day Kicks",
+                "routePath" : "/first-kicks"
+              },
+              {
+                "id" : 3,
+                "name" : "Bags, Backpacks & Lunchboxes",
+                "routePath" : "/bags-lunchboxes"
+              }
+            ],
+            "categoryId" : 4
+          },
+          {
+            "id" : 3,
+            "name" : "Shoe by Size",
+            "routePath" : "/back-school",
+            "subCategories" : [
+              {
+                "id" : 1,
+                "name" : "Big Kids (3.5Y - 7Y)",
+                "routePath" : "/school-essentials"
+              },
+              {
+                "id" : 2,
+                "name" : "Little Kids (10.5C - 3Y)",
+                "routePath" : "/first-kicks"
+              },
+              {
+                "id" : 3,
+                "name" : "Baby & Toddler (1C - 10C)",
+                "routePath" : "/bags-lunchboxes"
+              }
+            ],
+            "categoryId" : 4
+          },
+          {
+            "id" : 4,
+            "name" : "All Shoes",
+            "routePath" : "/all-shoes",
+            "subCategories" : [
+    
+              {
+                "id" : 1,
+                "name" : "Air Force 1",
+                "routePath" : "/airforce-1"
+              },
+              {
+                "id" : 2,
+                "name" : "Air Max",
+                "routePath" : "/air-max"
+              },
+         
+              {
+                "id" : 3,
+                "name" : "Dunks & Blazers",
+                "routePath" : "/dunk-blazer"
+              },
+              {
+                "id" : 4,
+                "name" : "Jordan",
+                "routePath" : "/basketball"
+              },
+              {
+                "id" : 5,
+                "name" : "Lifestyle",
+                "routePath" : "/running"
+              },
+              {
+                "id" : 6,
+                "name" : "Basketball",
+                "routePath" : "/nike-sb"
+              },
+              {
+                "id" : 7,
+                "name" : "Running",
+                "routePath" : "/training-gym"
+              },
+              {
+                "id" : 8,
+                "name" : "Shoes $70 & Under",
+                "routePath" : "/100-under"
+              }
+            ],
+          "categoryId" : 4
+          },
+          {
+            "id" : 5,
+            "name" : "Clothing by Size",
+            "routePath" : "/all-clothing",
+            "subCategories" : [
+              {
+                "id" : 1,
+                "name" : "Big Kids",
+                "routePath" : "/jordan"
+              },
+              {
+                "id" : 2,
+                "name" : "Little Kids",
+                "routePath" : "/plus-size"
+              },
+              {
+                "id" : 3,
+                "name" : "Baby & Toddlers",
+                "routePath" : "/matching-set"
+              },
+              {
+                "id" : 4,
+                "name" : "Extended Sizing",
+                "routePath" : "/bras"
+              }
+            ],
+            "categoryId" : 4
+          },
+          {
+            "id" : 6,
+            "name" : "All Clothing",
+            "routePath" : "/all-clothing",
+            "subCategories" : [
+              {
+                "id" : 1,
+                "name" : "Jordan",
+                "routePath" : "/jordan"
+              },
+              {
+                "id" : 2,
+                "name" : "Matching Sets",
+                "routePath" : "/matching-set"
+              },
+              {
+                "id" : 3,
+                "name" : "Tops & T-shirts",
+                "routePath" : "/tops-tshirts"
+              },
+              {
+                "id" : 4,
+                "name" : "Short",
+                "routePath" : "/shorts"
+              },
+              {
+                "id" : 5,
+                "name" : "Hoodies & Sweatshirts",
+                "routePath" : "/hoodies-sweatshirts"
+              },
+              {
+                "id" : 6,
+                "name" : "Overwear & Jackets",
+                "routePath" : "/jackets-vests"
+              },
+              {
+                "id" : 7,
+                "name" : "Pants & Tights",
+                "routePath" : "/pants"
+              },
+              {
+                "id" : 8,
+                "name" : "Underwear",
+                "routePath" : "/pants"
+              },
+              {
+                "id" : 9,
+                "name" : "Bra",
+                "routePath" : "/pants"
+              },
+              {
+                "id" : 10,
+                "name" : "Socks",
+                "routePath" : "/socks"
+              },
+              {
+                "id" : 11,
+                "name" : "Clothing $50 & Under ",
+                "routePath" : "/50-under"
+              }
+            ],
+            "categoryId" : 4
+          },
+          {
+            "id" : 7,
+            "name" : "Shop By Sport",
+            "routePath" : "/new-women",
+            "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "Basketball",
+              "routePath" : "/soccer"
+            },
+            {
+              "id" : 2,
+              "name" : "Cheerleading",
+              "routePath" : "/soccer"
+            },
+            {
+              "id" : 3,
+              "name" : "Soccer",
+              "routePath" : "/soccer"
+            },
+            {
+              "id" : 4,
+              "name" : "Basketball",
+              "routePath" : "/basketball"
+            },
+            {
+              "id" : 5,
+              "name" : "Softball",
+              "routePath" : "/cross-country"
+            },
+            {
+              "id" : 6,
+              "name" : "Football",
+              "routePath" : "/cheerleading"
+            },
+            {
+              "id" : 7,
+              "name" : "Running",
+              "routePath" : "/yoga"
+            }
+          ],
+          "categoryId" : 4
+          }
+        ]
     },
     {
       "id": 5,
       "name": "Accessories",
       "routePath": "/accessory",
-    "subCategories" : [
-      
+      "subCategories" : [
+        {
+          "id" : 1,
+          "name" : "Featured",
+          "routePath" : "/new-feature",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "$30 & Under",
+              "routePath" : "/new-arrival"
+            },
+            {
+              "id" : 2,
+              "name" : "Sale - Up to 50% off",
+              "routePath" : "/best-sellers"
+            }
+          ],
+          "categoryId" : 5
+        },
+        {
+          "id" : 2,
+          "name" : "Back to School",
+          "routePath" : "/back-school",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "Back to School Essentials",
+              "routePath" : "/school-essentials"
+            },
+            {
+              "id" : 2,
+              "name" : "Bags, Backpacks & Lunchboxes",
+              "routePath" : "/bags-lunchboxes"
+            }
+          ],
+          "categoryId" : 5
+        },
+        {
+          "id" : 3,
+          "name" : "All Accessories",
+          "routePath" : "/all-accessories",
+          "subCategories" : [
+            {
+              "id" : 1,
+              "name" : "Jordan",
+              "routePath" : "/jordan"
+            },
+            {
+              "id" : 2,
+              "name" : "Socks",
+              "routePath" : "/socks"
+            },
+            {
+              "id" : 3,
+              "name" : "Bags & Backpacks",
+              "routePath" : "/matching-set"
+            },
+            {
+              "id" : 4,
+              "name" : "Hats & Headwears",
+              "routePath" : "/tops-tshirts"
+            },
+            {
+              "id" : 5,
+              "name" : "Sunglasses & Eyeswears",
+              "routePath" : "/shorts"
+            },
+            {
+              "id" : 6,
+              "name" : "Water Bottles & Hydration",
+              "routePath" : "/hoodies-sweatshirts"
+            },
+            {
+              "id" : 7,
+              "name" : "Overwear & Jackets",
+              "routePath" : "/jackets-vests"
+            },
+            {
+              "id" : 8,
+              "name" : "Gloves",
+              "routePath" : "/pants"
+            }
+          ],
+          "categoryId" : 5
+        },
+        {
+          "id" : 4,
+          "name" : "Shop By Sport",
+          "routePath" : "/new-women",
+          "subCategories" : [
+          {
+            "id" : 1,
+            "name" : "Golf",
+            "routePath" : "/soccer"
+          },
+          {
+            "id" : 2,
+            "name" : "Basketball",
+            "routePath" : "/soccer"
+          },
+          {
+            "id" : 3,
+            "name" : "Soccer",
+            "routePath" : "/soccer"
+          },
+          {
+            "id" : 4,
+            "name" : "Football",
+            "routePath" : "/basketball"
+          },
+          {
+            "id" : 5,
+            "name" : "Softball",
+            "routePath" : "/cross-country"
+          },
+          {
+            "id" : 6,
+            "name" : "Football",
+            "routePath" : "/cheerleading"
+          },
+          {
+            "id" : 7,
+            "name" : "Baseball",
+            "routePath" : "/cheerleading"
+          },
+          {
+            "id" : 8,
+            "name" : "Running",
+            "routePath" : "/yoga"
+          },
+          {
+            "id" : 9,
+            "name" : "Volleyball",
+            "routePath" : "/yoga"
+          },
+          {
+            "id" : 10,
+            "name" : "Cheerleading",
+            "routePath" : "/yoga"
+          },
+          {
+            "id" : 11,
+            "name" : "Cross Country",
+            "routePath" : "/yoga"
+          },
+          {
+            "id" : 12,
+            "name" : "Training & Gym",
+            "routePath" : "/yoga"
+          }
+        ],
+        "categoryId" : 5
+        }
     ]
     },
     {
       "id": 6,
       "name": "Sale",
       "routePath": "/sale",
-    "subCategories" : [
-      
+      "subCategories" : [
+      {
+        "id" : 1,
+        "name" : "Sale - Up to 50% Off",
+        "routePath" : "/sale",
+        "subCategories" : [
+          {
+            "id" : 1,
+            "name" : "Sale Shoes",
+            "routePath" : "/sale"
+          },
+          {
+            "id" : 2,
+            "name" : "Sale Clothing",
+            "routePath" : "/sale"
+          },
+          {
+            "id" : 3,
+            "name" : "Sale Accessories",
+            "routePath" : "/sale"
+          }
+        ],
+        "categoryId" : 6
+      },
+      {
+        "id" : 2,
+        "name" : "Men",
+        "routePath" : "/sale",
+        "subCategories" : [
+          {
+            "id" : 1,
+            "name" : "Shoes",
+            "routePath" : "/sale"
+          },
+          {
+            "id" : 2,
+            "name" : "lothing",
+            "routePath" : "/sale"
+          },
+          {
+            "id" : 3,
+            "name" : "Accessories",
+            "routePath" : "/sale"
+          },
+          {
+            "id" : 4,
+            "name" : "Shop All",
+            "routePath" : "/sale"
+          }
+        ],
+        "categoryId" : 6
+      },
+      {
+        "id" : 3,
+        "name" : "Women",
+        "routePath" : "/sale",
+        "subCategories" : [
+          {
+            "id" : 1,
+            "name" : "Shoes",
+            "routePath" : "/sale"
+          },
+          {
+            "id" : 2,
+            "name" : "lothing",
+            "routePath" : "/sale"
+          },
+          {
+            "id" : 3,
+            "name" : "Accessories",
+            "routePath" : "/sale"
+          },
+          {
+            "id" : 4,
+            "name" : "Shop All",
+            "routePath" : "/sale"
+          }
+        ],
+        "categoryId" : 6
+      },
+      {
+        "id" : 4,
+        "name" : "Kids",
+        "routePath" : "/sale",
+        "subCategories" : [
+          {
+            "id" : 1,
+            "name" : "Shoes",
+            "routePath" : "/sale"
+          },
+          {
+            "id" : 2,
+            "name" : "Clothing",
+            "routePath" : "/sale"
+          },
+          {
+            "id" : 3,
+            "name" : "Accessories",
+            "routePath" : "/sale"
+          },
+          {
+            "id" : 4,
+            "name" : "Shop All",
+            "routePath" : "/sale"
+          }
+        ],
+        "categoryId" : 6
+      }
     ]
     }
   ]

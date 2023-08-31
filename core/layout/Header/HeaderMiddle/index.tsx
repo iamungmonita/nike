@@ -48,11 +48,11 @@ export default function HeaderMiddle() {
                         </svg>
                     </Link>
                 </div>
-                <div className='items-center hidden md:block '>
-                    <ul className='flex justify-center h-20 '>
+                <div className='items-center hidden md:block h-[80%]'>
+                    <ul className='flex justify-center h-20'>
                         {navLinks.map((navLink) => (
                             <Link className='p-3 font-medium group/item hover:border-b' key={navLink.id} href={navLink.routePath}>{navLink.name}
-                                <li className='hidden group-hover/item:grid z-20 grid-cols-7 grid-rows-1 top-20 absolute left-[50%] -translate-x-[50%] bg-white w-full overflow-x-hidden h-screen hover:block '>
+                                <li className='hidden group-hover/item:grid z-20 grid-cols-4 grid-rows-2 top-20 absolute left-[50%] -translate-x-[50%] bg-white w-full overflow-x-hidden h-[80vh] hover:block px-52'>
                                     {navLink.subCategories.filter((sublink) => sublink.categoryId === navLink.id).map((subLink, index) =>
                                         <li key={index} className='p-5 animate__animated animate__fadeInDownBig'>
                                             <Link href={subLink.routePath} className='flex flex-col '>{subLink.name}

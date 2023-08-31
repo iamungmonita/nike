@@ -4,11 +4,11 @@ import React from 'react';
 import { search } from '@/public/icons';
 
 interface PropType {
-  onCancel?:() => void;
+  onCancel?: () => void;
 }
 
 export default function SearchItem(props: PropType) {
-  const {onCancel} = props;
+  const { onCancel } = props;
   return (
     <div className='search-wrapper'>
       <div className='flex gap-x-3'>
@@ -18,7 +18,6 @@ export default function SearchItem(props: PropType) {
         </div>
         <button onClick={onCancel} className='font-medium'>Cancel</button>
       </div>
-      <h2>Popular Search Terms</h2>
     </div>
   )
 }

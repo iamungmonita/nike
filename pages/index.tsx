@@ -55,31 +55,7 @@ export default function Home() {
         DescriptionFirstPart='Wherever you decide to run or hike, Nike Trail & Nike ACG'
         DescriptionSecondPart='are here for your next adventure.'
         ButtonTextWhiteBackgroundBlack={true} />
-      <Carousel productItem={items} CardVersion={1} itemSize={400} itemTitle='Trending' />
-      <div className='space-y-20'>
-
-        {/* <Banner BannerVersion={1} ButtonName='Shop All' BannerImg={'/pictures/desktop/banner/section4.webp'} SmallScreenImage={'/pictures/mobile/banner/section4-mobile.webp'} titleFirstPart={'BACK TO SCHOOL'} titleSecondPart={'ESSENTIALS'} descriptionFirstPart='Score everything you need for day one and beyond.' textColor={true} BannerTitle={`Let's Go`} /> */}
-
-
-        {/* <div>
-          <h2 className={`text-2xl font-medium px-[5%] py-5`}>Featured</h2>
-          <div className='grid grid-cols-1 sm:grid-cols-2 gap-2 sm:px-[5%]'>
-            <div className='gap-x-2'>
-              <Banner BannerVersion={2} titleFirstPart='' subtitleFirstPart='Rise & Shine in Phoenix Fleece' ButtonName='Shop' BannerImg={'/pictures/desktop/featured/1.webp'} SmallScreenImage={'/pictures/mobile/featured/1.webp'} TextDownMiddle={true} textColor={true} />
-            </div>
-            <div className=''>
-              <Banner BannerVersion={2} titleFirstPart='' subtitleFirstPart='Must-Have Air Max' ButtonName='Shop All' BannerImg={'/pictures/desktop/featured/2.webp'} SmallScreenImage={'/pictures/mobile/featured/2.webp'} TextDownMiddle={true} textColor={true} />
-            </div>
-          </div>
-        </div>
-        <Carousel productItem={iconic} itemVersion={1} itemSize={400} itemTitle='Always Iconic' />
-        <Carousel productItem={sport} itemVersion={1} itemSize={400} itemTitle='Shop by Sport' />
-        <Carousel productItem={popular} itemVersion={2} itemSize={400} itemTitle='Popular Right Now' />
-        <div>
-          <Banner BannerVersion={1} ButtonName='Join Us' BannerImg={'/pictures/desktop/banner/nike-membership.png'} SmallScreenImage={'/pictures/mobile/banner/nike-membership-mobile.webp'} titleFirstPart={'BECOME A'} titleSecondPart={'MEMBER'} descriptionFirstPart='Sign up for free. Join the community.' textColor={false} TextColorWhite={true} ExtraButton={true} ExtraButtonName='Sign In' BannerTitle='Nike Membership' />
-          <Carousel productItem={member} itemVersion={2} itemTitleCloser={true} itemSize={400} />
-        </div> */}
-      </div>
+      <Carousel productItem={items} CardVersion={1} itemTitle='Trending' />
       <Banner
         BannerVersion={2}
         ButtonName='Shop'
@@ -111,9 +87,9 @@ export default function Home() {
             TextColor='black' />
         </div>
       </section>
-      <Carousel productItem={iconic} CardVersion={2} itemSize={300} itemSizeSmallScreen={400} itemTitle='Always Iconic' />
-      <Carousel productItem={sport} CardVersion={3} itemSize={300} itemSizeSmallScreen={100} itemTitle='Shop by Sport' />
-      <Carousel productItem={popular} CardVersion={1} itemSize={400} itemTitle='Popular Right Now' />
+      <Carousel productItem={iconic} CardVersion={2} itemTitle='Always Iconic' />
+      <Carousel productItem={sport} CardVersion={3} itemTitle='Shop by Sport' />
+      <Carousel productItem={popular} CardVersion={1} itemTitle='Popular Right Now' />
       <Banner
         BannerVersion={4}
         ButtonName='Join Us'
@@ -129,7 +105,7 @@ export default function Home() {
       <section>
         <div className='w-full flex flex-col gap-x-3 sm:flex-row px-[5%]'>
           {members.map((member, index) =>
-            <Card key={index} CardVersion={4} itemName={member.name} itemPicture={member.picture} itemSize={370} itemTag={member.tag} itemTitleCloser={true} />
+            <Card key={index} CardVersion={4} itemCurrentSlide={0} itemName={member.name} itemPicture={member.picture} itemSize={370} itemTag={member.tag} itemTitleCloser={true} />
           )}
         </div>
       </section>

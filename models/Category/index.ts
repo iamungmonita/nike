@@ -15,6 +15,8 @@ export interface Category {
     shop: boolean,
     headline: boolean,
     closer: boolean,
+    imageSize: number,
+    imageSmallScreen: number
     subCategories: {
         id: number,
         name: string,

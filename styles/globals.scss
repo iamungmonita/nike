@@ -13,7 +13,7 @@ $lightblue: '#add8e6';
     background: white;
     width: 100%;
     left: 0;
-    top: 0;
+    top: 10%;
     bottom: 0;
     z-index: 5;
     padding: 8px 20px 8px 36px;
@@ -28,6 +28,6 @@ $lightblue: '#add8e6';
 }
 
 .scroll_bar {
-    scrollbar-width:thin;
-    scrollbar-color: #333 transparent ;
+    scrollbar-width: thin;
+    scrollbar-color: #333 transparent;
 }
