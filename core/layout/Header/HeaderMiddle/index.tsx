@@ -1,46 +1,32 @@
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
-
+import React, { useState } from 'react';
 import { IconButton, Sidebar } from '@/core/components';
 import { Header } from '@/models/Header';
 import { heart, menu, search, shoppingBag } from '@/public/icons';
-import { getHeaderMiddle } from '@/service/header';
 import svgStyle from '@/styles/SVG.module.scss';
 import SearchItem from '../SearchItem';
+import useApi from '@/core/services/useApi';
 
 export default function HeaderMiddle() {
-    const [navLinks, setNavLinks] = useState<Header[]>([]);
+    const { response } = useApi<Header[]>('/data/header/header-middle.json')
     const [openSearch, setOpenSearch] = useState(false);
     const [openSideBar, setOpenSideBar] = useState(false);
-
-    useEffect(() => {
-        initFunction()
-    }, [])
-
-    function initFunction() {
-        Promise.resolve(getHeaderMiddle()).then((response) => {
-            setNavLinks(response);
-        });
-    }
 
     function toggleSearch() {
         setOpenSearch(!openSearch);
     }
-
     function onCancelSearch() {
         setOpenSearch(false);
     }
     function toggleSideBar() {
         setOpenSideBar(!openSideBar);
     }
-
     function onCancelSideBar() {
         setOpenSideBar(false);
     }
-
     return (
         <>
-            <div className='pr-10 pl-14 bg-white flex md:grid grid-cols-3 justify-between items-center h-20 relative'>
+            <div className='pr-[4%] pl-[5%] bg-white flex md:grid grid-cols-3 justify-between items-center h-20 relative'>
                 <div className='grid group'>
                     <Link href='/'>
                         <svg className={`${svgStyle.svg}`} xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="135.5 361.38 1000 356.39">
@@ -50,7 +36,7 @@ export default function HeaderMiddle() {
                 </div>
                 <div className='items-center hidden md:block h-[80%]'>
                     <ul className='flex justify-center h-20'>
-                        {navLinks.map((navLink) => (
+                        {response.map((navLink: Header) => (
                             <Link className='p-3 font-medium group/item hover:border-b' key={navLink.id} href={navLink.routePath}>{navLink.name}
                                 <li className='hidden group-hover/item:grid z-20 grid-cols-4 grid-rows-2 top-20 absolute left-[50%] -translate-x-[50%] bg-white w-full overflow-x-hidden h-[80vh] hover:block px-52'>
                                     {navLink.subCategories.filter((sublink) => sublink.categoryId === navLink.id).map((subLink, index) =>
@@ -66,7 +52,7 @@ export default function HeaderMiddle() {
                         ))}
                     </ul>
                 </div>
-                <div className='flex items-center justify-end'>
+                <div className='flex items-center justify-end '>
                     <div className='flex gap-x-3 justify-between'>
                         <div className='bg-header rounded-full hidden lg:flex justify-end gap-x-3' >
                             <IconButton IconImage={search} IconWidth={25} IconHeight={25} />
@@ -83,7 +69,7 @@ export default function HeaderMiddle() {
                 {openSearch && <SearchItem onCancel={onCancelSearch} />}
             </div >
             <div className={`top-0 right-0 w-[350px] bg-white shadow z-30 h-full animate__animated  fixed ${openSideBar ? 'animate__fadeInRightBig' : 'animate__fadeOutRightBig'}`}>
-                <Sidebar NavLinks={navLinks} onCancelSideBar={onCancelSideBar} />
+                <Sidebar NavLinks={response} onCancelSideBar={onCancelSideBar} />
             </div >
         </>
     )

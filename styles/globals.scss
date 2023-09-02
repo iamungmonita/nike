@@ -6,7 +6,10 @@ $lightblue: '#add8e6';
 $lightblue: '#add8e6';
 @import '_config';
 @import 'animate.css';
-
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/scrollbar';
 
 .search-wrapper {
     position: absolute;
@@ -22,12 +25,7 @@ $lightblue: '#add8e6';
 .image {
     aspect-ratio: 20/9;
 }
-
 .text-color {
     @include set-background(black);
 }
 
-.scroll_bar {
-    scrollbar-width: thin;
-    scrollbar-color: #333 transparent;
-}

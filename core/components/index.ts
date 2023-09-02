@@ -9,3 +9,5 @@ export { default as Banner } from '@/core/components/Banner';
 export { default as Carousel } from '@/core/components/Carousel';
 export { default as Card } from '@/core/components/Card';
 export { default as Sidebar } from '@/core/components/Sidebar';
+export { default as Swiper } from '@/core/components/Swiper';
+export { default as SwiperButton } from '@/core/components/Swiper/SwiperButton';

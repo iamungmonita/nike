@@ -1,7 +1,4 @@
-.scroll_bar {
-    scrollbar-width: thin;
-    scrollbar-color: #333 transparent;
-}
+
 .container {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
@@ -10,4 +7,9 @@
 .slider {
     scroll-snap-align: start;
 
+}
+
+.scroll_bar {
+    scrollbar-width: thin;
+    scrollbar-color: #333 transparent;
 }

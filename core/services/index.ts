@@ -1,6 +1,8 @@
 import axios, { AxiosRequestConfig, AxiosResponse, RawAxiosRequestHeaders } from 'axios';
 import * as _ from 'lodash';
 import getConfig from 'next/config';
+import { useEffect, useState } from 'react';
+import { getHeaderMiddle } from '@/service/header';
 
 /**
  * @template T the type of the action's `response` tag.
@@ -54,3 +56,4 @@ export function PUT<T, B = any>(url: string, data: B, headers: RawAxiosRequestHe
 export function DELETE<T, B = any>(url: string, data: B, headers: RawAxiosRequestHeaders): Promise<T> {
   return sendRequest({ method: "DELETE", data, url, headers });
 }
+

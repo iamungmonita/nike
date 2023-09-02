@@ -1,0 +1,188 @@
+[
+        {
+        "id": 1,
+        "name": "New Arrivals",
+        "routePath": "/new-arrival",
+        "subCategoryId" : 1
+        },
+        {
+        "id": 2,
+        "name": "Best Sellers",
+        "routePath": "/best-sellers",
+        "subCategoryId" : 1
+        },
+        {
+        "id": 3,
+        "name": "Member Exclusive",
+        "routePath": "/member exclusive",
+        "subCategoryId" : 1
+        },
+        {
+        "id": 4,
+        "name": "It's Air Force 1 Week",
+        "routePath": "/air-force",
+        "subCategoryId" : 1
+        },
+        {
+        "id": 5,
+        "name": "Extra 20% off Select Styles",
+        "routePath": "/select-styles",
+        "subCategoryId" : 1
+        },
+
+        {
+        "id": 6,
+        "name": "Back to School Essentials",
+        "routePath": "/school-essentials",
+        "subCategoryId" : 2
+        },
+        {
+        "id": 7,
+        "name": "First Day Kicks",
+        "routePath": "/first-kicks",
+        "subCategoryId" : 2
+        },
+        {
+        "id": 8,
+        "name": "Bags, Backpacks & Lunchboxes",
+        "routePath": "/bags-lunchboxes",
+        "subCategoryId" : 2
+        },
+
+        {
+        "id": 9,
+        "name": "Air Force",
+        "routePath": "/air-force",
+        "subCategoryId" : 3
+        },
+        {
+        "id": 10,
+        "name": "Air Jordan",
+        "routePath": "/air-jordan",
+        "subCategoryId" : 3
+        },
+        {
+        "id": 11,
+        "name": "Air Max",
+        "routePath": "/air-max",
+        "subCategoryId" : 3
+        },
+        {
+        "id": 12,
+        "name": "Blazer",
+        "routePath": "/blazer",
+        "subCategoryId" : 3
+        },
+        {
+        "id": 13,
+        "name": "Pegasus",
+        "routePath": "/pegasus",
+        "subCategoryId" : 3
+        },
+        {
+        "id": 14,
+        "name": "Metcon",
+        "routePath": "/metcon",
+        "subCategoryId" : 3
+        },
+        {
+        "id": 15,
+        "name": "LeBron",
+        "routePath": "/lebron",
+        "subCategoryId" : 3
+        },
+        {
+        "id": 16,
+        "name": "Tech Fleece",
+        "routePath": "/tech-fleece",
+        "subCategoryId" : 3
+        },
+
+        {
+        "id": 1417,
+        "name": "Clothing",
+        "routePath": "/clothing",
+        "subCategoryId" : 4
+        },
+        {
+        "id": 18,
+        "name": "Shoes",
+        "routePath": "/shoes",
+        "subCategoryId" : 4
+        },
+
+        {
+        "id": 19,
+        "name": "Clothing",
+        "routePath": "/clothing",
+        "subCategoryId" : 5
+        },
+        {
+        "id": 20,
+        "name": "Shoes",
+        "routePath": "/shoes",
+        "subCategoryId" : 5
+        },
+
+        {
+        "id": 21,
+        "name": "Clothing",
+        "routePath": "/clothing",
+        "subCategoryId" : 6
+        },
+        {
+        "id": 22,
+        "name": "Shoes",
+        "routePath": "/shoes",
+        "subCategoryId" : 6
+        },
+
+       {
+        "id": 23,
+        "name": "New & Upcoming Drops",
+        "routePath": "/upcoming-drops",
+        "subCategoryId" : 7
+        },
+        {
+        "id": 24,
+        "name": "Get 'Em in SNKRS",
+        "routePath": "/snkrs",
+        "subCategoryId" : 7
+        },
+        {
+        "id": 25,
+        "name": "SNKRS Launch Calendar",
+        "routePath": "/snkrs-calendar",
+        "subCategoryId" : 7
+        },
+        {
+        "id": 26,
+        "name": "Jordan Heat Check",
+        "routePath": "/jordan-heat",
+        "subCategoryId" : 7
+        },
+        {
+        "id": 27,
+        "name": "Jordan In Jordan Clothing",
+        "routePath": "/jordan-clothing",
+        "subCategoryId" : 7
+        },
+        {
+        "id": 28,
+        "name": "Dunks",
+        "routePath": "/dunks",
+        "subCategoryId" : 7
+        },
+        {
+        "id": 29,
+        "name": "NikeLab",
+        "routePath": "/nike-lab",
+        "subCategoryId" : 7
+        },
+        {
+        "id": 30,
+        "name": "Drops 101",
+        "routePath": "/drops-101",
+        "subCategoryId" : 7
+        }
+  ]

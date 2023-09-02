@@ -1,0 +1,49 @@
+[
+      {
+        "id": 1,
+        "name": "New & Feature",
+        "routePath": "/new-feature",
+        "subCategories" : [],
+        "categoryId": 1
+      },
+      {
+        "id": 2,
+        "name": "Back to School",
+        "routePath": "/back-school",
+        "subCategories" : [],
+        "categoryId": 1
+      },
+      {
+        "id": 3,
+        "name": "Shop Icons",
+        "routePath": "/shop-icons",
+        "subCategories" : [],
+        "categoryId": 1
+      },
+      {
+        "id": 4,
+        "name": "New For Men",
+        "routePath": "/new-men",
+        "subCategories" : [],
+        "categoryId": 1
+      },
+      {
+        "id": 5,
+        "name": "New For Women",
+        "routePath": "/new-women",
+        "subCategories" : [],
+        "categoryId": 1
+      },
+      {
+        "id": 6,
+        "name": "New For Kids",
+        "routePath": "/new-kids",
+        "categoryId": 1
+      },
+      {
+        "id": 7,
+        "name": "Drops",
+        "routePath": "/drops",
+        "categoryId": 1
+      }
+]

@@ -13,8 +13,11 @@ import search from '@/public/icons/search.svg';
 import shoppingBag from '@/public/icons/shoppingbag.svg';
 import twitter from '@/public/icons/twitter.svg';
 import youtube from '@/public/icons/youtube.svg';
+import filter from '@/public/icons/filter.svg';
+import arrow_down from '@/public/icons/arrow_down.svg';
 
 export {
+    filter,
     heart,
     shoppingBag,
     search,
@@ -29,5 +32,6 @@ export {
     nike,
     converse,
     jordan,
-    plus
+    plus,
+    arrow_down
 }

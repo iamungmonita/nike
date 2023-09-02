@@ -18,5 +18,6 @@ export interface SubSubHeader {
     id: number,
     name: string,
     routePath: string,
+    subCategoryId: number
 }
 
