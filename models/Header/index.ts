@@ -12,7 +12,7 @@ export interface SubHeader {
     name: string,
     routePath: string,
     categoryId: number,
-    subCategories: SubSubHeader[]
+    subCategories: SubSubHeader[] | []
 }
 export interface SubSubHeader {
     id: number,
