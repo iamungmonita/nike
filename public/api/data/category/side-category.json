@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "name": "Shoes",
+        "categoryId": 1
+    },
+    {
+        "id": 2,
+        "name": "Top & T-shirts",
+        "categoryId": 1
+    },
+    {
+        "id": 3,
+        "name": "Shorts",
+        "categoryId": 1
+    },
+    {
+        "id": 4,
+        "name": "Sports Bra",
+        "categoryId": 1
+    },
+    {
+        "id": 5,
+        "name": "Hoodies & Pullovers",
+        "categoryId": 1
+    },
+    {
+        "id": 6,
+        "name": "Pants & Tights",
+        "categoryId": 2
+    },
+    {
+        "id": 7,
+        "name": "Swimwear",
+        "categoryId": 1
+    },
+    {
+        "id": 8,
+        "name": "Skirts & Dresses",
+        "categoryId": 1
+    },
+    {
+        "id": 9,
+        "name": "Jordan",
+        "categoryId": 1
+    },
+    {
+        "id": 10,
+        "name": "Jumpsuits & Rompers",
+        "categoryId": 2
+    },
+    {
+        "id": 11,
+        "name": "Tracksuits",
+        "categoryId": 1
+    },
+    {
+        "id": 12,
+        "name": "Compression & Baselayer",
+        "categoryId": 1
+    },
+    {
+        "id": 13,
+        "name": "Socks",
+        "categoryId": 2
+    },
+    {
+        "id": 14,
+        "name": "Accessories & Equipment",
+        "categoryId": 2
+    }
+]

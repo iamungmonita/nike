@@ -15,6 +15,7 @@ import twitter from '@/public/icons/twitter.svg';
 import youtube from '@/public/icons/youtube.svg';
 import filter from '@/public/icons/filter.svg';
 import arrow_down from '@/public/icons/arrow_down.svg';
+import arrow_up from '@/public/icons/arrow_up.svg';
 
 export {
     filter,
@@ -33,5 +34,6 @@ export {
     converse,
     jordan,
     plus,
-    arrow_down
+    arrow_down,
+    arrow_up
 }

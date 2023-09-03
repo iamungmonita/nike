@@ -1,29 +1,26 @@
 import { useState, useEffect } from "react"
-import { GET } from ".."
 
-export type HookTypeParam = {
-    service: <T, P = any> (param: P) => Promise<T>
-    params: any,
-    effects: Array<any>
+
+export type HookTypeParam<T> = {
+    service: () => Promise<T>
+    effects: any[]
 }
 export type ReturnHookType<T> = {
     loading: boolean;
     loaded: boolean,
-    response: T | any,
+    response: T | null,
     error: any
 }
 
-
-export default function useApi<T>(url: string): ReturnHookType<T> {
+export default function useApi<T>(params: HookTypeParam<T>): ReturnHookType<T> {
+    const { service, effects } = params
     const [loading, setLoading] = useState(false)
     const [loaded, setLoaded] = useState(false)
-    const [response, setResponse] = useState<T | any>([])
+    const [response, setResponse] = useState<T | null>(null)
     const [error, setError] = useState(false)
-
-
     useEffect(() => {
         setLoading(true)
-        GET<T>(url)
+        service()
             .then((res: T) => {
                 setResponse(res)
                 setLoading(false)
@@ -34,7 +31,7 @@ export default function useApi<T>(url: string): ReturnHookType<T> {
                 setLoaded(true)
             })
         return () => { }
-    }, [])
+    }, effects)
     return {
         loading,
         loaded,

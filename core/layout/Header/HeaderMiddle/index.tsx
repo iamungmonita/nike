@@ -1,17 +1,31 @@
 import Link from 'next/link';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IconButton, Sidebar } from '@/core/components';
 import { Header } from '@/models/Header';
 import { heart, menu, search, shoppingBag } from '@/public/icons';
 import svgStyle from '@/styles/SVG.module.scss';
 import SearchItem from '../SearchItem';
-import useApi from '@/core/services/useApi';
+import useApi from '@/hooks/useApi';
+import { useRouter } from 'next/router';
+import { getHeaderMiddle } from '@/service/header';
 
 export default function HeaderMiddle() {
-    const { response } = useApi<Header[]>('/data/header/header-middle.json')
+    const router = useRouter()
+    const PromiseAll = () => Promise.resolve(getHeaderMiddle())
+    const { response } = useApi({ service: PromiseAll, effects: [] })
     const [openSearch, setOpenSearch] = useState(false);
     const [openSideBar, setOpenSideBar] = useState(false);
 
+    useEffect(() => {
+        window.addEventListener('resize', handleScreen)
+    }, [])
+
+    function handleScreen() {
+        if (window.innerWidth >= 640) {
+            setOpenSearch(false)
+            setOpenSideBar(false)
+        }
+    }
     function toggleSearch() {
         setOpenSearch(!openSearch);
     }
@@ -36,19 +50,19 @@ export default function HeaderMiddle() {
                 </div>
                 <div className='items-center hidden md:block h-[80%]'>
                     <ul className='flex justify-center h-20'>
-                        {response.map((navLink: Header) => (
-                            <Link className='p-3 font-medium group/item hover:border-b' key={navLink.id} href={navLink.routePath}>{navLink.name}
-                                <li className='hidden group-hover/item:grid z-20 grid-cols-4 grid-rows-2 top-20 absolute left-[50%] -translate-x-[50%] bg-white w-full overflow-x-hidden h-[80vh] hover:block px-52'>
+                        {response?.map((navLink: Header) => (
+                            <div className='p-3 font-medium group/item hover:border-b' key={navLink.id} onClick={() => router.push(navLink.routePath)}>{navLink.name}
+                                <div className='hidden group-hover/item:grid z-20 grid-cols-4 grid-rows-2 top-20 absolute left-[50%] -translate-x-[50%] bg-white w-full overflow-x-hidden h-[80vh] hover:block px-52'>
                                     {navLink.subCategories.filter((sublink) => sublink.categoryId === navLink.id).map((subLink, index) =>
-                                        <li key={index} className='p-5 animate__animated animate__fadeInDownBig'>
-                                            <Link href={subLink.routePath} className='flex flex-col '>{subLink.name}
+                                        <div key={index} className='p-5 animate__animated animate__fadeInDownBig'>
+                                            <li onClick={() => router.push(subLink.routePath)} className='flex flex-col '>{subLink.name}
                                                 {subLink.subCategories && subLink.subCategories.map((subCat, index) => <Link className='font-light' key={index} href={subCat.routePath}>{subCat.name}</Link>)}
-                                            </Link>
-                                        </li>
+                                            </li>
+                                        </div>
                                     )
                                     }
-                                </li>
-                            </Link>
+                                </div>
+                            </div>
                         ))}
                     </ul>
                 </div>

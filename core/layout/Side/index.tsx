@@ -1,375 +1,70 @@
-import useApi from '@/core/services/useApi'
+import useApi from '@/hooks/useApi'
 import { Header } from '@/models/Header'
-import React from 'react'
-import style from '@/styles/Scrollbar.module.scss'
+import React, { useEffect, useState } from 'react'
+import style from '@/styles/Side.module.scss'
 import { IconButton } from '@/core/components'
+import { getAllSideCategory, getAllSideComponent } from '@/service/side'
+import { Category } from '@/models/Category'
+
 
 type Props = {}
+type Response = [Category[], Category[]]
 
 export default function Side({ }: Props) {
-    const { response } = useApi<Header[]>('/data/header/header-middle.json')
-
-    const result = response.slice(3, 4)
-    const items = result.map((e: any) => e.subCategories)
-    const names = items.map((a: any) => (a.slice(5, 6).map((b: any) => b.subCategories)))
-
+    const [titles, setTitle] = useState<Category[] | null>(null)
+    const [subTitles, setSubTitle] = useState<Category[] | null>(null)
+    const PromiseAll = () => Promise.all([getAllSideCategory(), getAllSideComponent()])
+    const { response } = useApi({ service: PromiseAll, effects: [] })
 
 
-    // items.map((a: any) => (a.slice(5, 6).map((b: any) => console.log(b.subCategories.map((c: any) => c.name))
-    // )))
+    useEffect(() => {
+        init()
+    }, [response?.length])
 
-
-
-
-
-
-
-
-
+    function init() {
+        if (response?.length) {
+            const [sideCategory, sideComponent] = response
+            if (!titles?.length) {
+                setTitle(sideCategory)
+                setSubTitle(sideComponent)
+            }
+        }
+    }
     return (
-        <div className={`col-span-1 py-[5%] pr-[5%] overflow-y-scroll h-80 font-medium ${style.scroll_bar}`}>
-            {[{
-                id: 1,
-                name: "Pick Up Today"
-            }].map((e) =>
-                <div className='py-5 border-b flex justify-between items-center'>
-                    <p>{e.name}</p>
-                    <input type="checkbox" />
+        <div className={`col-span-1 py-[5%] overflow-y-scroll h-[80vw] ${style.scroll__bar}`}>
+            <div className='mr-[10%]'>
+                <div className='py-5 border-b flex justify-between items-center pr-[5%]'>
+                    <p>Pick Up Today</p>
+                    <label className='switch'>
+                        <input type="checkbox" />
+                        <span className='slider'></span>
+                    </label>
                 </div>
-            )}
-
-            {[{
-                id: 1,
-                name: "Sale & Offer"
-            }].map((e) =>
-                <div className='py-5 border-b '>
-                    <div className='flex justify-between items-center'>
-                        <p>{e.name}</p>
-                        <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
-                    </div>
-                    <div className=''>
-                        <span className='flex justify-between items-center pr-[5%]'><p>Back To School</p><input type="checkbox" name="sale" id="" /></span>
-                        <span className='flex justify-between items-center pr-[5%]'><p>Sale</p><input type="checkbox" name="sale" id="" /></span>
-                    </div>
+                <div className='py-5 border-b flex flex-col justify-between gap-y-3 font-medium'>
+                    {titles?.map((title, index) =>
+                        <p key={index}>{title.name}</p>
+                    )}
                 </div>
-            )}
-            {[{
-                id: 1,
-                name: "Gender"
-            }].map((e) =>
-                <div className='py-5 border-b flex justify-between items-center'>
-                    <p>{e.name}</p>
-                    <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
-                </div>
-            )}
-            {[{
-                id: 1,
-                name: "Kids"
-            }].map((e) =>
-                <div className='py-5 border-b '>
-                    <div className='flex justify-between items-center'>
-                        <p>{e.name}</p>
-                        <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
+                {subTitles?.map((subTitle, index) =>
+                    <div key={index} className={`py-5 border-b`}>
+                        <div className={`flex justify-between items-center font-medium `}>
+                            <p>{subTitle.name}</p>
+                            <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} NoBackgroundHover={true} />
+                        </div>
+                        <div className={`${subTitle.name === "Colors" ? 'grid grid-cols-3 gap-3 justify-between' : ''}`}>
+                            {subTitle.subCategories && subTitle.subCategories.map((subCat, index) =>
+                                <div key={index}>
+                                    <span className={`flex items-center pr-[5%] ${subTitle.name !== "Colors" ? 'block' : 'hidden'}`}><input type="checkbox" className='h-5 w-5 mr-5' name="sale" id="" /><p>{subCat.name}</p></span>
+                                    <span className={`flex flex-col justify-between items-center pr-[5%] ${subTitle.name === "Colors" ? 'block' : 'hidden'}`}>
+                                        <div className={`w-10 h-10 rounded-full border`} style={{ backgroundColor: subCat.name.toLocaleLowerCase() }}></div>
+                                        <p className='text-sm'>{subCat.name}</p>
+                                    </span>
+                                </div>)
+                            }
+                        </div>
                     </div>
-                    <div className=''>
-                        <span className='flex justify-between items-center pr-[5%]'><p>Boys</p><input type="checkbox" name="sale" id="" /></span>
-                        <span className='flex justify-between items-center pr-[5%]'><p>Girls</p><input type="checkbox" name="sale" id="" /></span>
-                    </div>
-                </div>
-            )}
-            {[{
-                id: 1,
-                name: "Shop by Price"
-            }].map((e) =>
-                <div className='py-5 border-b '>
-                    <div className='flex justify-between items-center'>
-                        <p>{e.name}</p>
-                        <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
-                    </div>
-                    <div className=''>
-                        <span className='flex justify-between items-center pr-[5%]'><p>40% Off and Up</p><input type="checkbox" name="sale" id="" /></span>
-                        <span className='flex justify-between items-center pr-[5%]'><p>30% Off and Up</p><input type="checkbox" name="sale" id="" /></span>
-                        <span className='flex justify-between items-center pr-[5%]'><p>0% Off and Up</p><input type="checkbox" name="sale" id="" /></span>
-                        <p>+ More</p>
-                    </div>
-                </div>
-            )}
-            {[{
-                id: 1,
-                name: "Products Discounts"
-            }].map((e) =>
-                <div className='py-5 border-b '>
-                    <div className='flex justify-between items-center'>
-                        <p>{e.name}</p>
-                        <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
-                    </div>
-                    <div className=''>
-                        <span className='flex justify-between items-center pr-[5%]'><p>40% Off and Up</p><input type="checkbox" name="sale" id="" /></span>
-                        <span className='flex justify-between items-center pr-[5%]'><p>30% Off and Up</p><input type="checkbox" name="sale" id="" /></span>
-                        <span className='flex justify-between items-center pr-[5%]'><p>0% Off and Up</p><input type="checkbox" name="sale" id="" /></span>
-                        <p>+ More</p>
-                    </div>
-                </div>
-            )}
-            {[{
-                id: 1,
-                name: "Colors"
-            }].map((e) =>
-                <div className='py-5 border-b '>
-                    <div className='flex justify-between items-center'>
-                        <p>{e.name}</p>
-                        <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
-                    </div>
-                    <div className='flex gap-3 flex-wrapp'>
-                        {[
-                            {
-                                id: 1,
-                                name: "Purple",
-                                color: '#800080',
-                            },
-                            {
-                                id: 2,
-                                name: "Black",
-                                color: '#800080',
-                            },
-                            {
-                                id: 3,
-                                name: "Red",
-                                color: '#800080',
-                            },
-                            {
-                                id: 4,
-                                name: "Orange",
-                                color: '#800080',
-                            },
-                            {
-                                id: 5,
-                                name: "Blue",
-                                color: '#800080',
-                            },
-                            {
-                                id: 6,
-                                name: "White",
-                                color: '#800080',
-                            },
-                        ].map((e) =>
-                            <div className='flex flex-col justify-center '>
-                                <div className={`rounded-full w-10 h-10 bg-[${e.color}]`}></div>
-                                <p className='py-5 border-b'>{e.name}</p>
-                            </div>
-                        )}
-                    </div>
-                </div>
-            )}
-            {[
-                {
-                    id: 1,
-                    name: "Brands",
-                }
-            ].map((e) =>
-                <div className='py-5 border-b '>
-                    <div className='flex justify-between items-center'>
-                        <p>{e.name}</p>
-                        <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
-                    </div>
-                    {[
-                        {
-                            id: 1,
-                            name: "Nike Sportwears",
-                        },
-                        {
-                            id: 2,
-                            name: "Jordan",
-                        },
-                        {
-                            id: 3,
-                            name: "NikeLab",
-                        },
-                        {
-                            id: 4,
-                            name: "ACG",
-                        },].map((e) => <span className='flex justify-between items-center pr-[5%]'><p>{e.name}</p><input type="checkbox" name="sale" id="" /></span>)}
-                    <p>+ More</p>
-                </div>
-            )}
-            {[
-                {
-                    id: 1,
-                    name: "Sports & Activities",
-                }
-            ].map((e) =>
-                <div className='py-5 border-b '>
-                    <div className='flex justify-between items-center'>
-                        <p>{e.name}</p>
-                        <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
-                    </div>
-                    {[
-                        {
-                            id: 1,
-                            name: "Lifestyle",
-                        },
-                        {
-                            id: 2,
-                            name: "Running",
-                        },
-                        {
-                            id: 3,
-                            name: "Training & Gym",
-                        },
-                        {
-                            id: 4,
-                            name: "Yoga",
-                        },].map((e) => <span className='flex justify-between items-center pr-[5%]'><p>{e.name}</p><input type="checkbox" name="sale" id="" /></span>)}
-                    <p>+ More</p>
-                </div>
-            )}
-            {[
-                {
-                    id: 1,
-                    name: "Icons",
-                }
-            ].map((e) =>
-                <div className='py-5 border-b '>
-                    <div className='flex justify-between items-center'>
-                        <p>{e.name}</p>
-                        <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
-                    </div>
-                    {[
-                        {
-                            id: 1,
-                            name: "Air Force 1",
-                        },
-                        {
-                            id: 2,
-                            name: "Air Max",
-                        },
-                        {
-                            id: 3,
-                            name: "Alpha Huarache",
-                        },
-                        {
-                            id: 4,
-                            name: "Benassi",
-                        },].map((e) => <span className='flex justify-between items-center pr-[5%]'><p>{e.name}</p><input type="checkbox" name="sale" id="" /></span>)}
-                    <p>+ More</p>
-                </div>
-            )}
-            {[
-                {
-                    id: 1,
-                    name: "Sports & Activities",
-                }
-            ].map((e) =>
-                <div className='py-5 border-b '>
-                    <div className='flex justify-between items-center'>
-                        <p>{e.name}</p>
-                        <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
-                    </div>
-                    {[
-                        {
-                            id: 1,
-                            name: "Air Max 1",
-                        },
-                        {
-                            id: 2,
-                            name: "Air Max 90",
-                        },
-                        {
-                            id: 3,
-                            name: "Air Max 95",
-                        },
-                        {
-                            id: 4,
-                            name: "Air Max 97",
-                        },].map((e) => <span className='flex justify-between items-center pr-[5%]'><p>{e.name}</p><input type="checkbox" name="sale" id="" /></span>)}
-                    <p>+ More</p>
-                </div>
-            )}
-            {[
-                {
-                    id: 1,
-                    name: "Athletes",
-                }
-            ].map((e) =>
-                <div className='py-5 border-b '>
-                    <div className='flex justify-between items-center'>
-                        <p>{e.name}</p>
-                        <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
-                    </div>
-                    {[
-                        {
-                            id: 1,
-                            name: "LeBron James ",
-                        },
-                        {
-                            id: 2,
-                            name: "Kevin Durant",
-                        },
-                        {
-                            id: 3,
-                            name: "Paul Goerge",
-                        },
-                        {
-                            id: 4,
-                            name: "Tiger Woods",
-                        },].map((e) => <span className='flex justify-between items-center pr-[5%]'><p>{e.name}</p><input type="checkbox" name="sale" id="" /></span>)}
-                    <p>+ More</p>
-                </div>
-            )}
-            {[
-                {
-                    id: 1,
-                    name: "Collaborator",
-                }
-            ].map((e) =>
-                <div className='py-5 border-b '>
-                    <div className='flex justify-between items-center'>
-                        <p>{e.name}</p>
-                        <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
-                    </div>
-                    {[
-                        {
-                            id: 1,
-                            name: "Nike & MMW",
-                        },
-                        {
-                            id: 2,
-                            name: "Gyakusou",
-                        }].map((e) => <span className='flex justify-between items-center pr-[5%]'><p>{e.name}</p><input type="checkbox" name="sale" id="" /></span>)}
-                    <p>+ More</p>
-                </div>
-            )}
-            {[
-                {
-                    id: 1,
-                    name: "Best For",
-                }
-            ].map((e) =>
-                <div className='py-5 border-b '>
-                    <div className='flex justify-between items-center'>
-                        <p>{e.name}</p>
-                        <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} />
-                    </div>
-                    {[
-                        {
-                            id: 1,
-                            name: "Warm Weather ",
-                        },
-                        {
-                            id: 2,
-                            name: "Wet Weather Conditions",
-                        },
-                        {
-                            id: 3,
-                            name: "Cold Weather",
-                        },
-                        {
-                            id: 4,
-                            name: "Dry Weather Conditions",
-                        },].map((e) => <span className='flex justify-between items-center pr-[5%]'><p>{e.name}</p><input type="checkbox" name="sale" id="" /></span>)}
-                    <p>+ More</p>
-                </div>
-            )}
-        </div>
+                )}
+            </div>
+        </div >
     )
 }
