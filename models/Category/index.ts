@@ -1,5 +1,4 @@
-import { StaticImport } from "next/dist/shared/lib/get-img-props"
-
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 export interface Category {
     id: number,
@@ -16,7 +15,8 @@ export interface Category {
     headline: boolean,
     closer: boolean,
     imageSize: number,
-    imageSmallScreen: number
+    imageSmallScreen: number;
+    isExpanded: boolean | undefined;
     subCategories: {
         id: number,
         name: string,
