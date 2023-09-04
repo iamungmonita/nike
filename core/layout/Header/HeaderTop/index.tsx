@@ -17,8 +17,8 @@ export default function HeaderTop() {
             </div>
             <ul className='text-xs font-medium flex z-20'>
                 {response?.map((navLink: Header) =>
-                    <div key={navLink.id} className={`border-r-gray-500 hover:text-gray-500 cursor-pointer sticky group/navLink text-center py-3`}>
-                        <li className='border-r px-5' onClick={() => router.push(navLink.routePath)}>{navLink.name}</li>
+                    <div key={navLink.id} className={` hover:text-gray-500 cursor-pointer sticky group/navLink text-center py-3`}>
+                        <li className='pl-5' onClick={() => router.push(navLink.routePath)}>{navLink.name}</li>
                         {navLink.subCategories &&
                             <ul className='hidden group-hover/navLink:flex flex-col fixed top-10 w-52 bg-white text-left hover:block p-5 gap-y-2 shadow'>
                                 {navLink.subCategories?.map((subLink, index) =>

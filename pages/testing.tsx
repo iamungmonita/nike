@@ -1,73 +1,25 @@
-
-import { SubHeader, SubSubHeader } from '@/models/Header'
-import { log } from 'console'
-import { filter } from 'lodash'
-
-import React, { useEffect, useState } from 'react'
-import { Header } from '@/models/Header'
-import { getAllHeaderId1, getAllSubHeaderId1 } from '@/service/header/subHeader'
-import useApi from '@/hooks/useApi'
-
+import React, { useState } from 'react'
+import Image from 'next/image'
 type Props = {}
 
-type Response = [SubHeader[], SubSubHeader[]]
-
 export default function testing({ }: Props) {
-    const [categoriesItems, setCategoriesItems] = useState<SubHeader[]>([])
-    const PromiseAll = () => Promise.all([getAllHeaderId1(), getAllSubHeaderId1()])
-    const { response } = useApi({ service: PromiseAll, effects: [] })
-
-
-    useEffect(() => {
-        init()
-    }, [response?.length])
-
-    function init() {
-        if (response?.length) {
-            const [HeaderId1, subHeaderId1] = response
-            if (!categoriesItems.length) {
-                const mappedCategory = HeaderId1.map((cat: SubHeader) => {
-                    const filterSub = filter(subHeaderId1, { subCategoryId: cat.id })
-                    return {
-                        ...cat,
-                        categoryId: cat.id,
-                        subCategories: filterSub
-                    }
-                })
-                setCategoriesItems(mappedCategory)
-            }
+    const [showSubtitle, setShowSubtitle] = useState<boolean>(true)
+    const [showNumber, setShowNumber] = useState<number>(0)
+    function toggleSubtitle(Id: number) {
+        if ([{ id: 1, name: 'title', subtitle: 'subtitle' }, { id: 2, name: 'title' }, { id: 3, name: 'title', subtitle: 'subtitle' }, { id: 4, name: 'title' }].map((e) => e.id === Id)) {
+            setShowSubtitle(!showSubtitle)
         }
+        setShowNumber(Id)
     }
     return (
-        <div className='flex max-w-[70vw] mx-auto'>
-            <div className='max-w-[25%] bg-red-200 '>
-                {categoriesItems.map((item) =>
-                    <div className='flex flex-col gap-y-5'>
-                        <div>
-                            <h2 className='font-medium'>{item.id === 1 && item.name}</h2>
-                            <p>{item.subCategories.map((sub) => <p>{sub.subCategoryId === 1 && sub.name}</p>)}</p>
-                        </div>
-                        <div>
-                            <h2 className='font-medium'>{item.id === 2 && item.name}</h2>
-                            <p>{item.subCategories.map((sub) => <p>{sub.subCategoryId === 2 && sub.name}</p>)}</p>
-                        </div>
-                    </div>
-                )}
-            </div>
-            <div className='max-w-[25%] bg-red-200 '>
-                {categoriesItems.map((item) =>
-                    <div className='flex flex-col gap-y-5'>
-                        <div>
-                            <h2 className='font-medium'>{item.id === 1 && item.name}</h2>
-                            <p>{item.subCategories.map((sub) => <p>{sub.subCategoryId === 1 && sub.name}</p>)}</p>
-                        </div>
-                        <div>
-                            <h2 className='font-medium'>{item.id === 2 && item.name}</h2>
-                            <p>{item.subCategories.map((sub) => <p>{sub.subCategoryId === 2 && sub.name}</p>)}</p>
-                        </div>
-                    </div>
-                )}
-            </div>
+        <div>
+            {[{ id: 1, name: 'title', subtitle: 'subtitle' }, { id: 2, name: 'title' }, { id: 3, name: 'title', subtitle: 'subtitle' }, { id: 4, name: 'title' }].map((e) =>
+                <div>
+                    <p className='flex w-[50px] justify-between'>{e.id}<Image src="/icons/arrow_down.svg" width={20} height={20} alt='' onClick={() => toggleSubtitle(e.id)} />
+                    </p>
+                    {showSubtitle && e.id === showNumber && <p>{e.subtitle} </p>}
+                </div>)}
+
         </div>
     )
 }

@@ -38,7 +38,7 @@ export default function Side({ }: Props) {
     }
 
     return (
-        <div className={`col-span-1 py-[5%] overflow-y-scroll h-[80vw] ${style.scroll__bar}`}>
+        <div className={`col-span-1 py-[5%] overflow-y-scroll h-[80vw] hidden lg:block ${style.scroll__bar}`}>
             <div className='mr-[10%]'>
                 <div className='py-5 border-b flex justify-between items-center pr-[5%]'>
                     <p>Pick Up Today</p>
