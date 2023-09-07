@@ -15,7 +15,7 @@ type SidebarProps = {
 export default function Sidebar(props: SidebarProps) {
     const [curr, setCurr] = useState<number>(0)
     const { onCancelSideBar } = props
-    const sliderImages = [1, 2, 3, 4, 5]
+    const sliderImages = [1, 2, 3]
     const [category, setCategory] = useState<Header[]>([])
     const [subCategories, setSubCategories] = useState<SubHeader[][]>([])
     const [subSubCategories, setSubSubCategories] = useState<SubHeader[]>([])
@@ -73,8 +73,8 @@ export default function Sidebar(props: SidebarProps) {
                     {subCategories.map((e) =>
                         <div className='p-5 space-y-5'>
                             <span className='flex justify-start items-center space-x-5 '><IconButton IconImage={'/icons/arrow_left.svg'} IconHeight={25} IconWidth={25} onClick={prev} NoBackgroundHover={true} NoPadding={true} /><p>All</p></span>
-                            {category.map((cat) => <h2 className='font-medium text-2xl px-10'>{cat.name}</h2>)}
-                            {e.map((b, index) => <div className='flex justify-between px-10' key={index}>
+                            {category.map((cat) => <h2 className='font-medium text-2xl pl-10 pr-5'>{cat.name}</h2>)}
+                            {e.map((b, index) => <div className='flex justify-between pl-10 pr-5' key={index}>
                                 <Link href={b.routePath}>{b.name}</Link>
                                 <IconButton IconImage={'/icons/arrow_right.svg'} IconHeight={25} IconWidth={25} onClick={() => nextPage(index)} NoBackgroundHover={true} NoPadding={true} />
                             </div>)}
