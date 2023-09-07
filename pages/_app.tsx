@@ -7,16 +7,23 @@ import Head from 'next/head';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const isWithLayout = ['/product'].includes(router.pathname);
+  const isWithLayout = ['/sign_in'].includes(router.pathname);
 
   return (
-    (!isWithLayout && (
+    (!isWithLayout ? (
       <Layout>
         <Head>
           <link rel="shortcut icon" href="/icons/nike.svg" />
         </Head>
         <Component {...pageProps} />
       </Layout>
-    ))
+    ) :
+      <>
+        <Head>
+          <link rel="shortcut icon" href="/icons/nike.svg" />
+        </Head>
+        <Component {...pageProps} />
+      </>
+    )
   )
 }

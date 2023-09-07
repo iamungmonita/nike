@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { IconButton, Sidebar } from '@/core/components';
 import { Header } from '@/models/Header';
-import { heart, menu, search, shoppingBag } from '@/public/icons';
+import { heart, menu, search, shoppingBag, login } from '@/public/icons';
 import svgStyle from '@/styles/SVG.module.scss';
 import SearchItem from '../SearchItem';
 import useApi from '@/hooks/useApi';
@@ -77,6 +77,7 @@ export default function HeaderMiddle() {
                             <IconButton IconImage={heart} IconWidth={25} IconHeight={25} IconHidden />
                             <IconButton IconImage={shoppingBag} IconWidth={25} IconHeight={25} />
                             <IconButton IconImage={menu} IconWidth={25} IconHeight={25} IconMediumHidden onClick={toggleSideBar} />
+                            <IconButton IconImage={login} IconWidth={25} IconHeight={25} IconMediumHidden />
                         </ul>
                     </div>
                 </div>

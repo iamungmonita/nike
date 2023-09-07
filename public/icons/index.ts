@@ -16,6 +16,7 @@ import youtube from '@/public/icons/youtube.svg';
 import filter from '@/public/icons/filter.svg';
 import arrow_down from '@/public/icons/arrow_down.svg';
 import arrow_up from '@/public/icons/arrow_up.svg';
+import login from '@/public/icons/login.svg';
 
 export {
     filter,
@@ -35,5 +36,6 @@ export {
     jordan,
     plus,
     arrow_down,
-    arrow_up
+    arrow_up,
+    login
 }
