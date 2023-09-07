@@ -13,6 +13,7 @@ export interface SubHeader {
     routePath: string,
     categoryId: number,
     subCategories: SubSubHeader[]
+    isExpanded?: boolean | undefined
 }
 export interface SubSubHeader {
     id: number,

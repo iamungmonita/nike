@@ -3,6 +3,7 @@ export interface Footer {
     name: string,
     routePath: string,
     subCategories: subCategory[]
+    isExpanded: boolean | undefined
 }
 
 export interface FooterTermOfUse {

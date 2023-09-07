@@ -31,7 +31,7 @@ export default function Side({ }: Props) {
         }
     }
 
-    function onClickExpanded (index: number){
+    function onClickExpanded(index: number) {
         subTitles[index].isExpanded = !subTitles[index].isExpanded;
         setSubTitle(subTitles);
         setRefresh(!refresh);
@@ -54,9 +54,9 @@ export default function Side({ }: Props) {
                 </div>
                 {subTitles?.map((subTitle, index) =>
                     <div key={subTitle.id} className={`py-5 border-b`}>
-                        <div onClick={()=> onClickExpanded(index)} className="flex justify-between items-center font-medium cursor-pointer">
+                        <div onClick={() => onClickExpanded(index)} className="flex justify-between items-center font-medium cursor-pointer">
                             <p>{subTitle.name}</p>
-                            <IconButton  IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} NoBackgroundHover={true} />
+                            <IconButton IconImage='/icons/arrow_down.svg' IconHeight={20} IconWidth={20} NoBackgroundHover={true} />
                         </div>
                         <div className={`${subTitle.name === "Colors" ? 'grid grid-cols-3 gap-3 justify-between' : ''}`}>
                             {subTitle.isExpanded && subTitle.subCategories.length > 0 && subTitle.subCategories.map((subCat) =>

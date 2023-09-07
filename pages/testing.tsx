@@ -1,25 +1,42 @@
-import React, { useState } from 'react'
+import useApi from '@/hooks/useApi'
+import { getFooter } from '@/service/footer'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { Footer } from '@/models/Footer'
 type Props = {}
 
 export default function testing({ }: Props) {
-    const [showSubtitle, setShowSubtitle] = useState<boolean>(true)
-    const [showNumber, setShowNumber] = useState<number>(0)
-    function toggleSubtitle(Id: number) {
-        if ([{ id: 1, name: 'title', subtitle: 'subtitle' }, { id: 2, name: 'title' }, { id: 3, name: 'title', subtitle: 'subtitle' }, { id: 4, name: 'title' }].map((e) => e.id === Id)) {
-            setShowSubtitle(!showSubtitle)
+    const [toggleLogo, setToggleLogo] = useState<boolean>(false)
+    const PromiseAction = () => Promise.resolve(getFooter())
+    const { response } = useApi({ service: PromiseAction, effects: [] })
+    const [result, setResult] = useState<Footer[]>([])
+    const [refresh, setRefresh] = useState<boolean>(false)
+    useEffect(() => {
+        if (response?.length) {
+            setResult(response)
         }
-        setShowNumber(Id)
+    }, [response?.length, refresh])
+
+    function toggleExpanded(index: number) {
+        setToggleLogo(!toggleLogo)
+        if (result.length) {
+            result[index].isExpanded = !result[index].isExpanded
+            setResult(result)
+
+        }
     }
     return (
         <div>
-            {[{ id: 1, name: 'title', subtitle: 'subtitle' }, { id: 2, name: 'title' }, { id: 3, name: 'title', subtitle: 'subtitle' }, { id: 4, name: 'title' }].map((e) =>
-                <div>
-                    <p className='flex w-[50px] justify-between'>{e.id}<Image src="/icons/arrow_down.svg" width={20} height={20} alt='' onClick={() => toggleSubtitle(e.id)} />
-                    </p>
-                    {showSubtitle && e.id === showNumber && <p>{e.subtitle} </p>}
-                </div>)}
-
-        </div>
+            {result?.map((res, index) =>
+                <div className='max-w-[500px] mx-auto'>
+                    <span className='flex justify-between' onClick={() => toggleExpanded(index)} >
+                        <p className='font-medium'>{res.name} </p>
+                        {res.subCategories && <Image src={res.isExpanded && toggleLogo ? '/icons/arrow_down.svg' : '/icons/arrow_up.svg'} height={25} width={25} alt='' />}
+                    </span>
+                    {res.isExpanded && res.subCategories.map((sub) => <p className='text-sm bg-red-200'>{sub.name}</p>)}
+                </div>
+            )
+            }
+        </div >
     )
 }

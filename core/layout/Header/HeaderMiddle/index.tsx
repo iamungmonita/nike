@@ -82,8 +82,8 @@ export default function HeaderMiddle() {
                 </div>
                 {openSearch && <SearchItem onCancel={onCancelSearch} />}
             </div >
-            <div className={`top-0 right-0 w-[350px] bg-white shadow z-30 h-full animate__animated  fixed ${openSideBar ? 'animate__fadeInRightBig' : 'animate__fadeOutRightBig'}`}>
-                <Sidebar NavLinks={response} onCancelSideBar={onCancelSideBar} />
+            <div className={`top-0 right-0 w-[350px] bg-white shadow z-30 h-full overflow-scroll animate__animated fixed ${openSideBar ? 'animate__fadeInRightBig' : 'animate__fadeOutRightBig'}`}>
+                <Sidebar onCancelSideBar={onCancelSideBar} />
             </div >
         </>
     )

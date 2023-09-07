@@ -32,7 +32,6 @@ export default function Carousel(props: CarouselProps) {
 
 
     }
-    console.log(currentSlide);
 
     return (
         <Swiper className='w-full pt-5 pb-10'>
