@@ -8,7 +8,6 @@ import SearchItem from '../SearchItem';
 import useApi from '@/hooks/useApi';
 import { useRouter } from 'next/router';
 import { getHeaderMiddle } from '@/service/header';
-
 export default function HeaderMiddle() {
     const router = useRouter()
     const PromiseAll = () => Promise.resolve(getHeaderMiddle())
@@ -37,6 +36,9 @@ export default function HeaderMiddle() {
     }
     function onCancelSideBar() {
         setOpenSideBar(false);
+    }
+    function pushRouter(url: string) {
+        router.push(url)
     }
     return (
         <>
@@ -77,7 +79,7 @@ export default function HeaderMiddle() {
                             <IconButton IconImage={heart} IconWidth={25} IconHeight={25} IconHidden />
                             <IconButton IconImage={shoppingBag} IconWidth={25} IconHeight={25} />
                             <IconButton IconImage={menu} IconWidth={25} IconHeight={25} IconMediumHidden onClick={toggleSideBar} />
-                            <IconButton IconImage={login} IconWidth={25} IconHeight={25} IconMediumHidden />
+                            <IconButton IconImage={login} IconWidth={25} IconHeight={25} IconMediumHidden onClick={() => pushRouter('/sign_in')} />
                         </ul>
                     </div>
                 </div>

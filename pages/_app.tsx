@@ -9,6 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const isWithLayout = ['/sign_in'].includes(router.pathname);
 
+
   return (
     (!isWithLayout ? (
       <Layout>

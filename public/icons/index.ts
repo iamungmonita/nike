@@ -17,8 +17,10 @@ import filter from '@/public/icons/filter.svg';
 import arrow_down from '@/public/icons/arrow_down.svg';
 import arrow_up from '@/public/icons/arrow_up.svg';
 import login from '@/public/icons/login.svg';
+import minus from '@/public/icons/minus.svg';
 
 export {
+    minus,
     filter,
     heart,
     shoppingBag,
