@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react"
-
+import { useEffect, useState } from 'react';
 
 export type HookTypeParam<T> = {
     service: () => Promise<T>
@@ -13,11 +12,12 @@ export type ReturnHookType<T> = {
 }
 
 export default function useApi<T>(params: HookTypeParam<T>): ReturnHookType<T> {
-    const { service, effects } = params
-    const [loading, setLoading] = useState(false)
-    const [loaded, setLoaded] = useState(false)
-    const [response, setResponse] = useState<T | null>(null)
-    const [error, setError] = useState(false)
+    const { service, effects } = params;
+    const [loading, setLoading] = useState(false);
+    const [loaded, setLoaded] = useState(false);
+    const [response, setResponse] = useState<T | null>(null);
+    const [error, setError] = useState(false);
+
     useEffect(() => {
         setLoading(true)
         service()
