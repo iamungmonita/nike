@@ -1,58 +1,86 @@
 [
-    {
-        "id" : 1,
-        "name" : "Air Force 1",
-        "routePath" : "/",
-        "picture": "/pictures/desktop/iconic/1.webp",
-        "imageSize" : 300,
-        "imageSmallSCreen" : 400
-    },
-    {
-        "id" : 2,
-        "name" : "Air Jordan 1",
-        "routePath" : "/",
-        "picture": "/pictures/desktop/iconic/2.webp",
-        "imageSize" : 300,
-        "imageSmallSCreen" : 400
-    },
-    {
-        "id" : 3,
-        "name" : "Air Max",
-        "routePath" : "/",
-        "picture": "/pictures/desktop/iconic/3.webp",
-        "imageSize" : 300,
-        "imageSmallSCreen" : 400
-    },
-    {
-        "id" : 4,
-        "name" : "Dunk",
-        "routePath" : "/",
-        "picture": "/pictures/desktop/iconic/4.webp",
-        "imageSize" : 300,
-        "imageSmallScreen" : 400
-    },
-    {
-        "id" : 5,
-        "name" : "Nike Blazer",
-        "routePath" : "/",
-        "picture": "/pictures/desktop/iconic/5.webp",
-        "imageSize" : 300,
-        "imageSmallScreen" : 400
-    },
-    {
-        "id" : 6,
-        "name" : "Metcon",
-        "routePath" : "/",
-        "picture": "/pictures/desktop/iconic/6.webp",
-        "imageSize" : 300,
-        "imageSmallScreen" : 400
-    },
-    {
-        "id" : 7,
-        "name" : "Pegasus Running Shoes",
-        "routePath" : "/",
-        "picture": "/pictures/desktop/iconic/7.webp",
-        "imageSize" : 300,
-        "imageSmallScreen" : 400
-    }
+  {
+    "id": 1,
+    "price": 100,
+    "discountedPrice": 80,
+    "color": 6,
+    "categoryId": 1,
+    "name": "Air Force 1",
+    "routePath": "/",
+    "picture": "/pictures/desktop/iconic/1.webp",
+    "imageSize": 300,
+    "imageSmallSCreen": 400
+  },
+  {
+    "id": 2,
+    "price": 100,
+    "discountedPrice": 80,
+    "color": 6,
+    "categoryId": 1,
+    "name": "Air Jordan 1",
+    "routePath": "/",
+    "picture": "/pictures/desktop/iconic/2.webp",
+    "imageSize": 300,
+    "imageSmallSCreen": 400
+  },
+  {
+    "id": 3,
+    "price": 100,
+    "discountedPrice": 80,
+    "color": 6,
+    "categoryId": 1,
+    "name": "Air Max",
+    "routePath": "/",
+    "picture": "/pictures/desktop/iconic/3.webp",
+    "imageSize": 300,
+    "imageSmallSCreen": 400
+  },
+  {
+    "id": 4,
+    "price": 100,
+    "discountedPrice": 80,
+    "color": 6,
+    "categoryId": 1,
+    "name": "Dunk",
+    "routePath": "/",
+    "picture": "/pictures/desktop/iconic/4.webp",
+    "imageSize": 300,
+    "imageSmallScreen": 400
+  },
+  {
+    "id": 5,
+    "price": 100,
+    "discountedPrice": 80,
+    "color": 6,
+    "categoryId": 1,
+    "name": "Nike Blazer",
+    "routePath": "/",
+    "picture": "/pictures/desktop/iconic/5.webp",
+    "imageSize": 300,
+    "imageSmallScreen": 400
+  },
+  {
+    "id": 6,
+    "price": 100,
+    "discountedPrice": 80,
+    "color": 6,
+    "categoryId": 1,
+    "name": "Metcon",
+    "routePath": "/",
+    "picture": "/pictures/desktop/iconic/6.webp",
+    "imageSize": 300,
+    "imageSmallScreen": 400
+  },
+  {
+    "id": 7,
+    "price": 100,
+    "discountedPrice": 80,
+    "color": 6,
+    "categoryId": 1,
+    "name": "Pegasus Running Shoes",
+    "routePath": "/",
+    "picture": "/pictures/desktop/iconic/7.webp",
+    "imageSize": 300,
+    "imageSmallScreen": 400
+  }
 ]

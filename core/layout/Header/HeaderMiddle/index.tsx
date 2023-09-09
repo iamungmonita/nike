@@ -53,11 +53,11 @@ export default function HeaderMiddle() {
                 <div className='items-center hidden md:block h-[80%]'>
                     <ul className='flex justify-center h-20'>
                         {response?.map((navLink: Header) => (
-                            <div className='p-3 font-medium group/item hover:border-b' key={navLink.id} onClick={() => router.push(navLink.routePath)}>{navLink.name}
+                            <div className='p-3 cursor-pointer font-medium group/item hover:border-b' key={navLink.id} onClick={() => router.push(navLink.routePath)}>{navLink.name}
                                 <div className='hidden group-hover/item:grid z-20 grid-cols-4 grid-rows-2 top-20 absolute left-[50%] -translate-x-[50%] bg-white w-full overflow-x-hidden h-[80vh] hover:block px-52'>
                                     {navLink.subCategories.filter((sublink) => sublink.categoryId === navLink.id).map((subLink, index) =>
                                         <div key={index} className='p-5 animate__animated animate__fadeInDownBig'>
-                                            <li onClick={() => router.push(subLink.routePath)} className='flex flex-col '>{subLink.name}
+                                            <li onClick={() => router.push(subLink.routePath)} className='flex flex-col'>{subLink.name}
                                                 {subLink.subCategories && subLink.subCategories.map((subCat, index) => <Link className='font-light' key={index} href={subCat.routePath}>{subCat.name}</Link>)}
                                             </li>
                                         </div>
