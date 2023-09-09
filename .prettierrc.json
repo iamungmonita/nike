@@ -1,5 +1,10 @@
 {
-    "singleQuote": true, # Use single quotes instead of double quotes
-    "tabWidth": 2,       # Number of spaces per indentation level
-    "semi": true         # Print semicolons
-}
+    "trailingComma": "es5",
+    "printWidth": 150,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "jsxBracketSameLine": true,
+    "quotemark": "double"
+  }
