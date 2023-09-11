@@ -37,9 +37,9 @@ export default function Card(props: ItemProps) {
     return (
         <>
             {CardVersion === 1 &&
-                <div className={`h-auto [&:not(:last-child)]:mr-5 `} >
-                    <Image className={`min-w-[400px] h-[400px] object-contain`} src={itemPicture} height={400} width={400} alt='' />
-                    <div className='py-[5%]'>
+                <div className={`h-auto [&:not(:last-child)]:mr-5`} >
+                    <Image className={`min-w-[350px] h-[350px] object-cover`} src={itemPicture} height={400} width={400} alt='' />
+                    <div className='py-3 '>
                         <p className='text-sm font-light sm:text-xl sm:font-medium'>{itemTag}</p>
                         <span className='flex justify-between items-center'>{itemTag && <p className='text-xl font-medium block sm:hidden'>{itemName}</p>}<p className='font-medium text-md'>{!itemTag && itemName}</p> {itemPrice && <p className='hidden sm:block'>{'$' + itemPrice}</p>}</span>
                         <p>{itemDescription && itemDescription}</p>
@@ -65,9 +65,9 @@ export default function Card(props: ItemProps) {
                         </div>
                     </div>
                     {/* large screen */}
-                    <div className={`min-w-[300px] h-auto  hidden sm:block [&:not(:last-child)]:mr-5`}>
+                    <div className={`min-w-[400px] h-auto  hidden sm:block [&:not(:last-child)]:mr-5`}>
 
-                        <Image className='w-[300px] h-[300px] object-contain' src={itemPicture} height={400} width={400} alt='' />
+                        <Image className='w-[400px] h-[400px] object-contain' src={itemPicture} height={400} width={400} alt='' />
 
                         <div className='py-[5%] flex flex-col'>
                             {itemTag && <p className='text-sm font-light sm:text-xl sm:font-medium'>{itemTag}</p>}

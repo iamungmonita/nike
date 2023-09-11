@@ -3,13 +3,14 @@ import { Category } from '@/models/Category'
 import IconButton from '../IconButton'
 import Card from '../Card'
 import style from '@/styles/Scrollbar.module.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Navigation, Pagination, Scrollbar, A11y, EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/scss/scrollbar';
+import useScreenWidth from '@/hooks/UseScreenWidth'
 interface CarouselProps {
     productItem: Category[],
     CardVersion: number,
@@ -19,58 +20,67 @@ interface CarouselProps {
 
 export default function Carousel(props: CarouselProps) {
     const [currentSlide, setCurrentSlide] = useState<number>(0)
+    const screen = useScreenWidth()
     const { productItem, CardVersion, itemTitleCloser, itemTitle, } = props
 
     function previousSlide() {
         setCurrentSlide((curr) => (curr === 0 ? productItem.length - 1 : curr - 1))
-
-
-
     }
     function nextSlide() {
         setCurrentSlide((curr) => (curr === productItem.length - 1 ? 0 : curr + 1))
-
-
     }
-
     return (
-        <Swiper className='w-full pt-5 pb-10'>
-            <div className='flex items-center justify-between py-5 px-[5%]'>
-                {itemTitle && <h2 className='text-2xl font-medium'>{itemTitle}</h2>}
-                <div className='gap-x-3 hidden sm:flex '>
-                    <div className='bg-gray-200 rounded-full'>
-                        <IconButton IconImage={'/icons/arrow_left.svg'} IconWidth={30} IconHeight={30} onClick={previousSlide} />
-                    </div>
-                    <div className='bg-gray-200 rounded-full'>
-                        <IconButton IconImage={'/icons/arrow_right.svg'} IconWidth={30} IconHeight={30} onClick={nextSlide} />
+        <section className='w-full pt-5 pb-10 px-[5%]'>
+            <Swiper
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
+                spaceBetween={20}
+                slidesPerView={screen <= 640 ? 1 : screen > 640 && screen < 1040 ? 2 : 3}
+                navigation={{
+                    nextEl: '.button-next',
+                    prevEl: '.button-prev'
+                }}
+                scrollbar={screen ? { draggable: true } : { draggable: false }}
+                onSwiper={(swiper) => console.log(swiper)}
+                onSlideChange={() => console.log('slide change')}
+            >
+                <div className='flex items-center justify-between py-5'>
+                    {itemTitle && <h2 className='text-2xl font-medium'>{itemTitle}</h2>}
+                    <div className='gap-x-3 flex'>
+                        <div className={`bg-gray-200 rounded-full slider-arrow button-prev `}>
+                            <IconButton IconImage={'/icons/arrow_left.svg'} IconWidth={30} IconHeight={30} onClick={previousSlide} />
+                        </div>
+                        <div className={`bg-gray-200 rounded-full slider-arrow button-next`}>
+                            <IconButton IconImage={'/icons/arrow_right.svg'} IconWidth={30} IconHeight={30} onClick={nextSlide} />
+                        </div>
                     </div>
                 </div>
-            </div>
-            <ul
-                className={`overflow-x-scroll ${style.scroll_bar} ${CardVersion === 3 ? 'grid grid-cols-1 gap-y-3 sm:flex' : 'flex'} px-[5%] pb-5`}
-            >
+                <ul
+                    className={`overflow-x-scroll ${style.scroll_bar} ${CardVersion === 3 ? 'grid grid-cols-1 gap-y-3 sm:flex' : 'flex'} px-[5%] pb-5`}
+                >
 
-                {productItem.map((item, index) =>
-
-                    <Card key={index}
-                        CardVersion={CardVersion}
-                        itemTitleCloser={itemTitleCloser}
-                        itemSize={item.imageSize}
-                        itemSizeSmallScreen={item.imageSmallScreen}
-                        itemPicture={item.picture}
-                        itemTag={item.tag}
-                        itemName={item.name}
-                        itemPrice={item.price}
-                        itemCategory={item.category}
-                        itemCategoryId={item.categoryId}
-                        itemDescription={item.description}
-                        itemShop={item.shop}
-                        itemCurrentSlide={currentSlide}
-                        itemSlideLength={productItem.length} />
-                )
-                }
-            </ul >
-        </Swiper >
+                    {productItem.map((item, index) =>
+                        <SwiperSlide>
+                            <Card key={index}
+                                CardVersion={CardVersion}
+                                itemTitleCloser={itemTitleCloser}
+                                itemSize={item.imageSize}
+                                itemSizeSmallScreen={item.imageSmallScreen}
+                                itemPicture={item.picture}
+                                itemTag={item.tag}
+                                itemName={item.name}
+                                itemPrice={item.price}
+                                itemCategory={item.category}
+                                itemCategoryId={item.categoryId}
+                                itemDescription={item.description}
+                                itemShop={item.shop}
+                                itemCurrentSlide={currentSlide}
+                                itemSlideLength={productItem.length} />
+                        </SwiperSlide>
+                    )
+                    }
+                </ul >
+            </Swiper >
+        </section>
     )
 
 }

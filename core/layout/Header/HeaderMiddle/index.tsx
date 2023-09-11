@@ -77,7 +77,7 @@ export default function HeaderMiddle() {
                         <ul className='flex gap-x-3 list-none '>
                             <IconButton onClick={toggleSearch} IconImage={search} IconWidth={25} IconHeight={25} IconLargeHidden />
                             <IconButton IconImage={heart} IconWidth={25} IconHeight={25} IconHidden />
-                            <IconButton IconImage={shoppingBag} IconWidth={25} IconHeight={25} />
+                            <IconButton IconImage={shoppingBag} IconWidth={25} IconHeight={25} onClick={() => pushRouter('/cart')} />
                             <IconButton IconImage={menu} IconWidth={25} IconHeight={25} IconMediumHidden onClick={toggleSideBar} />
                             <IconButton IconImage={login} IconWidth={25} IconHeight={25} IconMediumHidden onClick={() => pushRouter('/sign_in')} />
                         </ul>

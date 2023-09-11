@@ -23,13 +23,13 @@ export default function cart({ }: Props) {
   }
   return (
     <section>
-      <div className="p-5 space-y-5">
+      <div className="max-w-5xl mx-auto space-y-5">
         <div className="text-center md:hidden mb-10">
           <p className='text-2xl font-medium'>BAG</p>
           <p>0 Items | -</p>
         </div>
-        <div className='md:grid grid-cols-5 md:gap-x-10'>
-          <div className='md:col-span-3'>
+        <div className='md:grid grid-cols-6 md:gap-x-10'>
+          <div className='md:col-span-4'>
 
             <div className="border p-3">
               <h2 className="text-[20px] text-red-600">Members get free shipping on order $50+</h2>
@@ -63,9 +63,13 @@ export default function cart({ }: Props) {
               <p>Estimated Tax</p>
               <IconButton NoBackgroundHover={true} NoPadding={true} IconHeight={20} IconWidth={20} IconImage={'/icons/minus.svg'} />
             </div>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center border-y py-5">
               <p>Total</p>
               <IconButton NoBackgroundHover={true} NoPadding={true} IconHeight={20} IconWidth={20} IconImage={'/icons/minus.svg'} />
+            </div>
+            <div className='flex flex-col gap-y-5'>
+              <Button ButtonName='Checkout' ButtonTextWhiteBackgroundBlack={true} customStyle='p-5' />
+              <Button ButtonName='Paypal' customStyle='p-5 bg-gray-300 text-black' />
             </div>
           </div>
         </div>

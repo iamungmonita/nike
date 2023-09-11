@@ -1,16 +1,19 @@
 import React from 'react'
-
+import Image from 'next/image'
+import { StaticImport } from 'next/dist/shared/lib/get-img-props'
 export interface ButtonProps {
     onClick?: () => void
     ButtonName?: string,
     ButtonTextWhiteBackgroundBlack?: boolean
+    customStyle?: string,
+
 }
 
 export default function Button(props: ButtonProps) {
-    const { onClick, ButtonName, ButtonTextWhiteBackgroundBlack } = props
+    const { onClick, ButtonName, ButtonTextWhiteBackgroundBlack, customStyle } = props
     return (
         <button
-            className={`px-5 py-2  text-center rounded-full cursor-pointer hover:bg-hover  ${ButtonTextWhiteBackgroundBlack ? 'text-white bg-black' : 'text-black bg-white'} `}
-            onClick={onClick}>{ButtonName}</button>
+            className={`text-center rounded-full cursor-pointer hover:bg-hover ${customStyle} ${ButtonTextWhiteBackgroundBlack ? 'text-white bg-black' : 'text-black bg-white'} `}
+            onClick={onClick}>{ButtonName} </button>
     )
 }

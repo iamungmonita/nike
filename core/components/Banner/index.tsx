@@ -54,7 +54,7 @@ export default function Banner(props: BannerProps) {
                                 <h2 className='text-5xl'>{TitleFirstPart} <br />{TitleSecondPart}</h2 >
                             </div>
                             <p className={`text-black max-w-[90%]`}>{DescriptionFirstPart} {DescriptionSecondPart}</p>
-                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                         </div>
                     </div>
 
@@ -74,7 +74,7 @@ export default function Banner(props: BannerProps) {
                                 <h2 className='text-7xl h-14'>{TitleSecondPart}</h2 >
                             </div>
                             <p className={`text-black`}>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>
-                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                         </div>
                     </div>
                 </>
@@ -95,7 +95,7 @@ export default function Banner(props: BannerProps) {
                                 <h2 className='text-5xl'>{TitleFirstPart} <br /> {TitleSecondPart}</h2 >
                             </div>
                             <p className={`text-black max-w-[95%]`}>{DescriptionFirstPart} {DescriptionSecondPart}</p>
-                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                         </div>
                     </div>
 
@@ -115,7 +115,7 @@ export default function Banner(props: BannerProps) {
                                 <h2 className='text-5xl h-10'>{TitleSecondPart}</h2 >
                             </div>
                             <p className={`text-black`}>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>
-                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                         </div>
                     </div>
                 </>
@@ -134,7 +134,7 @@ export default function Banner(props: BannerProps) {
                             <h2 className={`text-2xl font-medium text-${TextColor}`}>{TitleFirstPart} <br /> {TitleSecondPart}</h2 >
                             {DescriptionFirstPart || DescriptionSecondPart && <p>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>}
                             <div className='flex gap-x-3'>
-                                <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                                <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                             </div>
                         </div>
                     </div>
@@ -154,7 +154,7 @@ export default function Banner(props: BannerProps) {
                                     <h2 className={`text-2xl font-medium text-${TextColor}`}>{TitleFirstPart} <br /> {TitleSecondPart}</h2 >
                                     {DescriptionFirstPart || DescriptionSecondPart && <p>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>}
                                     <div className='flex gap-x-3'>
-                                        <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                                        <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                                     </div>
                                 </div>
                             </div>
@@ -179,8 +179,8 @@ export default function Banner(props: BannerProps) {
                             </div>
                             <p>{DescriptionFirstPart} {DescriptionSecondPart}</p>
                             <div className='flex gap-x-3'>
-                                <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
-                                <Button ButtonName={ExtraButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                                <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
+                                <Button ButtonName={ExtraButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                             </div>
                         </div>
                     </div>
@@ -202,8 +202,8 @@ export default function Banner(props: BannerProps) {
                             </div>
                             <p>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>
                             <div className='flex gap-x-3'>
-                                <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
-                                <Button ButtonName={ExtraButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} />
+                                <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
+                                <Button ButtonName={ExtraButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                             </div>
                         </div>
                     </div>

@@ -7,7 +7,9 @@ import { getAllMemberShip } from '@/service/membership';
 import { getAllPopular } from '@/service/popular';
 import { getAllShopSport } from '@/service/shopbysport';
 import { getAllTrending } from '@/service/trending';
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y, EffectFade } from 'swiper/modules';
+import Image from 'next/image';
 export default function Home() {
   const [items, setItems] = useState<Category[]>([]);
   const [popular, setPopular] = useState<Category[]>([]);
@@ -35,7 +37,7 @@ export default function Home() {
       }
     );
   }
-
+  const [width, setWidth] = useState<boolean>(false)
   return (
     <main>
       <AHelmet>Nike. Just Do it. Nike.com</AHelmet>
@@ -86,8 +88,8 @@ export default function Home() {
           />
         </div>
       </section>
-      <Carousel productItem={iconic} CardVersion={2} itemTitle="Always Iconic" />
-      <Carousel productItem={sport} CardVersion={3} itemTitle="Shop by Sport" />
+      {/* <Carousel productItem={iconic} CardVersion={2} itemTitle="Always Iconic" />
+      <Carousel productItem={sport} CardVersion={3} itemTitle="Shop by Sport" /> */}
       <Carousel productItem={popular} CardVersion={1} itemTitle="Popular Right Now" />
       <Banner
         BannerVersion={4}

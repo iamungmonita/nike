@@ -1,12 +1,17 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { Button, IconButton } from '@/core';
 
 export default function sign_in() {
+  const [input, setInput] = useState<string>('')
+  const [password, setPassword] = useState<boolean>(false)
   function handleSubmit(e: any) {
     e.preventDefault();
-    console.log('submitted');
+    console.log('submitted', input);
+  }
+  function showPassword() {
+    setPassword(!password)
   }
 
   return (
@@ -28,7 +33,7 @@ export default function sign_in() {
           </p>
         </div>
         <div className="w-full">
-          <input type="text" className="px-5 w-full rounded-md py-4 border" placeholder="Email" required />
+          <input type="email" className="px-5 w-full rounded-md py-4 border" placeholder="Email" required onChange={(e) => setInput(e.target.value)} />
         </div>
         <div className="w-[80%] text-gray-500 ">
           <p className="font-light">
@@ -47,7 +52,7 @@ export default function sign_in() {
           </p>
         </div>
         <div className="self-end">
-          <Button ButtonName="Continue" ButtonTextWhiteBackgroundBlack={true} />
+          <Button ButtonName="Continue" ButtonTextWhiteBackgroundBlack={true} customStyle='px-5 py-3' />
         </div>
       </div>
     </form>
