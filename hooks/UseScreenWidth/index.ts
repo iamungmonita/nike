@@ -8,7 +8,6 @@ export default function useScreenWidth() {
   }, [screenWidth]);
   function handleWidth() {
     setScreenWidth(window.innerWidth);
-    console.log(screenWidth);
   }
 
   return screenWidth;

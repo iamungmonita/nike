@@ -40,8 +40,7 @@ export default function Carousel(props: CarouselProps) {
                     prevEl: '.button-prev'
                 }}
                 scrollbar={screen ? { draggable: true } : { draggable: false }}
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log('slide change')}
+
             >
                 <div className='flex items-center justify-between py-5'>
                     {itemTitle && <h2 className='text-2xl font-medium'>{itemTitle}</h2>}
@@ -57,9 +56,8 @@ export default function Carousel(props: CarouselProps) {
                 <ul
                     className={`overflow-x-scroll ${style.scroll_bar} ${CardVersion === 3 ? 'grid grid-cols-1 gap-y-3 sm:flex' : 'flex'} px-[5%] pb-5`}
                 >
-
                     {productItem.map((item, index) =>
-                        <SwiperSlide>
+                        <SwiperSlide key={index}>
                             <Card key={index}
                                 CardVersion={CardVersion}
                                 itemTitleCloser={itemTitleCloser}

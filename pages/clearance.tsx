@@ -66,7 +66,7 @@ export default function Clearance({ }: Props) {
     }
     )
   }, [length])
-  console.log(items);
+
 
   return (
     <main>

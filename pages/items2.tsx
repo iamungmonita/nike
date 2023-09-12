@@ -5,7 +5,7 @@ import useApi from '@/hooks/useApi'
 import { Category } from '@/models/Category'
 type Props = {}
 
-export default function items({ }: Props) {
+export default function items2({ }: Props) {
     const [items, setItems] = useState<Category[]>([])
     const promiseAll = () => Promise.resolve(getAllPopular())
     const { response } = useApi({ service: promiseAll, effects: [] })

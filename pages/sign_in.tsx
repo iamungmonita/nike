@@ -8,7 +8,7 @@ export default function sign_in() {
   const [password, setPassword] = useState<boolean>(false)
   function handleSubmit(e: any) {
     e.preventDefault();
-    console.log('submitted', input);
+
   }
   function showPassword() {
     setPassword(!password)

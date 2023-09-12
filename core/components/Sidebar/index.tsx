@@ -25,7 +25,7 @@ export default function Sidebar(props: SidebarProps) {
     const { response } = useApi({ service: promiseAll, effects: [] })
 
     useEffect(() => {
-        console.log(response);
+
     }, [response?.length])
 
     const prev = () => {
@@ -61,11 +61,12 @@ export default function Sidebar(props: SidebarProps) {
                     </div>
                     <div className='pt-10'>
                         {response?.map((res) => res.map((e, index) =>
-                            <div className='flex justify-between pl-5'>
+                            <div className='flex justify-between pl-5' key={e.id}>
                                 <p className='font-medium text-2xl'>{e.name}</p>
                                 <IconButton IconImage={'/icons/arrow_right.svg'} IconHeight={25} IconWidth={25} onClick={() => next(index)} NoBackgroundHover={true} />
                             </div>
                         ))}
+
                     </div>
                 </div>
                 <p className={`${style.slider} transition-transform ease-out duration-500`}

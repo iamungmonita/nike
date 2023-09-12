@@ -17,7 +17,7 @@ export default function search() {
         const data = await res.json()
         setItems(data)
     }
-    console.log(items);
+
 
     const updateParam = (type: number) => {
         const searchParam = new URLSearchParams(window.location.search)
