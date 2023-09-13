@@ -53,7 +53,7 @@ export default function testing({}: Props) {
         <button>Submit</button>
       </div>
       <button onClick={() => increment(10)}>increment by 10</button>
-      <button onClick={() => removeItem()}>Remove Item</button>
+      <button>Remove Item</button>
     </div>
   );
 }
