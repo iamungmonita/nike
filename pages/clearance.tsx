@@ -1,26 +1,25 @@
-
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { AHelmet, IconButton, Side, Sidebar } from '@/core';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+
+import { AHelmet, IconButton, Side } from '@/core';
 import useApi from '@/hooks/useApi';
+import { useGetState } from '@/hooks/useGetState';
 import { Category } from '@/models/Category';
 import { getAllIconic } from '@/service/iconic';
-import { useCounter } from '@/store/counterStore';
-import { shallow } from 'zustand/shallow';
-import { useGetState } from '@/hooks/useGetState';
-import { useRouter } from 'next/router';
-import { Listbox } from '@headlessui/react'
+import { cartCounter } from '@/store/counterStore';
+
 type Props = {};
 
-export default function Clearance({ }: Props) {
-  const router = useRouter()
-  const count = useCounter((state) => state.count)
+export default function Clearance({}: Props) {
+  const router = useRouter();
+  const count = cartCounter((state) => state.count);
   const [items, setItems] = useState<Category[] | null>([]);
   const [showFilter, setShowFilter] = useState<boolean>(true);
   const [length, setLength] = useState<boolean>(false);
   const [refresh, setRefresh] = useState<boolean>(false);
-  const counter = useGetState(useCounter, ((state: any) => state.count))
+  const counter = useGetState(cartCounter, (state: any) => state.count);
   const PromsieAll = () => Promise.resolve(getAllIconic());
   const { response } = useApi({ service: PromsieAll, effects: [] });
   const people = [
@@ -29,55 +28,58 @@ export default function Clearance({ }: Props) {
     { id: 3, name: 'Therese Wunsch', unavailable: false },
     { id: 4, name: 'Benedict Kessler', unavailable: true },
     { id: 5, name: 'Katelyn Rohan', unavailable: false },
-  ]
-  const [selectedPerson, setSelectedPerson] = useState(people[0])
+  ];
+  const [selectedPerson, setSelectedPerson] = useState(people[0]);
 
   useEffect(() => {
-    setItems(response)
-  }, [response?.length])
+    setItems(response);
+  }, [response?.length]);
 
   function toggleFilter() {
     setShowFilter(!showFilter);
   }
   function FilterProduct() {
-    const filter = response?.filter((item) => item.categoryId === 1)
+    const filter = response?.filter((item) => item.categoryId === 1);
     if (filter?.length) {
-      setItems(filter)
-      setRefresh(!refresh)
+      setItems(filter);
+      setRefresh(!refresh);
     }
   }
   function FilterProductWomen() {
-    const filterwomen = response?.filter((item) => item.categoryId === 2)
+    const filterwomen = response?.filter((item) => item.categoryId === 2);
     if (filterwomen?.length) {
-      setItems(filterwomen)
-      setRefresh(!refresh)
+      setItems(filterwomen);
+      setRefresh(!refresh);
     }
   }
   function routerPush(id: number) {
-    router.push(`/product/${id}`)
+    router.push(`/product/${id}`);
   }
   useEffect(() => {
     window.addEventListener('scroll', function scroll() {
       if (this.scrollY > 200) {
-        setLength(true)
+        setLength(true);
       } else {
-        setLength(false)
+        setLength(false);
       }
-    }
-    )
-  }, [length])
-
+    });
+  }, [length]);
 
   return (
     <main>
       <AHelmet>Clearance Outlet Deals & Discounts. Nike.com</AHelmet>
-      <section className='relative'>
+      <section className="relative">
         <div className="px-[5%]">
           <div className="flex justify-between h-20 bg-white items-center">
-            <div className={`font-medium duration-500 ${length ? 'text-md fixed top-0 left-0 pl-[5%] py-3 justify-center bg-white shadow w-full' : 'md:text-2xl  text-md'} z-20`}>Sale - Up to 50% off</div>
+            <div
+              className={`font-medium duration-500 ${
+                length ? 'text-md fixed top-0 left-0 pl-[5%] py-3 justify-center bg-white shadow w-full' : 'md:text-2xl  text-md'
+              } z-20`}>
+              Sale - Up to 50% off
+            </div>
             <div className={`{flex justify-end gap-x-5 flex`}>
               <div className={`flex gap-x-3 items-center text-sm`}>
-                <p className='md:block hidden'>{!showFilter ? 'Hide' : 'Show'} Filters</p>
+                <p className="md:block hidden">{!showFilter ? 'Hide' : 'Show'} Filters</p>
                 <IconButton IconImage={'/icons/filter.svg'} IconHeight={20} IconWidth={20} NoBackgroundHover={true} onClick={toggleFilter} />
               </div>
               <div className="flex gap-x-3 items-center text-sm ">
@@ -98,10 +100,15 @@ export default function Clearance({ }: Props) {
                     </div>
                   </Listbox.Options>
                 </Listbox> */}
-
               </div>
               <div className="flex gap-x-3 items-center text-sm">
-                <IconButton IconImage={'/icons/gender-female.svg'} IconHeight={20} IconWidth={20} NoBackgroundHover={true} onClick={FilterProductWomen} />
+                <IconButton
+                  IconImage={'/icons/gender-female.svg'}
+                  IconHeight={20}
+                  IconWidth={20}
+                  NoBackgroundHover={true}
+                  onClick={FilterProductWomen}
+                />
               </div>
             </div>
           </div>
@@ -115,24 +122,11 @@ export default function Clearance({ }: Props) {
                   <div key={card.id} className="flex cursor-pointer" onClick={() => routerPush(card.id)}>
                     <div className={`h-auto pb-5`}>
                       <div className="group/image">
-                        <Image
-                          className={`w-[400px] h-auto  object-cover`}
-                          src={card.picture}
-                          height={500}
-                          width={500}
-                          alt=""
-                        />
+                        <Image className={`w-[400px] h-auto  object-cover`} src={card.picture} height={500} width={500} alt="" />
                         <div className="py-[5%]">
                           <div className=" gap-x-1 hidden group-hover/image:flex">
                             {[1, 2, 3, 4].map((e, index) => (
-                              <Image
-                                key={index}
-                                className={`min-w-[40px] h-[40px] object-cover`}
-                                src={card.picture}
-                                height={40}
-                                width={40}
-                                alt=""
-                              />
+                              <Image key={index} className={`min-w-[40px] h-[40px] object-cover`} src={card.picture} height={40} width={40} alt="" />
                             ))}
                           </div>
                           <div className="group-hover/image:hidden">
