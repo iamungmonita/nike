@@ -3,10 +3,8 @@ import { Products } from '@/core';
 import useApi from '@/hooks/useApi';
 import { Category } from '@/models/Category';
 import { getAllPopular } from '@/service/popular';
-import { log } from 'console';
 import React, { useEffect, useState } from 'react'
-Products
-type Props = {}
+
 
 export default function index() {
     const [products, setProducts] = useState<Category[]>([])
@@ -17,9 +15,6 @@ export default function index() {
             setProducts(response)
         }
     }, [response?.length])
-
-
-
     return (
         <Products products={products} />
     )

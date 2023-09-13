@@ -5,6 +5,7 @@ import useApi from '@/hooks/useApi'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { AHelmet, Button } from '@/core'
+import { useCounter } from '@/store/counterStore'
 type Props = {}
 
 export default function index({ }: Props) {
@@ -12,9 +13,11 @@ export default function index({ }: Props) {
     const [product, setProduct] = useState<Category>()
     const promiseAll = () => Promise.resolve(getAllPopular())
     const { response } = useApi({ service: promiseAll, effects: [] })
+    const [productId, setProductId] = useState<number>()
     const router = useRouter()
     const { id } = router.query
     const filterId = Number(id)
+    const { addToCart, increment, removeItem } = useCounter()
 
     useEffect(() => {
         if (response?.length) {
@@ -24,6 +27,14 @@ export default function index({ }: Props) {
     }, [response?.length])
 
     const result = products.filter((pro) => pro.id === filterId)
+    function handleSubmit(e: any) {
+        e.preventDefault()
+        const filterProduct = products.filter((product) => product.id === productId)
+        addToCart(filterProduct[0])
+        increment(filterProduct[0].price)
+        // removeItem()
+    }
+
     return (
         <div>
 
@@ -32,9 +43,9 @@ export default function index({ }: Props) {
                     <AHelmet>{res.name}</AHelmet>
                     <div className='grid grid-cols-6 text-left py-5 gap-x-10'>
                         <div className='flex gap-x-2  col-span-4 h-[80vh]'>
-                            <div className='flex flex-col min-w-[30px] gap-2 overflow-y-scroll overflow-x-hidden '>
+                            <div className='flex flex-col min-w-[30px] gap-2 overflow-y-scroll scroll_bar overflow-x-hidden mr-5'>
                                 {[1, 2, 3, 4, 5].map((pic) =>
-                                    <div className='min-w-[50px]' key={pic}>
+                                    <div className='min-w-[50px] mr-5' key={pic}>
                                         <Image className='object-cover w-full h-full' src={res.picture} height={60} width={60} alt='' />
                                     </div>
                                 )}
@@ -43,7 +54,7 @@ export default function index({ }: Props) {
                                 <Image className='w-full h-full object-cover aspect-auto' src={res.picture} height={400} width={400} alt='' />
                             </div>
                         </div>
-                        <div className='p-2 space-y-5 col-span-2 overflow-scroll h-[80vh]'>
+                        <div className='p-2 space-y-5 col-span-2 scroll_bar overflow-scroll pr-5 h-[80vh]'>
                             <div>
                                 <h2 className='text-2xl font-medium'>{res.name}</h2>
                                 <h2 className='text-md'>{`${res.categoryId === 1 ? `Men's Shoes` : res.categoryId === 2 ? `Women's Shoes` : `Kid's Shoes`}  `}</h2>
@@ -65,10 +76,10 @@ export default function index({ }: Props) {
                             <div className='text-center'>
                                 <p>4 interest-free payments of $32.50 with Klarna. <span className='underline'>Learn More</span></p>
                             </div>
-                            <div className='flex flex-col gap-y-5'>
-                                <Button ButtonName='Add to Bag' ButtonTextWhiteBackgroundBlack={true} customStyle={'p-5'} />
-                                <Button ButtonName='Favorite' customStyle={'p-5 bg-white text-black border'} />
-                            </div>
+                            <form className='flex flex-col gap-y-5' onSubmit={handleSubmit}>
+                                <Button ButtonName='Add to Bag' ButtonTextWhiteBackgroundBlack={true} customStyle={'p-5'} onClick={() => setProductId(res.id)} />
+                                <Button ButtonName='Favorite' customStyle={'p-5 bg-white text-black border hover:border-black'} />
+                            </form>
                         </div>
                     </div>
 

@@ -1,0 +1,9 @@
+.container {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.slider {
+  scroll-snap-align: start;
+  flex: 1 0 100%;
+}/*# sourceMappingURL=Carousel.module.css.map */

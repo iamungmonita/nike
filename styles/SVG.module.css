@@ -1,0 +1,6 @@
+.svg {
+  cursor: pointer;
+}
+.svg:hover {
+  @apply fill-gray-500;
+}/*# sourceMappingURL=SVG.module.css.map */

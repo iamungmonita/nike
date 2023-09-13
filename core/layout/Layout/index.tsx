@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../Header'
+import Header from '../Header/index'
 import Footer from '../Footer'
 import { useRouter } from 'next/router'
 import HeaderTop from '../Header/HeaderTop'

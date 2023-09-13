@@ -14,6 +14,7 @@ export default function testing({ }: Props) {
   const promiseAll = () => Promise.resolve(getAllIconic())
   const { response } = useApi({ service: promiseAll, effects: [] })
   const [products, setProducts] = useState<Category[]>([])
+  const [exist, setExist] = useState<Category[]>([])
   const counter = useGetState(useCounter, ((state: any) => state.count))
   const cartItems = useGetState(useCounter, ((state: any) => state.items))
   const [productId, setProductId] = useState<number>()
@@ -29,14 +30,19 @@ export default function testing({ }: Props) {
   function handleSubmit(e: any) {
     e.preventDefault()
     const filterProduct = products.filter((product) => product.id === productId)
-    addToCart(filterProduct[0])
+    const exist = products.filter((product) => product.id === filterProduct[0].id)
 
+    addToCart(filterProduct[0])
+    increment(filterProduct[0].price)
+    // removeItem()
   }
 
   return (
     <div>
       <p>Count: {counter}</p>
-
+      <div>
+        {exist.length}
+      </div>
       <div>
         {products.map((product) =>
           <form onSubmit={handleSubmit}>

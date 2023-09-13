@@ -1,13 +1,15 @@
-import HeaderBottom from './HeaderBottom';
-import HeaderMiddle from './HeaderMiddle';
-import HeaderTop from './HeaderTop';
+import React from 'react'
+import HeaderBottom from './HeaderBottom'
+import HeaderMiddle from './HeaderMiddle'
+import HeaderTop from './HeaderTop'
+type Props = {}
 
-export default function Header() {
+export default function index({ }: Props) {
     return (
-        <section className='bg-header'>
+        <div>
             <HeaderTop />
             <HeaderMiddle />
             <HeaderBottom />
-        </section>
+        </div>
     )
 }

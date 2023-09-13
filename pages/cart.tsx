@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Button, Carousel, IconButton } from '@/core';
+import { AHelmet, Button, Carousel, IconButton } from '@/core';
 import useApi from '@/hooks/useApi';
 import { Category } from '@/models/Category';
 import { getAllPopular } from '@/service/popular';
@@ -12,10 +12,16 @@ type Props = {};
 export default function cart({ }: Props) {
   const [carousel, setCarousel] = useState<Category[]>([]);
   const [promotionCode, setPromotionCode] = useState<boolean>(false)
+  const [expanded, setExpanded] = useState<boolean>(false)
+  const [size, setSize] = useState<string>('S')
+  const [quantity, setQuantity] = useState<number>(1)
   const promiseALl = () => Promise.resolve(getAllPopular());
   const { response } = useApi({ service: promiseALl, effects: [] });
   const total = useGetState(useCounter, ((state: any) => state.count))
+  const fee = total * 0.02
   const items = useGetState(useCounter, ((state: any) => state.items))
+  const result = useGetState(useCounter, ((state: any) => state.item))
+  const { findIndex, incrementQuantity, removeItem } = useCounter()
   useEffect(() => {
     if (response?.length) {
       setCarousel(response);
@@ -24,8 +30,19 @@ export default function cart({ }: Props) {
   function showPromotionCode() {
     setPromotionCode(!promotionCode)
   }
+
+  function incrementShit(id: number) {
+    findIndex(id)
+    incrementQuantity(result)
+    console.log(items[result]);
+
+
+  }
+
+
   return (
     <section>
+      <AHelmet>Cart. Nike Store.</AHelmet>
       <div className="max-w-5xl mx-auto space-y-5 p-5 md:p-0">
         <div className="text-center md:hidden mb-10">
           <p className='text-2xl font-medium'>BAG</p>
@@ -48,7 +65,18 @@ export default function cart({ }: Props) {
                     <div className='text-sm text-gray-500'>
                       <p>Basketball Shoes</p>
                       <p>Description of the materials</p>
-                      <p>Size and Quality</p>
+                      <div className='flex gap-x-5 items-center'>
+                        <select value={size} onChange={(e) => setSize(e.target.value)} className=''>
+                          <option value="S">S</option>
+                          <option value="M">M</option>
+                          <option value="L">L</option>
+                        </select>
+                        <div>
+                          <IconButton IconImage={'/icons/minus.svg'} IconHeight={10} IconWidth={10} />
+                          <p>1</p>
+                          <IconButton IconImage={'/icons/plus-black.svg'} IconHeight={10} IconWidth={10} onClick={() => incrementShit(item.id)} />
+                        </div>
+                      </div>
                       <div className='flex  items-center'>
                         <IconButton IconImage={'/icons/heart.svg'} IconHeight={25} IconWidth={25} NoBackgroundHover={true} />
                         <IconButton IconImage={'/icons/garbage.svg'} IconHeight={25} IconWidth={25} NoBackgroundHover={true} />
@@ -72,23 +100,23 @@ export default function cart({ }: Props) {
             </div>
             <div className="flex justify-between items-center">
               <p>Subtotal</p>
-              <IconButton NoBackgroundHover={true} NoPadding={true} IconHeight={20} IconWidth={20} IconImage={'/icons/minus.svg'} />
+              <p>{'$' + total}</p>
             </div>
             <div className="flex justify-between items-center">
               <p>Estimated Shipping and Handling</p>
-              <p>{'$' + total}</p>
+              <p>{'$' + fee}</p>
             </div>
             <div className="flex justify-between items-center">
               <p>Estimated Tax</p>
               <IconButton NoBackgroundHover={true} NoPadding={true} IconHeight={20} IconWidth={20} IconImage={'/icons/minus.svg'} />
             </div>
             <div className="flex justify-between items-center border-y py-5">
-              <p>Total</p>
+              <p>Total: {'$' + total}</p>
               <IconButton NoBackgroundHover={true} NoPadding={true} IconHeight={20} IconWidth={20} IconImage={'/icons/minus.svg'} />
             </div>
             <div className='flex flex-col gap-y-5'>
               <Button ButtonName='Checkout' ButtonTextWhiteBackgroundBlack={true} customStyle='p-5' />
-              <Button ButtonName='Paypal' customStyle='p-5 bg-gray-300 text-black' />
+              <Button ButtonName='Paypal' customStyle='p-5 bg-gray-300 text-black border' />
             </div>
           </div>
         </div>
@@ -103,6 +131,7 @@ export default function cart({ }: Props) {
       <div>
         <Carousel productItem={carousel} CardVersion={1} itemTitle="You might also like" />
       </div>
+
     </section>
   );
 }

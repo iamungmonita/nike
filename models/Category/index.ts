@@ -18,6 +18,7 @@ export interface Category {
   imageSize: number;
   imageSmallScreen: number;
   isExpanded: boolean | undefined;
+  quantity: number;
   subCategories: {
     id: number;
     name: string;

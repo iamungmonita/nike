@@ -1,83 +1,91 @@
-
 [
-    {
-        "id": 1,
-        "name": "Nike Dunk Low Retro Premium",
-        "price" : 120,
-        "routePath" : "/products", 
-        "picture" : "/pictures/desktop/popular/1.jpeg",
-        "categoryId": 1,
-        "gender" : "men"
-    },
-    {
-        "id": 2,
-        "name": "Air Jordan 3 Retro",
-        "price" : 200,
-        "routePath" : "/products", 
-        "picture" : "/pictures/desktop/popular/2.jpeg",
-        "categoryId": 1,
-        "gender" : "men"
-    },
-    {
-        "id": 3,
-        "name": "Air Jordan 2 Retro Low",
-        "price" : 150,
-        "routePath" : "/products", 
-        "picture" : "/pictures/desktop/popular/3.jpeg",
-        "categoryId": 2,
-        "gender" : "women"
-    },
-    {
-        "id": 4,
-        "name": "Air Jordan 13 Retro",
-        "price" : 200,
-        "routePath" : "/products", 
-        "picture" : "/pictures/desktop/popular/4.jpeg",
-        "categoryId": 1,
-        "gender" : "men"
-    },
-    {
-        "id": 5,
-        "name": "Air Jordan 7 Retro",
-        "price" : 200,
-        "routePath" : "/products", 
-        "picture" : "/pictures/desktop/popular/5.webp",
-        "categoryId": 1,
-        "gender" : "men"
-    },
-    {
-        "id": 6,
-        "name": "Air Jordan 7 Retro",
-        "price" : 200,
-        "routePath" : "/products", 
-        "picture" : "/pictures/desktop/popular/6.webp",
-        "categoryId": 1,
-        "gender" : "men"
-    },
-    {
-        "id": 7,
-        "name": "Air Jordan 1 Low OG",
-        "price" : 140,
-        "routePath" : "/products", 
-        "picture" : "/pictures/desktop/popular/7.webp",
-        "categoryId": 2,
-        "gender" : "women"
-    },
-    {
-        "id": 8,
-        "name": "Air Jordan 1 Low OG",
-        "price" : 140,
-        "routePath" : "/products", 
-        "picture" : "/pictures/desktop/popular/8.webp",
-        "categoryId": 2,
-        "gender" : "women"
-    },
-    {
-        "id": 9,
-        "name": "Air Jordan 1 Low OG",
-        "price" : 120,
-        "routePath" : "/products", 
-        "picture" : "/pictures/desktop/popular/9.webp",
-        "categoryId": 3
-    }
+  {
+    "id": 1,
+    "name": "Nike Dunk Low Retro Premium",
+    "price": 120,
+    "routePath": "/products",
+    "picture": "/pictures/desktop/popular/1.jpeg",
+    "categoryId": 1,
+    "gender": "men",
+    "quantity": 1
+  },
+  {
+    "id": 2,
+    "name": "Air Jordan 3 Retro",
+    "price": 200,
+    "routePath": "/products",
+    "picture": "/pictures/desktop/popular/2.jpeg",
+    "categoryId": 1,
+    "gender": "men",
+    "quantity": 1
+  },
+  {
+    "id": 3,
+    "name": "Air Jordan 2 Retro Low",
+    "price": 150,
+    "routePath": "/products",
+    "picture": "/pictures/desktop/popular/3.jpeg",
+    "categoryId": 2,
+    "gender": "women",
+    "quantity": 1
+  },
+  {
+    "id": 4,
+    "name": "Air Jordan 13 Retro",
+    "price": 200,
+    "routePath": "/products",
+    "picture": "/pictures/desktop/popular/4.jpeg",
+    "categoryId": 1,
+    "gender": "men",
+    "quantity": 1
+  },
+  {
+    "id": 5,
+    "name": "Air Jordan 7 Retro",
+    "price": 200,
+    "routePath": "/products",
+    "picture": "/pictures/desktop/popular/5.webp",
+    "categoryId": 1,
+    "gender": "men",
+    "quantity": 1
+  },
+  {
+    "id": 6,
+    "name": "Air Jordan 7 Retro",
+    "price": 200,
+    "routePath": "/products",
+    "picture": "/pictures/desktop/popular/6.webp",
+    "categoryId": 1,
+    "gender": "men",
+    "quantity": 1
+  },
+  {
+    "id": 7,
+    "name": "Air Jordan 1 Low OG",
+    "price": 140,
+    "routePath": "/products",
+    "picture": "/pictures/desktop/popular/7.webp",
+    "categoryId": 2,
+    "gender": "women",
+    "quantity": 1
+  },
+  {
+    "id": 8,
+    "name": "Air Jordan 1 Low OG",
+    "price": 140,
+    "routePath": "/products",
+    "picture": "/pictures/desktop/popular/8.webp",
+    "categoryId": 2,
+    "gender": "women",
+    "quantity": 1
+  },
+  {
+    "id": 9,
+    "name": "Air Jordan 1 Low OG",
+    "price": 120,
+    "routePath": "/products",
+    "picture": "/pictures/desktop/popular/9.webp",
+    "categoryId": 3,
+    "quantity": 1
+  }
 ]
