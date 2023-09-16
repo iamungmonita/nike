@@ -10,7 +10,6 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/scss/scrollbar';
-import useScreenWidth from '@/hooks/useScreenWidth'
 import Link from 'next/link'
 
 export interface Carousel2Props {
@@ -21,16 +20,14 @@ export interface Carousel2Props {
 }
 export default function Carousel2(props: Carousel2Props) {
     const [currentSlide, setCurrentSlide] = useState<number>(0)
-    const screen = useScreenWidth()
     const { productItem, CardVersion, itemTitleCloser, itemTitle, } = props
-
+    // 
     function previousSlide() {
         setCurrentSlide((curr) => (curr === 0 ? productItem.length - 1 : curr - 1))
     }
     function nextSlide() {
         setCurrentSlide((curr) => (curr === productItem.length - 1 ? 0 : curr + 1))
     }
-
     return (
         <section className='w-full pt-5 pb-10 px-[5%]'>
             <div className='sm:hidden'>
@@ -64,7 +61,7 @@ export default function Carousel2(props: Carousel2Props) {
                         nextEl: '.button-next',
                         prevEl: '.button-prev'
                     }}
-                    scrollbar={screen ? { draggable: true } : { draggable: false }}>
+                    scrollbar={{ draggable: true }}>
                     <div className='py-5'>
                         {itemTitle && <h2 className='text-2xl font-medium'>{itemTitle}</h2>}
                         <div className='flex'>
