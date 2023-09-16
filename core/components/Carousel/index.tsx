@@ -9,7 +9,6 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/scss/scrollbar';
-import useScreenWidth from '@/hooks/useScreenWidth'
 
 
 export interface CarouselProps {
@@ -20,7 +19,6 @@ export interface CarouselProps {
 }
 export default function Carousel(props: CarouselProps) {
     const [currentSlide, setCurrentSlide] = useState<number>(0)
-    const screen = useScreenWidth()
     const { productItem, CardVersion, itemTitleCloser, itemTitle, } = props
 
     function previousSlide() {
@@ -41,7 +39,7 @@ export default function Carousel(props: CarouselProps) {
                         nextEl: '.button-next',
                         prevEl: '.button-prev'
                     }}
-                    scrollbar={screen ? { draggable: true } : { draggable: false }}>
+                    scrollbar={{ draggable: true }}>
                     <div className='flex items-center justify-between py-5'>
                         {itemTitle && <h2 className='text-2xl font-medium'>{itemTitle}</h2>}
                         <div className='gap-x-3 flex'>
@@ -86,7 +84,7 @@ export default function Carousel(props: CarouselProps) {
                         nextEl: '.button-next',
                         prevEl: '.button-prev'
                     }}
-                    scrollbar={screen ? { draggable: true } : { draggable: false }}>
+                    scrollbar={{ draggable: true }}>
                     <div className='flex items-center justify-between py-5'>
                         {itemTitle && <h2 className='text-2xl font-medium'>{itemTitle}</h2>}
                         <div className='gap-x-3 flex'>
@@ -131,7 +129,7 @@ export default function Carousel(props: CarouselProps) {
                         nextEl: '.button-next',
                         prevEl: '.button-prev'
                     }}
-                    scrollbar={screen ? { draggable: true } : { draggable: false }}>
+                    scrollbar={{ draggable: true }}>
                     <div className='flex items-center justify-between py-5'>
                         {itemTitle && <h2 className='text-2xl font-medium'>{itemTitle}</h2>}
                         <div className='gap-x-3 flex'>
