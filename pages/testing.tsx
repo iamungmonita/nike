@@ -9,7 +9,7 @@ import { cartCounter } from '@/store/counterStore';
 
 type Props = {};
 
-export default function testing({}: Props) {
+export default function testing({ }: Props) {
   const promiseAll = () => Promise.resolve(getAllIconic());
   const { response } = useApi({ service: promiseAll, effects: [] });
   const [products, setProducts] = useState<Category[]>([]);
@@ -32,7 +32,7 @@ export default function testing({}: Props) {
     const exist = products.filter((product) => product.id === filterProduct[0].id);
 
     addToCart(filterProduct[0]);
-    increment(filterProduct[0].price);
+    increment(filterProduct[0].price, 0);
     // removeItem()
   }
 
@@ -52,7 +52,7 @@ export default function testing({}: Props) {
         ))}
         <button>Submit</button>
       </div>
-      <button onClick={() => increment(10)}>increment by 10</button>
+      <button onClick={() => increment(10, 0)}>increment by 10</button>
       <button>Remove Item</button>
     </div>
   );
