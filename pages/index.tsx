@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-
+import Carousel2 from '@/core/components/Carousel2';
+import Carousel3 from '@/core/components/Carousel3';
 import { AHelmet, Banner, Card, Carousel } from '@/core';
 import { Category } from '@/models/Category';
 import { getAllIconic } from '@/service/iconic';
@@ -44,7 +45,7 @@ export default function Home() {
       <Banner
         BannerVersion={1}
         ButtonName="Shop"
-        BannerImg={'/pictures/desktop/banner/rediscover.webp'}
+        BannerImg={'/pictures/desktop/banner/section1.jpg'}
         SmallScreenImage={'/pictures/mobile/banner/section2-mobile.webp'}
         TitleFirstPart="REDISCOVER"
         TitleSecondPart="THE WORLD"
@@ -52,6 +53,7 @@ export default function Home() {
         DescriptionSecondPart="are here for your next adventure."
         ButtonTextWhiteBackgroundBlack={true}
       />
+      <Carousel2 productItem={iconic} CardVersion={2} itemTitle="Always Iconic" />
       <Carousel productItem={items} CardVersion={1} itemTitle="Trending" />
       <Banner
         BannerVersion={2}
@@ -88,8 +90,8 @@ export default function Home() {
           />
         </div>
       </section>
-      {/* <Carousel productItem={iconic} CardVersion={2} itemTitle="Always Iconic" />
-      <Carousel productItem={sport} CardVersion={3} itemTitle="Shop by Sport" /> */}
+      <Carousel2 productItem={iconic} CardVersion={2} itemTitle="Always Iconic" />
+      <Carousel3 productItem={sport} CardVersion={3} itemTitle="Shop by Sport" />
       <Carousel productItem={popular} CardVersion={1} itemTitle="Popular Right Now" />
       <Banner
         BannerVersion={4}

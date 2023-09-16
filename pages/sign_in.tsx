@@ -8,12 +8,7 @@ export default function sign_in() {
   const [password, setPassword] = useState<boolean>(false)
   function handleSubmit(e: any) {
     e.preventDefault();
-
   }
-  function showPassword() {
-    setPassword(!password)
-  }
-
   return (
     <form onSubmit={handleSubmit}>
       <div className="max-w-[460px] mx-auto flex flex-col px-10 md:px-0 gap-y-10">

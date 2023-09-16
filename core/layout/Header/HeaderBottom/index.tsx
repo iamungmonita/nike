@@ -34,7 +34,7 @@ export default function HeaderBottom({ }: Props) {
     }
 
     return (
-        <div className='text-center overflow-x-hidden'>
+        <div className='text-center overflow-x-hidden bg-gray-100'>
             <ul className={`flex font-medium ${style.container} transition-transform ease-out duration-500 w-screen`}>
                 {navLinks.map((navlink, index) =>
                     <div key={index} className={`${style.slider} transition-transform ease-out duration-500 text-center items-center p-5`} style={{ transform: `translateX(-${currentSlide * 100}%)` }}>

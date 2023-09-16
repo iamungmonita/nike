@@ -6,6 +6,8 @@ export interface Category {
   routePath: string;
   picture: string | StaticImport;
   tag: string;
+  material?: string;
+  size: string;
   category: string;
   price: number;
   categoryId: number;
@@ -19,6 +21,7 @@ export interface Category {
   imageSmallScreen: number;
   isExpanded: boolean | undefined;
   quantity: number;
+  features: { feature: string; details: string[]; isExpanded: boolean | undefined }[];
   subCategories: {
     id: number;
     name: string;

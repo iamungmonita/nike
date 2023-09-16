@@ -13,7 +13,7 @@ export default function Button(props: ButtonProps) {
     const { onClick, ButtonName, ButtonTextWhiteBackgroundBlack, customStyle } = props
     return (
         <button
-            className={`text-center rounded-full cursor-pointer hover:bg-hover ${customStyle} ${ButtonTextWhiteBackgroundBlack ? 'text-white bg-black' : 'text-black bg-white'} `}
+            className={`text-center rounded-full cursor-pointer ${customStyle} ${ButtonTextWhiteBackgroundBlack ? 'text-white bg-black' : 'text-black bg-white'} `}
             onClick={onClick}>{ButtonName} </button>
     )
 }

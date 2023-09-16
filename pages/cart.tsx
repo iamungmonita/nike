@@ -9,26 +9,30 @@ import { getAllPopular } from '@/service/popular';
 import { cartCounter } from '@/store/counterStore';
 
 export default function Cart() {
+
   const [carousel, setCarousel] = useState<Category[]>([]);
   const promiseALl = () => Promise.resolve(getAllPopular());
   const { response } = useApi({ service: promiseALl, effects: [] });
-
   const [promotionCode, setPromotionCode] = useState<boolean>(false);
   const [expanded, setExpanded] = useState<boolean>(false);
-  const [size, setSize] = useState<string>('S');
+
   const [quantity, setQuantity] = useState<number>(1);
   const total = useGetState(cartCounter, (state: any) => state.count);
   const fee = total * 0.02;
   const items = useGetState(cartCounter, (state: any) => state.items) ?? [];
   const result = useGetState(cartCounter, (state: any) => state.item);
+  const qty = useGetState(cartCounter, (state: any) => state.qty);
+  const [size, setSize] = useState<string>('S');
+  const [totalQty, setTotalQty] = useState<number>(0)
+  const { incrementQuantity, updateItems, removeAll, changeSize, increment, decrement } = cartCounter();
 
-  const { incrementQuantity, removeItem } = cartCounter();
 
   useEffect(() => {
     if (response?.length) {
       setCarousel(response);
     }
   }, [response?.length]);
+
 
   function showPromotionCode() {
     setPromotionCode(!promotionCode);
@@ -37,6 +41,11 @@ export default function Cart() {
   function onIncrQuantity(index: number, amount: number) {
     const quantity = (amount += 1);
     incrementQuantity(index, quantity);
+    increment(items[index].price, 1)
+    setTotalQty(totalQty + 1)
+  }
+  function onChangeSize(index: number) {
+    changeSize(size, index)
   }
 
   function onDcrQuantity(index: number, amount: number) {
@@ -45,7 +54,24 @@ export default function Cart() {
     }
     const quantity = (amount -= 1);
     incrementQuantity(index, quantity);
+    decrement(items[index].price, 1)
+    setTotalQty(totalQty - 1)
   }
+
+  function deleteItem(index: number) {
+    if (items > 1) {
+      decrement(items[index].price * items[index].quantity, items[index].quantity)
+      items.splice(index - 1, index)
+    }
+    else {
+      decrement(items[index].price * items[index].quantity, items[index].quantity)
+      items.splice(index, 1)
+    }
+    updateItems(items);
+  }
+  // const qty = items.filter((item: Category) => item.quantity > 2).map((e: Category) => e.quantity)
+
+
 
   return (
     <section>
@@ -53,7 +79,7 @@ export default function Cart() {
       <div className="max-w-5xl mx-auto space-y-5 p-5 md:p-0">
         <div className="text-center md:hidden mb-10">
           <p className="text-2xl font-medium">BAG</p>
-          <p>0 Items | -</p>
+          <p>{qty + " Items | - "}</p>
         </div>
         <div className="md:grid grid-cols-6 md:gap-x-10">
           <div className="md:col-span-4">
@@ -68,44 +94,55 @@ export default function Cart() {
                   items.map((item: any, index: number) => (
                     <div className="flex gap-x-5  border-b pb-5" key={item.id}>
                       <Image src={item.picture} height={150} width={150} alt={item.name as string} />
-                      <div>
-                        <p>{item.name}</p>
-                        <div className="text-sm text-gray-500">
+                      <div className='space-y-3 w-full'>
+                        <div className='flex justify-between items-center w-full'>
+                          <h2 className='font-medium text-xl'>{item.name}</h2>
+                          <div className="flex items-center">
+                            <IconButton
+                              IconImage={'/icons/heart.svg'}
+                              IconHeight={20}
+                              IconWidth={20}
+                              NoPadding={true}
+                              NoBackgroundHover={true}
+                              CustomizeStyle='px-2' />
+                            <IconButton
+                              onClick={() => deleteItem(index)}
+                              IconImage={'/icons/garbage.svg'}
+                              IconHeight={20}
+                              IconWidth={20}
+                              NoPadding={true}
+                              NoBackgroundHover={true}
+                              CustomizeStyle='px-2'
+                            />
+                          </div>
+                        </div>
+                        <div className="text-sm text-gray-500 space-y-1">
                           <p>Basketball Shoes</p>
                           <p>Description of the materials</p>
-                          <div className="flex gap-x-5 items-center">
-                            <select value={size} onChange={(e) => setSize(e.target.value)} className="">
+                          <div className="flex gap-x-5 items-center" onClick={() => onChangeSize(index)}>
+                            <select value={item.size} onChange={(e) => setSize(e.target.value)} className="border text-center pl-4 py-1 w-[100px]">
                               <option value="S">S</option>
                               <option value="M">M</option>
                               <option value="L">L</option>
                             </select>
-                            <div>
-                              <IconButton
-                                onClick={() => onDcrQuantity(index, item.quantity)}
-                                IconImage={'/icons/minus.svg'}
-                                IconHeight={10}
-                                IconWidth={10}
-                              />
-                              <p>{item.quantity}</p>
-                              <IconButton
-                                IconImage={'/icons/plus-black.svg'}
-                                IconHeight={10}
-                                IconWidth={10}
-                                onClick={() => onIncrQuantity(index, item.quantity)}
-                              />
-                            </div>
                           </div>
-                          <div className="flex  items-center">
-                            <IconButton IconImage={'/icons/heart.svg'} IconHeight={25} IconWidth={25} NoBackgroundHover={true} />
+                          <div className='flex w-[100px] border items-center'>
                             <IconButton
-                              onClick={() => removeItem(index)}
-                              IconImage={'/icons/garbage.svg'}
-                              IconHeight={25}
-                              IconWidth={25}
-                              NoBackgroundHover={true}
+                              onClick={() => onDcrQuantity(index, item.quantity)}
+                              IconImage={'/icons/minus.svg'}
+                              IconHeight={10}
+                              IconWidth={10}
+                            />
+                            <p className='px-5'>{item.quantity}</p>
+                            <IconButton
+                              IconImage={'/icons/plus-black.svg'}
+                              IconHeight={10}
+                              IconWidth={10}
+                              onClick={() => onIncrQuantity(index, item.quantity)}
                             />
                           </div>
                         </div>
+
                       </div>
                     </div>
                   ))}

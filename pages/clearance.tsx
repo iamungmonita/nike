@@ -12,7 +12,7 @@ import { cartCounter } from '@/store/counterStore';
 
 type Props = {};
 
-export default function Clearance({}: Props) {
+export default function Clearance({ }: Props) {
   const router = useRouter();
   const count = cartCounter((state) => state.count);
   const [items, setItems] = useState<Category[] | null>([]);
@@ -22,14 +22,7 @@ export default function Clearance({}: Props) {
   const counter = useGetState(cartCounter, (state: any) => state.count);
   const PromsieAll = () => Promise.resolve(getAllIconic());
   const { response } = useApi({ service: PromsieAll, effects: [] });
-  const people = [
-    { id: 1, name: 'Durward Reynolds', unavailable: false },
-    { id: 2, name: 'Kenton Towne', unavailable: false },
-    { id: 3, name: 'Therese Wunsch', unavailable: false },
-    { id: 4, name: 'Benedict Kessler', unavailable: true },
-    { id: 5, name: 'Katelyn Rohan', unavailable: false },
-  ];
-  const [selectedPerson, setSelectedPerson] = useState(people[0]);
+
 
   useEffect(() => {
     setItems(response);
@@ -72,9 +65,8 @@ export default function Clearance({}: Props) {
         <div className="px-[5%]">
           <div className="flex justify-between h-20 bg-white items-center">
             <div
-              className={`font-medium duration-500 ${
-                length ? 'text-md fixed top-0 left-0 pl-[5%] py-3 justify-center bg-white shadow w-full' : 'md:text-2xl  text-md'
-              } z-20`}>
+              className={`font-medium duration-500 ${length ? 'text-md fixed top-0 left-0 pl-[5%] py-3 justify-center bg-white shadow w-full' : 'md:text-2xl  text-md'
+                } z-20`}>
               Sale - Up to 50% off
             </div>
             <div className={`{flex justify-end gap-x-5 flex`}>

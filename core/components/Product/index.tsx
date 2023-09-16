@@ -25,7 +25,7 @@ export default function Product(props: Props) {
                         alt=""
                     />
                     <div className="py-[5%]">
-                        <div className=" gap-x-1 hidden group-hover/image:flex">
+                        <div className=" gap-x-1 hidden group-hover/image:flex rounded-md">
                             {[1, 2, 3, 4].map((e, index) => (
                                 <Image
                                     key={index}
