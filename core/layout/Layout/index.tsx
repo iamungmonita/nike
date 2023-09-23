@@ -13,6 +13,7 @@ export default function Layout({ children }: Props) {
     const router = useRouter();
 
     const isSpecificLayout = ['/cart'].includes(router.pathname);
+
     return (
         <div>
             {isSpecificLayout ?
@@ -28,7 +29,6 @@ export default function Layout({ children }: Props) {
                     {children}
                     <Footer />
                 </div>
-
             }
         </div>
     )

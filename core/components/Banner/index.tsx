@@ -2,11 +2,13 @@ import React from 'react'
 import Image from 'next/image'
 import Button from '../Button'
 import { StaticImport } from 'next/dist/shared/lib/get-img-props'
+import { useRouter } from 'next/router'
 
 export interface BannerProps {
     onClick?: () => void,
     ButtonName: string,
-    BannerImg: string | StaticImport,
+    ButtonPathName: string
+    BannerImg: string | StaticImport
     TitleFirstPart: string,
     TitleSecondPart?: string,
     DescriptionFirstPart?: string,
@@ -20,10 +22,12 @@ export interface BannerProps {
 }
 
 export default function Banner(props: BannerProps) {
+    const router = useRouter()
     const {
         onClick,
         ButtonName,
         BannerImg,
+        ButtonPathName,
         TitleFirstPart,
         TitleSecondPart,
         DescriptionFirstPart,
@@ -54,7 +58,7 @@ export default function Banner(props: BannerProps) {
                                 <h2 className='text-5xl'>{TitleFirstPart} <br />{TitleSecondPart}</h2 >
                             </div>
                             <p className={`text-black max-w-[90%]`}>{DescriptionFirstPart} {DescriptionSecondPart}</p>
-                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
+                            <Button ButtonName={ButtonName} onClick={() => router.push(ButtonPathName)} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                         </div>
                     </div>
 
@@ -74,7 +78,7 @@ export default function Banner(props: BannerProps) {
                                 <h2 className='text-7xl h-14'>{TitleSecondPart}</h2 >
                             </div>
                             <p className={`text-black`}>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>
-                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
+                            <Button ButtonName={ButtonName} onClick={() => router.push(ButtonPathName)} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                         </div>
                     </div>
                 </>
@@ -95,7 +99,7 @@ export default function Banner(props: BannerProps) {
                                 <h2 className='text-5xl'>{TitleFirstPart} <br /> {TitleSecondPart}</h2 >
                             </div>
                             <p className={`text-black max-w-[95%]`}>{DescriptionFirstPart} {DescriptionSecondPart}</p>
-                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
+                            <Button ButtonName={ButtonName} onClick={() => router.push(ButtonPathName)} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                         </div>
                     </div>
 
@@ -115,7 +119,7 @@ export default function Banner(props: BannerProps) {
                                 <h2 className='text-5xl h-10'>{TitleSecondPart}</h2 >
                             </div>
                             <p className={`text-black`}>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>
-                            <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
+                            <Button ButtonName={ButtonName} onClick={() => router.push(ButtonPathName)} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                         </div>
                     </div>
                 </>
@@ -134,7 +138,7 @@ export default function Banner(props: BannerProps) {
                             <h2 className={`text-2xl font-medium text-${TextColor}`}>{TitleFirstPart} <br /> {TitleSecondPart}</h2 >
                             {DescriptionFirstPart || DescriptionSecondPart && <p>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>}
                             <div className='flex gap-x-3'>
-                                <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
+                                <Button ButtonName={ButtonName} onClick={() => router.push(ButtonPathName)} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                             </div>
                         </div>
                     </div>
@@ -154,7 +158,7 @@ export default function Banner(props: BannerProps) {
                                     <h2 className={`text-2xl font-medium text-${TextColor}`}>{TitleFirstPart} <br /> {TitleSecondPart}</h2 >
                                     {DescriptionFirstPart || DescriptionSecondPart && <p>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>}
                                     <div className='flex gap-x-3'>
-                                        <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
+                                        <Button ButtonName={ButtonName} onClick={() => router.push(ButtonPathName)} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                                     </div>
                                 </div>
                             </div>
@@ -179,8 +183,8 @@ export default function Banner(props: BannerProps) {
                             </div>
                             <p>{DescriptionFirstPart} {DescriptionSecondPart}</p>
                             <div className='flex gap-x-3'>
-                                <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
-                                <Button ButtonName={ExtraButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
+                                <Button ButtonName={ButtonName} onClick={() => router.push(ButtonPathName)} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
+                                <Button ButtonName={ExtraButtonName} onClick={() => router.push(ButtonPathName)} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                             </div>
                         </div>
                     </div>
@@ -202,8 +206,8 @@ export default function Banner(props: BannerProps) {
                             </div>
                             <p>{DescriptionFirstPart} <br /> {DescriptionSecondPart}</p>
                             <div className='flex gap-x-3'>
-                                <Button ButtonName={ButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
-                                <Button ButtonName={ExtraButtonName} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
+                                <Button ButtonName={ButtonName} onClick={() => router.push(ButtonPathName)} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
+                                <Button ButtonName={ExtraButtonName} onClick={() => router.push(ButtonPathName)} ButtonTextWhiteBackgroundBlack={ButtonTextWhiteBackgroundBlack} customStyle='py-2 px-5' />
                             </div>
                         </div>
                     </div>

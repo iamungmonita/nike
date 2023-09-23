@@ -38,7 +38,6 @@ export default function Home() {
       }
     );
   }
-  const [width, setWidth] = useState<boolean>(false)
   return (
     <main>
       <AHelmet>Nike. Just Do it. Nike.com</AHelmet>
@@ -52,6 +51,7 @@ export default function Home() {
         DescriptionFirstPart="Wherever you decide to run or hike, Nike Trail & Nike ACG"
         DescriptionSecondPart="are here for your next adventure."
         ButtonTextWhiteBackgroundBlack={true}
+        ButtonPathName='/products'
       />
       <Carousel2 productItem={iconic} CardVersion={2} itemTitle="Always Iconic" />
       <Carousel productItem={items} CardVersion={1} itemTitle="Trending" />
@@ -65,6 +65,7 @@ export default function Home() {
         TitleSecondPart="ESSENTIALS"
         DescriptionFirstPart="Score everything you need for day one and beyond."
         ButtonTextWhiteBackgroundBlack={true}
+        ButtonPathName='/products'
       />
       <section className="px-[5%] my-10">
         <h2 className={`text-2xl font-medium py-5`}>Featured</h2>
@@ -77,6 +78,7 @@ export default function Home() {
             TitleFirstPart={'Rise & Shine in'}
             TitleSecondPart={'Phoenix Fleece'}
             ButtonTextWhiteBackgroundBlack={true}
+            ButtonPathName='/products'
             TextColor="black"
           />
           <Banner
@@ -87,6 +89,7 @@ export default function Home() {
             TitleFirstPart={'Must-Have Air Max'}
             ButtonTextWhiteBackgroundBlack={true}
             TextColor="black"
+            ButtonPathName='/products'
           />
         </div>
       </section>
@@ -105,6 +108,7 @@ export default function Home() {
         ButtonTextWhiteBackgroundBlack={false}
         TextColor="white"
         BannerTitle="Nike Membership"
+        ButtonPathName='/sign_in'
       />
       <section>
         <div className="w-full flex flex-col gap-x-3 sm:flex-row px-[5%]">
