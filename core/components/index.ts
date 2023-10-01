@@ -10,3 +10,4 @@ export { default as Card } from '@/core/components/Card';
 export { default as Sidebar } from '@/core/components/Sidebar';
 export { default as Products } from '@/core/components/Products';
 export { default as Product } from '@/core/components/Product';
+export { default as Dropdown } from '@/core/components/Dropdown';

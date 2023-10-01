@@ -1,10 +1,19 @@
 import React from 'react'
-import { Banner } from '@/core'
+import { Banner, Dropdown, Card } from '@/core'
 import { useEffect, useState } from 'react';
+
+import { Category } from '@/models/Category';
+import { getAllMemberShip } from '@/service/membership';
+import useApi from '@/hooks/useApi';
+
 type Props = {}
 
 export default function membership({ }: Props) {
+    const [members, setMember] = useState<Category[]>([])
     const [length, setLength] = useState<boolean>(false);
+    const [toggle, setToggle] = useState<boolean>(false);
+    const promiseALl = () => Promise.resolve(getAllMemberShip())
+    const { response } = useApi({ service: promiseALl, effects: [] })
     useEffect(() => {
         window.addEventListener('scroll', function scroll() {
             if (this.scrollY > 200) {
@@ -14,6 +23,11 @@ export default function membership({ }: Props) {
             }
         });
     }, [length]);
+    useEffect(() => {
+        if (response?.length) {
+            setMember(response)
+        }
+    }, [response?.length])
     return (
         <section>
             <Banner
@@ -33,7 +47,27 @@ export default function membership({ }: Props) {
                 } z-20`}>
                 Nike Membership
             </div>
-            <h2>Featured Benefits</h2>
-        </section>
+            <div className='text-center text-2xl font-semibold'>
+                <h2>Featured Benefits</h2>
+                <section>
+                    <div className="w-full grid grid-cols-2 gap-x-3 flex-row py-3 px-[5%]">
+                        {members.map((member, index) => (
+                            <Card
+                                key={index}
+                                CardVersion={4}
+                                itemCurrentSlide={0}
+                                itemName={member.name}
+                                itemPicture={member.picture}
+                                itemSize={370}
+                                itemTag={member.tag}
+                                itemTitleCloser={true}
+                            />
+                        ))}
+                    </div>
+                </section>
+            </div>
+
+
+        </section >
     )
 }

@@ -69,7 +69,8 @@ export default function Carousel(props: CarouselProps) {
                                     itemDescription={item.description}
                                     itemShop={item.shop}
                                     itemCurrentSlide={currentSlide}
-                                    itemSlideLength={productItem.length} />
+                                    itemSlideLength={productItem.length}
+                                />
                             </SwiperSlide>
                         )}
                     </ul >
