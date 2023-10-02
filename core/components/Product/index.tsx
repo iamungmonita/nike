@@ -11,7 +11,7 @@ export default function Product(props: Props) {
     const router = useRouter()
     const { card } = props
     function routerPush(id: number) {
-        router.push(`/products/${id}`)
+        router.push(`/products/women/${id}`)
     }
     return (
         <div key={card.id} className="flex cursor-pointer" onClick={() => routerPush(card.id)}>

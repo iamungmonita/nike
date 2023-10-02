@@ -11,6 +11,9 @@ import { getHeaderMiddle } from '@/service/header';
 import svgStyle from '@/styles/SVG.module.scss';
 
 import SearchItem from '../SearchItem';
+import { useGetState } from '@/hooks/useGetState';
+import { cartCounter } from '@/store/counterStore';
+import { Category } from '@/models/Category';
 
 export default function HeaderMiddle() {
   const router = useRouter();
@@ -19,7 +22,10 @@ export default function HeaderMiddle() {
   const [openSearch, setOpenSearch] = useState(false);
   const [openSideBar, setOpenSideBar] = useState(false);
   const screen = useScreenWidth();
-
+  const [value, setValue] = useState<string>('')
+  const items = useGetState(cartCounter, (state: any) => state.items) ?? [];
+  const [itemsLength, setItemsLength] = useState<number>()
+  const qty = useGetState(cartCounter, (state: any) => state.qty);
   useEffect(() => {
     if (screen >= 640) {
       setOpenSearch(false);
@@ -42,6 +48,16 @@ export default function HeaderMiddle() {
   function pushRouter(url: string) {
     router.push(url);
   }
+
+  useEffect(() => {
+    if (items.length) {
+      setItemsLength(items.length)
+    }
+  }, [items.length])
+
+
+
+
   return (
     <section>
       <div className="pr-[4%] pl-[5%] bg-white flex justify-between items-center h-20 relative">
@@ -85,12 +101,15 @@ export default function HeaderMiddle() {
           <div className="flex gap-x-3 justify-between">
             <div className="bg-header rounded-full hidden lg:flex justify-end gap-x-3">
               <IconButton IconImage={search} IconWidth={25} IconHeight={25} />
-              <input type="text" placeholder="Search..." className="w-32 bg-transparent outline-none hover:bg-header rounded-full" />
+              <input type="search" placeholder="Search..." className="w-32 bg-transparent outline-none hover:bg-header rounded-full" onChange={(e) => setValue(e.target.value)} />
             </div>
             <ul className="flex gap-x-3 list-none ">
               <IconButton onClick={toggleSearch} IconImage={search} IconWidth={25} IconHeight={25} IconLargeHidden />
               <IconButton IconImage={heart} IconWidth={25} IconHeight={25} IconHidden />
-              <IconButton IconImage={shoppingBag} IconWidth={25} IconHeight={25} onClick={() => pushRouter('/cart')} />
+              <div className='relative'>
+                <IconButton IconImage={shoppingBag} IconWidth={25} IconHeight={25} onClick={() => pushRouter('/cart')} />
+                <p className='absolute text-white top-[-20%] left-[60%] bg-blue-500 rounded-full w-[25px]  h-[25px] text-center'>{qty}</p>
+              </div>
               <IconButton IconImage={menu} IconWidth={25} IconHeight={25} IconMediumHidden onClick={toggleSideBar} />
               <IconButton IconImage={login} IconWidth={25} IconHeight={25} IconMediumHidden onClick={() => pushRouter('/sign_in')} />
             </ul>

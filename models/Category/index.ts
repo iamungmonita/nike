@@ -8,6 +8,8 @@ export interface Category {
   tag: string;
   material?: string;
   size: string;
+  shoesId: number;
+  sortbyId: number;
   category: string;
   price: number;
   categoryId: number;

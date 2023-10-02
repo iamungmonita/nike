@@ -25,7 +25,7 @@ export default function index({ }: Props) {
                         We can't find the page you are looking for.
                         <br />
                         Sorry for the inconvenience.</h2>
-                    <button className='px-10 py-2 bg-gray-100 text-sm '>
+                    <button className='px-10 py-2 bg-gray-100 text-sm'>
                         <Link href={'/'}>BACK TO HOMEPAGE</Link>
                     </button>
                 </div>

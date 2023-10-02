@@ -7,6 +7,7 @@ import { useGetState } from '@/hooks/useGetState';
 import { Category } from '@/models/Category';
 import { getAllPopular } from '@/service/popular';
 import { cartCounter } from '@/store/counterStore';
+import Link from 'next/link';
 
 export default function Cart() {
 
@@ -192,7 +193,7 @@ export default function Cart() {
           <h2 className="font-medium text-2xl">Favorites</h2>
           <p>Want to review your favorites?</p>
           <p>
-            <span className="underline font-medium">Join Us</span> or <span className="underline font-medium">Sign In</span>
+            <span className="underline font-medium">Join Us</span> or <Link href={'/sign_in'} className="underline font-medium">Sign In</Link>
           </p>
         </div>
       </div>

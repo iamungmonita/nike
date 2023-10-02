@@ -30,7 +30,7 @@ export default function Card(props: ItemProps) {
         itemCategoryId,
         itemDescription,
         itemShop,
-        itemSize,
+        itemSize
     } = props
 
     return (

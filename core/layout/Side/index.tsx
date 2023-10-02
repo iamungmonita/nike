@@ -5,15 +5,18 @@ import useApi from '@/hooks/useApi';
 import { Category } from '@/models/Category';
 import { getAllSideCategory, getAllSideComponent } from '@/service/side';
 import style from '@/styles/Side.module.scss';
+import { getAllProducts } from '@/service/products';
 
-type Props = {}
+type Props = {
+    sortbyFunction: (message: number) => void
+}
 type Response = [Category[], Category[]]
 
-export default function Side({ }: Props) {
+export default function Side({ sortbyFunction }: Props) {
     const [refresh, setRefresh] = useState(false)
     const [titles, setTitle] = useState<Category[] | []>([])
     const [subTitles, setSubTitle] = useState<Category[] | []>([])
-    const PromiseAll = () => Promise.all([getAllSideCategory(), getAllSideComponent()])
+    const PromiseAll = () => Promise.all([getAllProducts(), getAllSideComponent()])
     const { response } = useApi({ service: PromiseAll, effects: [] })
 
 
@@ -49,7 +52,7 @@ export default function Side({ }: Props) {
                 </div>
                 <div className='py-5 border-b flex flex-col justify-between gap-y-3 font-medium'>
                     {titles?.map((title, index) =>
-                        <p key={index}>{title.name}</p>
+                        <p className='cursor-pointer' key={index} onClick={() => sortbyFunction(title.shoesId)}>{title.name}</p>
                     )}
                 </div>
                 {subTitles?.map((subTitle, index) =>
