@@ -52,8 +52,8 @@ export default function Products(props: Props) {
     setMessage(message)
     const filter = products.filter((item) => item.id === message)
     setItems(filter)
-
   }
+
   useEffect(() => {
     document.addEventListener('click', clickOutside)
     return () => {
