@@ -48,7 +48,7 @@ export default function Products(props: Props) {
     });
   }, [length]);
 
-  function sortbyFunction(message: number) {
+  function sortbyFunction(message: number): void {
     setMessage(message)
     const filter = products.filter((item) => item.id === message)
     setItems(filter)
