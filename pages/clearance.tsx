@@ -23,7 +23,6 @@ export default function Clearance({ }: Props) {
   const PromsieAll = () => Promise.resolve(getAllIconic());
   const { response } = useApi({ service: PromsieAll, effects: [] });
 
-
   useEffect(() => {
     setItems(response);
   }, [response?.length]);
@@ -106,7 +105,7 @@ export default function Clearance({ }: Props) {
           </div>
           <div className={` ${showFilter && 'grid-cols-5 grid'} `}>
             <div className={`${showFilter ? 'block' : 'hidden'} animate__animated duration-100 mr-5`}>
-              <Side />
+              {/* <Side sortbyFunction={sortbyFunction} /> */}
             </div>
             <div className="col-span-4">
               <div className="gap-x-5 items-top grid grid-cols-2 lg:grid-cols-3 lg:gap-y-10">

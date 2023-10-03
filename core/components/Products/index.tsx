@@ -12,6 +12,7 @@ import useApi from '@/hooks/useApi';
 type Props = {
   products: Category[];
   category?: string | string[] | undefined,
+
 };
 
 export default function Products(props: Props) {
@@ -48,7 +49,7 @@ export default function Products(props: Props) {
     });
   }, [length]);
 
-  function sortbyFunction(message: number): void {
+  function sortbyFunction(message: number) {
     setMessage(message)
     const filter = products.filter((item) => item.id === message)
     setItems(filter)
@@ -70,7 +71,6 @@ export default function Products(props: Props) {
 
   useEffect(() => {
     if (products.length && category?.length && category === 'women') {
-
       const fitlerWomen = products.filter((item) => item.categoryId === 2)
       setItems(fitlerWomen)
 
