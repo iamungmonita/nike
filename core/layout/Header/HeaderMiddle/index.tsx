@@ -76,11 +76,10 @@ export default function HeaderMiddle() {
                 key={index}
                 onClick={() => pushRouter(item.routePath)}>
                 <p> {item.name}</p>
-                <div className=" hidden group-hover/item:flex z-20 justify-between gap-x-10 top-20 absolute left-[50%] -translate-x-[50%] bg-white w-full overflow-x-hidden min-h-[60vh] hover:block px-[10%]">
+                <div className="opacity-0 -mt-1 group-hover/item:opacity-100 group-hover/item:mt-0 group-hover/item:visible invisible flex z-20 justify-between gap-x-10 top-20 absolute duration-300 left-[50%] -translate-x-[50%] bg-white w-full overflow-hidden min-h-[60vh] px-[10%]">
                   {item.subCategories
-                    .filter((sub_item) => sub_item.categoryId === item.id)
-                    .map((sub_item, index) => (
-                      <div key={index} className="animate__animated animate__fadeInDownBig">
+                    .map((sub_item, index) =>
+                      <div key={index} className="">
                         <li onClick={() => pushRouter(sub_item.routePath)} className="flex flex-col">
                           <p className="text-left">{sub_item.name}</p>
                           {sub_item.subCategories &&
@@ -91,7 +90,7 @@ export default function HeaderMiddle() {
                             ))}
                         </li>
                       </div>
-                    ))}
+                    )}
                 </div>
               </div>
             ))}
